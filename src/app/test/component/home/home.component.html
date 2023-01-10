@@ -1,0 +1,1461 @@
+
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
+        <div class="navbar-container d-flex content">
+            <div class="bookmark-wrapper d-flex align-items-center">
+                <ul class="nav navbar-nav d-xl-none">
+                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav bookmark-icons">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
+                        <div class="bookmark-input search-input">
+                            <div class="bookmark-input-icon"><i data-feather="search"></i></div>
+                            <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
+                            <ul class="search-list search-list-bookmark"></ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav navbar-nav align-items-center ms-auto">
+                <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
+                </li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+                <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
+                    <div class="search-input">
+                        <div class="search-input-icon"><i data-feather="search"></i></div>
+                        <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
+                        <div class="search-input-close"><i data-feather="x"></i></div>
+                        <ul class="search-list search-list-main"></ul>
+                    </div>
+                </li>
+                <li class="nav-item dropdown dropdown-cart me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="shopping-cart"></i><span class="badge rounded-pill bg-primary badge-up cart-item-count">6</span></a>
+                    <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+                        <li class="dropdown-menu-header">
+                            <div class="dropdown-header d-flex">
+                                <h4 class="notification-title mb-0 me-auto">My Cart</h4>
+                                <div class="badge rounded-pill badge-light-primary">4 Items</div>
+                            </div>
+                        </li>
+                        <li class="scrollable-container media-list">
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/assets/app-assets/images/pages/eCommerce/1.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Apple watch 5</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="1">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$374.90</h5>
+                                </div>
+                            </div>
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/assets/app-assets/images/pages/eCommerce/7.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Google Home Mini</a></h6><small class="cart-item-by">By Google</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="3">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$129.40</h5>
+                                </div>
+                            </div>
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/assets/app-assets/images/pages/eCommerce/2.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iPhone 11 Pro</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="2">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$699.00</h5>
+                                </div>
+                            </div>
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/assets/app-assets/images/pages/eCommerce/3.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iMac Pro</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="1">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$4,999.00</h5>
+                                </div>
+                            </div>
+                            <div class="list-item align-items-center"><img class="d-block rounded me-1" src="/assets/app-assets/images/pages/eCommerce/5.png" alt="donuts" width="62">
+                                <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                                    <div class="media-heading">
+                                        <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> MacBook Pro</a></h6><small class="cart-item-by">By Apple</small>
+                                    </div>
+                                    <div class="cart-item-qty">
+                                        <div class="input-group">
+                                            <input class="touchspin-cart" type="number" value="1">
+                                        </div>
+                                    </div>
+                                    <h5 class="cart-item-price">$2,999.00</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown-menu-footer">
+                            <div class="d-flex justify-content-between mb-1">
+                                <h6 class="fw-bolder mb-0">Total:</h6>
+                                <h6 class="text-primary fw-bolder mb-0">$10,999.00</h6>
+                            </div><a class="btn btn-primary w-100" href="app-ecommerce-checkout.html">Checkout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
+                    <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+                        <li class="dropdown-menu-header">
+                            <div class="dropdown-header d-flex">
+                                <h4 class="notification-title mb-0 me-auto">Notifications</h4>
+                                <div class="badge rounded-pill badge-light-primary">6 New</div>
+                            </div>
+                        </li>
+                        <li class="scrollable-container media-list"><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar"><img src="/assets/app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar"><img src="/assets/app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" width="32" height="32"></div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">New message</span>&nbsp;received</p><small class="notification-text"> You have 10 unread messages</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-danger">
+                                            <div class="avatar-content">MD</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Revised Order 👋</span>&nbsp;checkout</p><small class="notification-text"> MD Inc. order updated</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-item d-flex align-items-center">
+                                <h6 class="fw-bolder me-auto mb-0">System Notifications</h6>
+                                <div class="form-check form-check-primary form-switch">
+                                    <input class="form-check-input" id="systemNotification" type="checkbox" checked="">
+                                    <label class="form-check-label" for="systemNotification"></label>
+                                </div>
+                            </div><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-danger">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="x"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Server down</span>&nbsp;registered</p><small class="notification-text"> USA Server is down due to high CPU usage</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-success">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="check"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Sales report</span>&nbsp;generated</p><small class="notification-text"> Last month sales report generated</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-warning">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="alert-triangle"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">High memory</span>&nbsp;usage</p><small class="notification-text"> BLR Server using high memory</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="/assets/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="me-50" data-feather="message-square"></i> Chats</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="auth-login-cover.html"><i class="me-50" data-feather="power"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="main-search-list-defaultlist d-none">
+        <li class="d-flex align-items-center"><a href="#">
+                <h6 class="section-label mt-75 mb-0">Files</h6>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/assets/app-assets/images/icons/xls.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;17kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/assets/app-assets/images/icons/jpg.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;11kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/assets/app-assets/images/icons/pdf.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;150kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="/assets/app-assets/images/icons/doc.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;256kb</small>
+            </a></li>
+        <li class="d-flex align-items-center"><a href="#">
+                <h6 class="section-label mt-75 mb-0">Members</h6>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/assets/app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/assets/app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/assets/app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="/assets/app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
+                    </div>
+                </div>
+            </a></li>
+    </ul>
+    <ul class="main-search-list-defaultlist-other-list d-none">
+        <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
+                <div class="d-flex justify-content-start"><span class="me-75" data-feather="alert-circle"></span><span>No results found.</span></div>
+            </a></li>
+    </ul>
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item me-auto"><a class="navbar-brand" href="/assets/html/ltr/vertical-menu-template/index.html">
+                    <span class="brand-logo">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX///8AAAAkJCRcXFy9vb2UlJTy8vKMjIyhoaHQ0NBra2s6OjqoqKjo6OjDw8Pb29swMDBlZWX4+PiCgoLp6enf39/X19exsbF1dXVTU1OioqJOTk65ubmIiIivr69AQEAUFBQaGhopKSk3Nzd8fHwhISEODg6ZmZkYGBhHR0dxcXEOj+IkAAAJj0lEQVR4nO2d63qqOhCGpSqCAipy8NyqVav3f4FbCJAJJKgETNZ+5v1lETAfJDOTyaG9HoIgCIIgCIIgCIIgCIIgCIIgCIIgCNIN5tRUXYRuGRqGMVRdiA6JL0bCJVZdkI7wTkbOyVNdmA6YrgzIaqq6QC1jjo0y4/+TyfF3ha7D9VB83vmqC9YWa/riro8/r/TPteqitcL2XAj6JRXT/C2OnLeKSyeP/V2omYfF0XBeHP22FZZOnrAvUgKU90PB1frj09r4M6h8O/ihtfcfNTlDalEc7gkOPeFfjOT2tPgj0SvyR/Sk/UdLJ483K4q+DMBxczfZQU8fLIvzZv9SJBdtinKvoBnJ3hnzTkMazW2iTxe0IQGN0E6MAaWen/H0No3Ix0FPf0CEdmHcefxHG53xx3SgtpfiC/0jOYuqsOBx72iwHL1XLtMO8DIW8GUA/07PYGIAfyF49VphT2iDcsHxKY1sHgYTmNk+7CS6tPlO9IzkQITGGEX3Tt8OcXp7+h7v8EkAE6xhJGdSx8a0MJPWvrTrRAAdqAV0j6C1LjXrIIsiNHCc8YIwmmEiNk0jOVGxwPHKKwEvXfhQ+OHs5/EqXVzClhZ17nKuc2kn0YDmE3aQdYjkoltRHsY8AJO5EkVjEY3YmKgUGK2b6kjOFXTW7Q3/eBngKDc2/zj3/X8KYCiZhAt4B+dq15dlQOs4UwdAemehzKwCmw9DrUBkQwRAewQjbxDJXYUXd4kgQgOR98sFA48KRt5qIzmbGhKmyyMo7BNEjwV0xGafjeTAIMQGxpZ1DrAekXucgs7054Y6AhppMkYeGI35+3ElyKEyZgu4nftnOsgg4PqB6SMPGP5mTgxE3t/wye1p3lGY1GoRGKGBnwOlk0gpgfcFn5L/wUhuwA/+geP/kbN6W/q+oKuHXZdnHlaGiJ+KFwbRjRBYKzhA0FUk5/IHIaClb6fDA+ok9DhwqKOLSA5G/LCeiDqzUr/F7TYzxvq39UhOEKEBM3dv87mC1AdjsDuL5GIqBNabAUgqtZ1YAe1uBuoMaBM/7U1a8fhJadAuOhnmFNwfptTb6SCDgYXblHv4q6ueuPdV/AYc/5jeuIcbAqaJQE8OHWCXM5xivnsEkYHkpBUQocGpWsCudj6dAkzkgPYzpn03mUgupHcHlovJBHYfJ/qCjCSw7s2ratHU4NMDBrt9p8QFVhmLd3jV+NZZEAo9QXygLYBxgKHdLsx7AWMaB9Baco9ybKyQPCRgqWGKkO2P0q5FW2yY+4M+N3SPdnrkt7FCcn1hQsHYkvHFnnk12qcUtFDPAcamvPRvCW+cVtM5+cxOnywpXBrtsxQqpDUodVrNK2mvR6xmYsDc0vTJksKt0T6ljuYX+21qBfz040hCYZj9FLRmXIW90aV8hiSXcrm/ymc8LDl5sFJxTdryVha88WLNU9jzzXapONpU4XoBi2KlDWciI7BqQa4mad0VhZ2TKvR6ZrVIUrcNmHsRXzRQqDB1FMAnJ0imGKGfy9yOcoW5oyZs6i97CsgL5VkYDRSCUFU690Xs8WmiocIJ6ZhLx/6xYfw5xLNqpnDec/4Mo4XeqRk+nlJfQ4X9Rw0LW+vdPFXo76122ZdrH09hizxTaJadVAuUXo9ihTtxQRuz00phJW5tgVKvT7FCuwOFpV6fYoU9b3OatMlpU07CqlbYPahQElT4AVChJKjwA6BCSZ4qjJbjdlmWp5QoVjh9PRh7mdJEPYy8O1a4EBe0MQutFLodKCzNz1FtaYLhqF2G5USvaoXdgwolQYUfABVKggo/ACqUBBV+AFQoCSrk45tm4IbTyLZt78FgGztra+3E20Hy5+NoNA3dgDN3hod2CsP3Zitunk5s0k3hXixGwLNtlDRT2KTPv6i/pV4Kq/tAvsK49p5aKZyLVdQyr7upTgrzNUs7y3KI4UyMZoLrBkHguunnh4kl5tWxrHwawL3mrhopzKdkvTM3OR8lr1nep4/CQVbY9+a15ks7xAtEtVHoNhJIJQrX+GmjMFt19f5C1ohceBN9r4tC61llE5NVb9FuZpoozOYUN5s9n62nEsz51UQhcfWnhr9CJowKHL8eCsMn1uIJbp2R0kMhWWm14373CsTz84uuhcKsFTafl+zXtEQtFJJXILP+4SquBFoolH2FxUvkfaWDQrJUrvliwAQyXM5bHK6DQrJET24nIDLlYcn5RgeFh+SLmeQvpatUD5wvlCs0IxKwyW5vQgIbK6osM1Cs0CsWmB42o330Wn6whB94znJSbDGwKjVGtQrpLh0Z59t4GHuu/4pS34wGzqI/Kd+jJEGpwpq8zGzTv++u8TbJZIRp+jcgSWJvsHWGi3H/dhZfzORtVCoMxGWUBAY3KhV2sRSBAFM96hVaD+tnesN5eePu97jd1/aj8ZqWhgoL0+dH2+F4U9O8uJxWv45Ha2V1KwGNFGY6TdeL14v5bXIUL2T/m32v7kNnW3UvWiv0g1Jx/WSMLfK8bRzvHWe/T5LEduQ+DCt7oh9QN6+xwjhJtp0b7IqTBg2XfEc0bRX6xRZO7+7GUfhUIkJbhXRXsDdTwmBbkfRGuiqEq8jf2nEkhvYnOaCrQljOrGE6s1pOZOh3Bi/c66uQfDjuSZtKx3ThjgV8kuXmJO77c0gPf66vQrKZSpT1hdO4me6bJ2JT3GGQnX7WV+EgL1bq49PcNd0eT8SquEOc1dajvgqz4aMd6ertipNrSZprtth9QWao3PVVyFoaMsBmj+d1jIkI5lVvNVYIZ9G8tauKBy480gP6KYTpjPd2rAATcNJQQVuFxbZmp3fHn/LNGA+kcuursBclGjcN9lQJfx8W+DvfT0djhS2BCj+rkIw1nELffXRwW2Dv+iHppMAxEKX50uy/4tEdcWXJ7vQHf0SpwjW/nNIwO/iqzepXM/JtwG4XqFah2fa+kAkXNmZQPbrWdEqpmPJkU9UKe+56uSQTS1d5rE1CuIXpisn+R0A/j8NJuua+XK4rMZFyhQnEMRaT9si0g/ohU5LZKXKPpP/FzdNppLAon/mywqLF2f+EwmJeovuywqJKDrRQKN6hFezhTqkPwmPeJdxUa7ZDa0pXCiH8eW284tZvoModXeWeWdlHWIlCzhupX0TBXZrBf+t6KKyW9/xsiMavlLxufql6hb0Re9r8+RiUXwoWRPOLO1ZYXYgmOjNwRouMnfXa6Exo7fJLRo6w2VZKILuBcKkQ0xKf/4/EGhQBQRAEQRAEQRAEQRAEQRAEQRAEQRBEc/4DlAKhnkoYeowAAAAASUVORK5CYII=" alt="">
+                    </span>
+                        <h2 class="brand-text">Vuexy</h2>
+                    </a></li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+                        </li>
+                        <li class="active"><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Invoice</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-file-manager.html"><i data-feather="save"></i><span class="menu-title text-truncate" data-i18n="File Manager">File Manager</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="shield"></i><span class="menu-title text-truncate" data-i18n="Roles &amp; Permission">Roles &amp; Permission</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-access-roles.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Roles">Roles</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-access-permission.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Permission">Permission</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="shopping-cart"></i><span class="menu-title text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-shop.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Shop">Shop</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-details.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Details">Details</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-wishlist.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Wish List">Wish List</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-ecommerce-checkout.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Checkout">Checkout</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">User</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">View</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="app-user-view-account.html"><span class="menu-item text-truncate" data-i18n="Account">Account</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="app-user-view-security.html"><span class="menu-item text-truncate" data-i18n="Security">Security</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="app-user-view-billing.html"><span class="menu-item text-truncate" data-i18n="Billing &amp; Plans">Billing &amp; Plans</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="app-user-view-notifications.html"><span class="menu-item text-truncate" data-i18n="Notifications">Notifications</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="app-user-view-connections.html"><span class="menu-item text-truncate" data-i18n="Connections">Connections</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Pages</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-account-settings-account.html"><span class="menu-item text-truncate" data-i18n="Account">Account</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-security.html"><span class="menu-item text-truncate" data-i18n="Security">Security</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-billing.html"><span class="menu-item text-truncate" data-i18n="Billings &amp; Plans">Billings &amp; Plans</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-notifications.html"><span class="menu-item text-truncate" data-i18n="Notifications">Notifications</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-connections.html"><span class="menu-item text-truncate" data-i18n="Connections">Connections</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-profile.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Profile">Profile</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-faq.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ">FAQ</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-knowledge-base.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Knowledge Base">Knowledge Base</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-pricing.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pricing">Pricing</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-license.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">License</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-api-key.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="API Key">API Key</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Blog">Blog</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-blog-list.html"><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-blog-detail.html"><span class="menu-item text-truncate" data-i18n="Detail">Detail</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-blog-edit.html"><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Mail Template">Mail Template</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-welcome.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Welcome">Welcome</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-reset-password.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Reset Password">Reset Password</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-verify-email.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Verify Email">Verify Email</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-deactivate-account.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Deactivate Account">Deactivate Account</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-invoice.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Invoice">Invoice</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-promotional.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Promotional">Promotional</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Miscellaneous">Miscellaneous</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-misc-coming-soon.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Coming Soon">Coming Soon</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-not-authorized.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Not Authorized">Not Authorized</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-under-maintenance.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Maintenance">Maintenance</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-error.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Error">Error</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user-check"></i><span class="menu-title text-truncate" data-i18n="Authentication">Authentication</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Login">Login</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-login-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-login-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Register">Register</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-register-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-register-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-register-multisteps.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Multi-Steps">Multi-Steps</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Forgot Password">Forgot Password</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-forgot-password-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-forgot-password-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Reset Password">Reset Password</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-reset-password-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-reset-password-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Verify Email">Verify Email</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-verify-email-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-verify-email-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Two Steps">Two Steps</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-two-steps-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-two-steps-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="modal-examples.html"><i data-feather="square"></i><span class="menu-title text-truncate" data-i18n="Modal Examples">Modal Examples</span></a>
+                </li>
+                <li class=" navigation-header"><span data-i18n="User Interface">User Interface</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="ui-typography.html"><i data-feather="type"></i><span class="menu-title text-truncate" data-i18n="Typography">Typography</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="ui-feather.html"><i data-feather="eye"></i><span class="menu-title text-truncate" data-i18n="Feather">Feather</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate" data-i18n="Card">Card</span><span class="badge badge-light-success rounded-pill ms-auto me-1">New</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="card-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-advance.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advance">Advance</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-statistics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Statistics">Statistics</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-actions.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Card Actions">Card Actions</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="briefcase"></i><span class="menu-title text-truncate" data-i18n="Components">Components</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="component-accordion.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Accordion">Accordion</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Alerts">Alerts</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-avatar.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Avatar">Avatar</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Badges">Badges</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-breadcrumbs.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Breadcrumbs">Breadcrumbs</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-buttons.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Buttons">Buttons</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-carousel.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Carousel">Carousel</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-collapse.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapse">Collapse</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-divider.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Divider">Divider</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-dropdowns.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Dropdowns">Dropdowns</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-list-group.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List Group">List Group</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-modals.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Modals">Modals</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-navs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Navs Component">Navs Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-offcanvas.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Offcanvas">Offcanvas</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pagination.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pagination">Pagination</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pill-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pill Badges">Pill Badges</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pills-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pills Component">Pills Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-popovers.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Popovers">Popovers</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-progress.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Progress">Progress</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-spinner.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Spinner">Spinner</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-tabs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tabs Component">Tabs Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-timeline.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Timeline">Timeline</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-bs-toast.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toasts">Toasts</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-tooltips.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tooltips">Tooltips</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="box"></i><span class="menu-title text-truncate" data-i18n="Extensions">Extensions</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="ext-component-sweet-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sweet Alert">Sweet Alert</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-blockui.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Block UI">BlockUI</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-toastr.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toastr">Toastr</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-sliders.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sliders">Sliders</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-drag-drop.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Drag &amp; Drop">Drag &amp; Drop</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-tour.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tour">Tour</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-clipboard.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Clipboard">Clipboard</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-media-player.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Media player">Media Player</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-context-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Context Menu">Context Menu</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-swiper.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="swiper">Swiper</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-tree.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tree">Tree</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-ratings.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Ratings">Ratings</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-i18n.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="l18n">l18n</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="layout"></i><span class="menu-title text-truncate" data-i18n="Page Layouts">Page Layouts</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="layout-collapsed-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapsed Menu">Collapsed Menu</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-full.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Full">Layout Full</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-without-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Without Menu">Without Menu</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-empty.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Empty">Layout Empty</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="layout-blank.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Blank">Layout Blank</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Forms &amp; Tables</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span class="menu-title text-truncate" data-i18n="Form Elements">Form Elements</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="form-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input">Input</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-input-groups.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Groups">Input Groups</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-input-mask.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Mask">Input Mask</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-textarea.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Textarea">Textarea</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-checkbox.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Checkbox">Checkbox</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-radio.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Radio">Radio</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-custom-options.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Custom Options">Custom Options</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-switch.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Switch">Switch</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-select.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Select">Select</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-number-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Number Input">Number Input</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-file-uploader.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="File Uploader">File Uploader</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-quill-editor.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Quill Editor">Quill Editor</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-date-time-picker.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Date &amp; Time Picker">Date &amp; Time Picker</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-layout.html"><i data-feather="box"></i><span class="menu-title text-truncate" data-i18n="Form Layout">Form Layout</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-wizard.html"><i data-feather="package"></i><span class="menu-title text-truncate" data-i18n="Form Wizard">Form Wizard</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-validation.html"><i data-feather="check-circle"></i><span class="menu-title text-truncate" data-i18n="Form Validation">Form Validation</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="form-repeater.html"><i data-feather="rotate-cw"></i><span class="menu-title text-truncate" data-i18n="Form Repeater">Form Repeater</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="table-bootstrap.html"><i data-feather="server"></i><span class="menu-title text-truncate" data-i18n="Table">Table</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Datatable">Datatable</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="table-datatable-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="table-datatable-advanced.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advanced">Advanced</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Charts &amp; Maps">Charts &amp; Maps</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="pie-chart"></i><span class="menu-title text-truncate" data-i18n="Charts">Charts</span><span class="badge badge-light-danger rounded-pill ms-auto me-2">2</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="chart-apex.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Apex">Apex</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="chart-chartjs.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Chartjs">Chartjs</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="maps-leaflet.html"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="Leaflet Maps">Leaflet Maps</span></a>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Misc">Misc</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Menu Levels</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Second Level 2.1</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Second Level 2.2</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.1</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.2</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="disabled nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="eye-off"></i><span class="menu-title text-truncate" data-i18n="Disabled Menu">Disabled Menu</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Documentation">Documentation</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.ticksy.com/" target="_blank"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Raise Support">Raise Support</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- Dashboard Ecommerce Starts -->
+                <section id="dashboard-ecommerce">
+                    <div class="row match-height">
+                        <!-- Medal Card -->
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="card card-congratulation-medal">
+                                <div class="card-body">
+                                    <h5>Congratulations 🎉 John!</h5>
+                                    <p class="card-text font-small-3">You have won gold medal</p>
+                                    <h3 class="mb-75 mt-2 pt-50">
+                                        <a href="#">$48.9k</a>
+                                    </h3>
+                                    <button type="button" class="btn btn-primary">View Sales</button>
+                                    <img src="/assets/app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Medal Card -->
+
+                        <!-- Statistics Card -->
+                        <div class="col-xl-8 col-md-6 col-12">
+                            <div class="card card-statistics">
+                                <div class="card-header">
+                                    <h4 class="card-title">Statistics</h4>
+                                    <div class="d-flex align-items-center">
+                                        <p class="card-text font-small-2 me-25 mb-0">Updated 1 month ago</p>
+                                    </div>
+                                </div>
+                                <div class="card-body statistics-body">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                            <div class="d-flex flex-row">
+                                                <div class="avatar bg-light-primary me-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="trending-up" class="avatar-icon"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="my-auto">
+                                                    <h4 class="fw-bolder mb-0">230k</h4>
+                                                    <p class="card-text font-small-3 mb-0">Sales</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                            <div class="d-flex flex-row">
+                                                <div class="avatar bg-light-info me-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="user" class="avatar-icon"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="my-auto">
+                                                    <h4 class="fw-bolder mb-0">8.549k</h4>
+                                                    <p class="card-text font-small-3 mb-0">Customers</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                                            <div class="d-flex flex-row">
+                                                <div class="avatar bg-light-danger me-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="box" class="avatar-icon"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="my-auto">
+                                                    <h4 class="fw-bolder mb-0">1.423k</h4>
+                                                    <p class="card-text font-small-3 mb-0">Products</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-sm-6 col-12">
+                                            <div class="d-flex flex-row">
+                                                <div class="avatar bg-light-success me-2">
+                                                    <div class="avatar-content">
+                                                        <i data-feather="dollar-sign" class="avatar-icon"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="my-auto">
+                                                    <h4 class="fw-bolder mb-0">$9745</h4>
+                                                    <p class="card-text font-small-3 mb-0">Revenue</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Statistics Card -->
+                    </div>
+
+                    <div class="row match-height">
+                        <div class="col-lg-4 col-12">
+                            <div class="row match-height">
+                                <!-- Bar Chart - Orders -->
+                                <div class="col-lg-6 col-md-3 col-6">
+                                    <div class="card">
+                                        <div class="card-body pb-50">
+                                            <h6>Orders</h6>
+                                            <h2 class="fw-bolder mb-1">2,76k</h2>
+                                            <div id="statistics-order-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ Bar Chart - Orders -->
+
+                                <!-- Line Chart - Profit -->
+                                <div class="col-lg-6 col-md-3 col-6">
+                                    <div class="card card-tiny-line-stats">
+                                        <div class="card-body pb-50">
+                                            <h6>Profit</h6>
+                                            <h2 class="fw-bolder mb-1">6,24k</h2>
+                                            <div id="statistics-profit-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ Line Chart - Profit -->
+
+                                <!-- Earnings Card -->
+                                <div class="col-lg-12 col-md-6 col-12">
+                                    <div class="card earnings-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h4 class="card-title mb-1">Earnings</h4>
+                                                    <div class="font-small-2">This Month</div>
+                                                    <h5 class="mb-1">$4055.56</h5>
+                                                    <p class="card-text text-muted font-small-2">
+                                                        <span class="fw-bolder">68.2%</span><span> more earnings than last month.</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div id="earnings-chart"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ Earnings Card -->
+                            </div>
+                        </div>
+
+                        <!-- Revenue Report Card -->
+                        <div class="col-lg-8 col-12">
+                            <div class="card card-revenue-budget">
+                                <div class="row mx-0">
+                                    <div class="col-md-8 col-12 revenue-report-wrapper">
+                                        <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                                            <h4 class="card-title mb-50 mb-sm-0">Revenue Report</h4>
+                                            <div class="d-flex align-items-center">
+                                                <div class="d-flex align-items-center me-2">
+                                                    <span class="bullet bullet-primary font-small-3 me-50 cursor-pointer"></span>
+                                                    <span>Earning</span>
+                                                </div>
+                                                <div class="d-flex align-items-center ms-75">
+                                                    <span class="bullet bullet-warning font-small-3 me-50 cursor-pointer"></span>
+                                                    <span>Expense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="revenue-report-chart"></div>
+                                    </div>
+                                    <div class="col-md-4 col-12 budget-wrapper">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                2020
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">2020</a>
+                                                <a class="dropdown-item" href="#">2019</a>
+                                                <a class="dropdown-item" href="#">2018</a>
+                                            </div>
+                                        </div>
+                                        <h2 class="mb-25">$25,852</h2>
+                                        <div class="d-flex justify-content-center">
+                                            <span class="fw-bolder me-25">Budget:</span>
+                                            <span>56,800</span>
+                                        </div>
+                                        <div id="budget-chart"></div>
+                                        <button type="button" class="btn btn-primary">Increase Budget</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Revenue Report Card -->
+                    </div>
+
+                    <div class="row match-height">
+                        <!-- Company Table Card -->
+                        <div class="col-lg-8 col-12">
+                            <div class="card card-company-table">
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Company</th>
+                                                    <th>Category</th>
+                                                    <th>Views</th>
+                                                    <th>Revenue</th>
+                                                    <th>Sales</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="/assets/app-assets/images/icons/toolbox.svg" alt="Toolbar svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bolder">Dixons</div>
+                                                                <div class="font-small-2 text-muted">meguc@ruj.io</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-primary me-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="monitor" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Technology</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-bolder mb-25">23.4k</span>
+                                                            <span class="font-small-2 text-muted">in 24 hours</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$891.2</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="fw-bolder me-1">68%</span>
+                                                            <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="/assets/app-assets/images/icons/parachute.svg" alt="Parachute svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bolder">Motels</div>
+                                                                <div class="font-small-2 text-muted">vecav@hodzi.co.uk</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-success me-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="coffee" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Grocery</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-bolder mb-25">78k</span>
+                                                            <span class="font-small-2 text-muted">in 2 days</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$668.51</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="fw-bolder me-1">97%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="/assets/app-assets/images/icons/brush.svg" alt="Brush svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bolder">Zipcar</div>
+                                                                <div class="font-small-2 text-muted">davcilse@is.gov</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-warning me-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="watch" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Fashion</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-bolder mb-25">162</span>
+                                                            <span class="font-small-2 text-muted">in 5 days</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$522.29</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="fw-bolder me-1">62%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="/assets/app-assets/images/icons/star.svg" alt="Star svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bolder">Owning</div>
+                                                                <div class="font-small-2 text-muted">us@cuhil.gov</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-primary me-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="monitor" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Technology</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-bolder mb-25">214</span>
+                                                            <span class="font-small-2 text-muted">in 24 hours</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$291.01</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="fw-bolder me-1">88%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="/assets/app-assets/images/icons/book.svg" alt="Book svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bolder">Cafés</div>
+                                                                <div class="font-small-2 text-muted">pudais@jife.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-success me-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="coffee" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Grocery</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-bolder mb-25">208</span>
+                                                            <span class="font-small-2 text-muted">in 1 week</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$783.93</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="fw-bolder me-1">16%</span>
+                                                            <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="/assets/app-assets/images/icons/rocket.svg" alt="Rocket svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bolder">Kmart</div>
+                                                                <div class="font-small-2 text-muted">bipri@cawiw.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-warning me-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="watch" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Fashion</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-bolder mb-25">990</span>
+                                                            <span class="font-small-2 text-muted">in 1 month</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$780.05</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="fw-bolder me-1">78%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar rounded">
+                                                                <div class="avatar-content">
+                                                                    <img src="/assets/app-assets/images/icons/speaker.svg" alt="Speaker svg" />
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bolder">Payers</div>
+                                                                <div class="font-small-2 text-muted">luk@izug.io</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="avatar bg-light-warning me-1">
+                                                                <div class="avatar-content">
+                                                                    <i data-feather="watch" class="font-medium-3"></i>
+                                                                </div>
+                                                            </div>
+                                                            <span>Fashion</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-bolder mb-25">12.9k</span>
+                                                            <span class="font-small-2 text-muted">in 12 hours</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$531.49</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="fw-bolder me-1">42%</span>
+                                                            <i data-feather="trending-up" class="text-success font-medium-1"></i>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Company Table Card -->
+
+                        <!-- Developer Meetup Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card card-developer-meetup">
+                                <div class="meetup-img-wrapper rounded-top text-center">
+                                    <img src="/assets/app-assets/images/illustration/email.svg" alt="Meeting Pic" height="170" />
+                                </div>
+                                <div class="card-body">
+                                    <div class="meetup-header d-flex align-items-center">
+                                        <div class="meetup-day">
+                                            <h6 class="mb-0">THU</h6>
+                                            <h3 class="mb-0">24</h3>
+                                        </div>
+                                        <div class="my-auto">
+                                            <h4 class="card-title mb-25">Developer Meetup</h4>
+                                            <p class="card-text mb-0">Meet world popular developers</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-0">
+                                        <div class="avatar float-start bg-light-primary rounded me-1">
+                                            <div class="avatar-content">
+                                                <i data-feather="calendar" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="more-info">
+                                            <h6 class="mb-0">Sat, May 25, 2020</h6>
+                                            <small>10:AM to 6:PM</small>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <div class="avatar float-start bg-light-primary rounded me-1">
+                                            <div class="avatar-content">
+                                                <i data-feather="map-pin" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="more-info">
+                                            <h6 class="mb-0">Central Park</h6>
+                                            <small>Manhattan, New york City</small>
+                                        </div>
+                                    </div>
+                                    <div class="avatar-group">
+                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Billy Hopkins" class="avatar pull-up">
+                                            <img src="/assets/app-assets/images/portrait/small/avatar-s-9.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Amy Carson" class="avatar pull-up">
+                                            <img src="/assets/app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Brandon Miles" class="avatar pull-up">
+                                            <img src="/assets/app-assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Daisy Weber" class="avatar pull-up">
+                                            <img src="/assets/app-assets/images/portrait/small/avatar-s-20.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom" title="Jenny Looper" class="avatar pull-up">
+                                            <img src="/assets/app-assets/images/portrait/small/avatar-s-20.jpg" alt="Avatar" width="33" height="33" />
+                                        </div>
+                                        <h6 class="align-self-center cursor-pointer ms-50 mb-0">+42</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Developer Meetup Card -->
+
+                        <!-- Browser States Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card card-browser-states">
+                                <div class="card-header">
+                                    <div>
+                                        <h4 class="card-title">Browser States</h4>
+                                        <p class="card-text font-small-2">Counter August 2020</p>
+                                    </div>
+                                    <div class="dropdown chart-dropdown">
+                                        <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item" href="#">Last 28 Days</a>
+                                            <a class="dropdown-item" href="#">Last Month</a>
+                                            <a class="dropdown-item" href="#">Last Year</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="browser-states">
+                                        <div class="d-flex">
+                                            <img src="/assets/app-assets/images/icons/google-chrome.png" class="rounded me-1" height="30" alt="Google Chrome" />
+                                            <h6 class="align-self-center mb-0">Google Chrome</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="fw-bold text-body-heading me-1">54.4%</div>
+                                            <div id="browser-state-chart-primary"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="d-flex">
+                                            <img src="/assets/app-assets/images/icons/mozila-firefox.png" class="rounded me-1" height="30" alt="Mozila Firefox" />
+                                            <h6 class="align-self-center mb-0">Mozila Firefox</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="fw-bold text-body-heading me-1">6.1%</div>
+                                            <div id="browser-state-chart-warning"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="d-flex">
+                                            <img src="/assets/app-assets/images/icons/apple-safari.png" class="rounded me-1" height="30" alt="Apple Safari" />
+                                            <h6 class="align-self-center mb-0">Apple Safari</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="fw-bold text-body-heading me-1">14.6%</div>
+                                            <div id="browser-state-chart-secondary"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="d-flex">
+                                            <img src="/assets/app-assets/images/icons/internet-explorer.png" class="rounded me-1" height="30" alt="Internet Explorer" />
+                                            <h6 class="align-self-center mb-0">Internet Explorer</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="fw-bold text-body-heading me-1">4.2%</div>
+                                            <div id="browser-state-chart-info"></div>
+                                        </div>
+                                    </div>
+                                    <div class="browser-states">
+                                        <div class="d-flex">
+                                            <img src="/assets/app-assets/images/icons/opera.png" class="rounded me-1" height="30" alt="Opera Mini" />
+                                            <h6 class="align-self-center mb-0">Opera Mini</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="fw-bold text-body-heading me-1">8.4%</div>
+                                            <div id="browser-state-chart-danger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Browser States Card -->
+
+                        <!-- Goal Overview Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h4 class="card-title">Goal Overview</h4>
+                                    <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="goal-overview-radial-bar-chart" class="my-2"></div>
+                                    <div class="row border-top text-center mx-0">
+                                        <div class="col-6 border-end py-1">
+                                            <p class="card-text text-muted mb-0">Completed</p>
+                                            <h3 class="fw-bolder mb-0">786,617</h3>
+                                        </div>
+                                        <div class="col-6 py-1">
+                                            <p class="card-text text-muted mb-0">In Progress</p>
+                                            <h3 class="fw-bolder mb-0">13,561</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Goal Overview Card -->
+
+                        <!-- Transaction Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card card-transaction">
+                                <div class="card-header">
+                                    <h4 class="card-title">Transactions</h4>
+                                    <div class="dropdown chart-dropdown">
+                                        <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item" href="#">Last 28 Days</a>
+                                            <a class="dropdown-item" href="#">Last Month</a>
+                                            <a class="dropdown-item" href="#">Last Year</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="transaction-item">
+                                        <div class="d-flex">
+                                            <div class="avatar bg-light-primary rounded float-start">
+                                                <div class="avatar-content">
+                                                    <i data-feather="pocket" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-percentage">
+                                                <h6 class="transaction-title">Wallet</h6>
+                                                <small>Starbucks</small>
+                                            </div>
+                                        </div>
+                                        <div class="fw-bolder text-danger">- $74</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="d-flex">
+                                            <div class="avatar bg-light-success rounded float-start">
+                                                <div class="avatar-content">
+                                                    <i data-feather="check" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-percentage">
+                                                <h6 class="transaction-title">Bank Transfer</h6>
+                                                <small>Add Money</small>
+                                            </div>
+                                        </div>
+                                        <div class="fw-bolder text-success">+ $480</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="d-flex">
+                                            <div class="avatar bg-light-danger rounded float-start">
+                                                <div class="avatar-content">
+                                                    <i data-feather="dollar-sign" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-percentage">
+                                                <h6 class="transaction-title">Paypal</h6>
+                                                <small>Add Money</small>
+                                            </div>
+                                        </div>
+                                        <div class="fw-bolder text-success">+ $590</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="d-flex">
+                                            <div class="avatar bg-light-warning rounded float-start">
+                                                <div class="avatar-content">
+                                                    <i data-feather="credit-card" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-percentage">
+                                                <h6 class="transaction-title">Mastercard</h6>
+                                                <small>Ordered Food</small>
+                                            </div>
+                                        </div>
+                                        <div class="fw-bolder text-danger">- $23</div>
+                                    </div>
+                                    <div class="transaction-item">
+                                        <div class="d-flex">
+                                            <div class="avatar bg-light-info rounded float-start">
+                                                <div class="avatar-content">
+                                                    <i data-feather="trending-up" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-percentage">
+                                                <h6 class="transaction-title">Transfer</h6>
+                                                <small>Refund</small>
+                                            </div>
+                                        </div>
+                                        <div class="fw-bolder text-success">+ $98</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Transaction Card -->
+                    </div>
+                </section>
+                <!-- Dashboard Ecommerce ends -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+        <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021<a class="ms-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+    </footer>
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+    <!-- END: Footer-->
