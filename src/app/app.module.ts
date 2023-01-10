@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { HomeAdminAtelierComponent } from './admin/atelier/component/home-admin-
 import { HomeAdminFinancierComponent } from './admin/financier/component/home-admin-financier/home-admin-financier.component';
 import { LoginClientComponent } from './client/component/auth/login-client/login-client.component';
 import { SigninClientComponent } from './client/component/auth/signin-client/signin-client.component';
+import { DragDropComponent } from './test/component/drag-drop/drag-drop.component';
 
 @NgModule({
   declarations: [
@@ -42,12 +44,14 @@ import { SigninClientComponent } from './client/component/auth/signin-client/sig
     HomeAdminFinancierComponent,
     LoginClientComponent,
     SigninClientComponent,
+    DragDropComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
