@@ -1,0 +1,7 @@
+<h1>Create quotes</h1>
+
+<form (ngSubmit)="insert()">
+    <input type="text" name="name" id="name" [(ngModel)]="lesson.name">
+    <input type="text" name="quote" id="quote" [(ngModel)]="lesson.quote">
+    <input type="submit" value="Save">
+</form>
