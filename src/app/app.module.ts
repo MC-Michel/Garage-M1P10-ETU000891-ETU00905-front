@@ -20,6 +20,8 @@ import { HeaderAdminAtelierComponent } from './admin/atelier/partials/header-adm
 import { NavAdminAtelierComponent } from './admin/atelier/partials/nav-admin-atelier/nav-admin-atelier.component';
 import { HomeAdminAtelierComponent } from './admin/atelier/component/home-admin-atelier/home-admin-atelier.component';
 import { HomeAdminFinancierComponent } from './admin/financier/component/home-admin-financier/home-admin-financier.component';
+import { LoginClientComponent } from './client/component/auth/login-client/login-client.component';
+import { SigninClientComponent } from './client/component/auth/signin-client/signin-client.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { HomeAdminFinancierComponent } from './admin/financier/component/home-ad
     NavAdminAtelierComponent,
     HomeAdminAtelierComponent,
     HomeAdminFinancierComponent,
+    LoginClientComponent,
+    SigninClientComponent,
   ],
   imports: [
     BrowserModule,
