@@ -20,10 +20,13 @@ const routes: Routes = [
   { path : 'lesson/update/:name', component : UpdateComponent},
   { path : 'home', component : HomeComponent},
   { path : 'drag-drop', component : DragDropComponent},
+
+  //Ny liens rehetra momba an client atao any am ClientRoutingModule
   { path : 'client', loadChildren: ()=> import("./client/client.module").then((m) => ClientModule) },
   { path : 'client/voiture/create', component : VoitureCreateComponent},
   { path : 'client/auth/login', component : LoginClientComponent},
   { path : 'client/auth/signin', component : SigninClientComponent},
+
   { path : 'atelier', component : HomeAdminAtelierComponent},
   { path : 'financier', component : HomeAdminFinancierComponent},
 ];

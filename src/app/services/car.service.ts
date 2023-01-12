@@ -14,6 +14,7 @@ export class CarService {
 
   createCar(data: any){
     const url = this.wsUrl+"/cars";
+    console.log('Here')
     return this.http.post(url,data );
   }
   getCars(): Observable<any[]>{

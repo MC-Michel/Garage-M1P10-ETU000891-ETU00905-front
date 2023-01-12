@@ -12,11 +12,14 @@ export class HomeClientComponent implements OnInit {
 
   constructor(private carService: CarService) { }
   async loadCars(){
-    this.cars = await lastValueFrom<any[]>(this.carService.getCars());
+    const ans: any = await lastValueFrom<any[]>(this.carService.getCars())
+    if(ans.data) this.cars= ans.data;
   }
   async ngOnInit() {
     try{
+      console.log('Here')
       await this.loadCars();
+      console.log('There')
     }catch(e: any){
       //Afficher error dans alert par exemple
       console.log(e);
