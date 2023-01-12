@@ -12,47 +12,50 @@
                 <div class="auth-wrapper auth-cover">
                     <div class="auth-inner row m-0">
                         <!-- Brand logo-->
-                        <a class="brand-logo" href="index.html">
+                        <a class="brand-logo" routerLink="/">
                             <img src="assets/img/logo/logo-kojao.png" alt="" height="28">
                             <h2 class="brand-text text-primary ms-1">K-OJAO</h2>
                         </a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="/assets/app-assets/images/pages/login-v2.svg" alt="Login V2" /></div>
+                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="assets/img/banner/carservice.png" alt="Login V2" /></div>
                         </div>
                         <!-- /Left Text-->
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title fw-bold mb-1">Welcome to K-OJAO! 👋</h2>
-                                <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
-                                <form class="auth-login-form mt-2" action="index.html" method="POST">
+                                <h2 class="card-title fw-bold text-center mb-1">Bienvenue sur K-OJAO! 👋</h2>
+                                <form class="auth-login-form mt-2" (ngSubmit)="onSubmit()">
                                     <div class="mb-1">
-                                        <label class="form-label" for="login-email">Email</label>
-                                        <input class="form-control" id="login-email" type="text" name="login-email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" />
+                                        <label class="form-label" for="login-email">Nom d'utilisateur</label>
+                                        <input class="form-control" id="login-email" type="text" name="login-email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" value="client"/>
                                     </div>
                                     <div class="mb-1">
                                         <div class="d-flex justify-content-between">
-                                            <label class="form-label" for="login-password">Password</label><a href="auth-forgot-password-cover.html"><small>Forgot Password?</small></a>
+                                            <label class="form-label" for="login-password">Mot de passe</label>
+                                            <!-- <a href="auth-forgot-password-cover.html"><small>Forgot Password?</small></a> -->
                                         </div>
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input class="form-control form-control-merge" id="login-password" type="password" name="login-password" placeholder="············" aria-describedby="login-password" tabindex="2" /><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                                            <input class="form-control form-control-merge" id="login-password" type="password" name="login-password" placeholder="············" aria-describedby="login-password" tabindex="2" value="123456" />
+                                            <!-- <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span> -->
                                         </div>
                                     </div>
-                                    <div class="mb-1">
-                                        <div class="form-check">
-                                            <input class="form-check-input" id="remember-me" type="checkbox" tabindex="3" />
-                                            <label class="form-check-label" for="remember-me"> Remember Me</label>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
+                                    <button class="btn btn-primary w-100" tabindex="4">Se connecter</button>
                                 </form>
-                                <p class="text-center mt-2"><span>New on our platform?</span><a href="auth-register-cover.html"><span>&nbsp;Create an account</span></a></p>
-                                <div class="divider my-2">
-                                    <div class="divider-text">or</div>
+                                <p class="text-center mt-2"><span>Nouveau sur notre plateforme?</span><a routerLink="/client/auth/signin"><span>&nbsp;Créer votre compte</span></a></p>
+
+                                <div class="alert alert-info">
+                                    <div class="alert-body">
+                                        <strong>Utilisateur à utiliser :</strong>
+                                        <br>
+                                        - Client : client / 123456
+                                        <br>
+                                        - Responsable atelier : atelier / 123456
+                                        <br>
+                                        - Responsable financier : financier / 123456
+                                    </div>
                                 </div>
-                                <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i data-feather="mail"></i></a><a class="btn btn-github" href="#"><i data-feather="github"></i></a></div>
                             </div>
                         </div>
                         <!-- /Login-->
