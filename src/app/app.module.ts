@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
@@ -12,7 +12,7 @@ import { UpdateComponent } from './test/component/lesson/update/update.component
 import { ListComponent } from './test/component/lesson/list/list.component';
 import { HomeComponent } from './test/component/home/home.component';
 import { FooterComponent } from './common/partials/footer/footer.component';
-import { HomeClientComponent } from './client/component/home-client/home-client.component';
+import { HomeClientComponent } from './client/pages/home-client/home-client.component';
 import { HeaderClientComponent } from './client/partials/header-client/header-client.component';
 import { NavClientComponent } from './client/partials/nav-client/nav-client.component';
 import { NavAdminFinancierComponent } from './admin/financier/partials/nav-admin-financier/nav-admin-financier.component';
@@ -21,11 +21,13 @@ import { HeaderAdminAtelierComponent } from './admin/atelier/partials/header-adm
 import { NavAdminAtelierComponent } from './admin/atelier/partials/nav-admin-atelier/nav-admin-atelier.component';
 import { HomeAdminAtelierComponent } from './admin/atelier/component/home-admin-atelier/home-admin-atelier.component';
 import { HomeAdminFinancierComponent } from './admin/financier/component/home-admin-financier/home-admin-financier.component';
-import { LoginClientComponent } from './client/component/auth/login-client/login-client.component';
-import { SigninClientComponent } from './client/component/auth/signin-client/signin-client.component';
+import { LoginClientComponent } from './client/pages/auth/login-client/login-client.component';
+import { SigninClientComponent } from './client/pages/auth/signin-client/signin-client.component';
 import { DragDropComponent } from './test/component/drag-drop/drag-drop.component';
-import { VoitureCreateComponent } from './client/component/voiture/voiture-create/voiture-create.component';
+import { VoitureCreateComponent } from './client/pages/voiture/voiture-create/voiture-create.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
+import { SharedModule } from './common/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,22 +36,16 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UpdateComponent,
     ListComponent,
     HomeComponent,
-    FooterComponent,
-    HomeClientComponent,
-    HeaderClientComponent,
-    NavClientComponent,
     NavAdminFinancierComponent,
     HeaderAdminFinancierComponent,
     HeaderAdminAtelierComponent,
     NavAdminAtelierComponent,
     HomeAdminAtelierComponent,
     HomeAdminFinancierComponent,
-    LoginClientComponent,
-    SigninClientComponent,
     DragDropComponent,
-    VoitureCreateComponent,
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -57,7 +53,13 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     DragDropModule,
     CKEditorModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

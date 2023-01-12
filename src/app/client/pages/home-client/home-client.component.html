@@ -82,6 +82,7 @@
                     </div>
                 </div>
             </section>
+
             <section id="list">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12">
@@ -100,21 +101,18 @@
                                             <th class="text-center">Image</th>
                                             <th>Marque</th>
                                             <th>Immatriculation</th>
-                                            <th>Description</th>
-                                            <th class="text-center">Statut</th>
-                                            <th class="text-center">Actions</th>
-                                            <th class="text-center">Historique</th>
+                                            <th>Action</th>
+                                          
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="align-top" *ngFor="let i of [1,2,3,4,5,2,3,4,5,2,3]">
+
+                                        <tr class="align-top" *ngFor="let car of cars">
                                             <td class="text-center">
                                                 <img src="https://www.suzukiauto.co.za/hubfs/Swift-new-1.png" width="200" alt="Angular" />
                                             </td>
-                                            <td>Toyota</td>
-                                            <td>5120 TAN</td>
-                                            <td>Toyota Motor Corp., Largest Japanese automobile manufacturer and one of the largest automotive companies in the world. It was established in 1933 as a division of the Toyoda Automatic Loom Works, Ltd., and in 1937 it was incorporated as the Toyota Motor Co., Ltd.</td>
-                                            <td><span class="badge rounded-pill badge-light-primary me-1">Déposée</span></td>
+                                            <td>{{car.brand}}</td>
+                                            <td>{{car.numberPlate}}</td>
                                             <td class="text-center">
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
