@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  baseUrl : "http://localhost:4200",
-  wsUrl : "http://localhost:3000",
+  baseUrl : "https://garage-front.tobywallet.fr/",
+  wsUrl : "https://garage-back.tobywallet.fr/",
+  // baseUrl : "http://localhost:4200",
+  // wsUrl : "http://localhost:3000",
 };
 
 /*
