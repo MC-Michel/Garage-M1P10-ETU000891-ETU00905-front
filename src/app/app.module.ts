@@ -24,6 +24,8 @@ import { HomeAdminFinancierComponent } from './admin/financier/component/home-ad
 import { LoginClientComponent } from './client/component/auth/login-client/login-client.component';
 import { SigninClientComponent } from './client/component/auth/signin-client/signin-client.component';
 import { DragDropComponent } from './test/component/drag-drop/drag-drop.component';
+import { VoitureCreateComponent } from './client/component/voiture/voiture-create/voiture-create.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -45,13 +47,15 @@ import { DragDropComponent } from './test/component/drag-drop/drag-drop.componen
     LoginClientComponent,
     SigninClientComponent,
     DragDropComponent,
+    VoitureCreateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    DragDropModule
+    DragDropModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
