@@ -12,7 +12,7 @@ import { ListComponent } from './test/component/lesson/list/list.component';
 import { UpdateComponent } from './test/component/lesson/update/update.component';
 
 const routes: Routes = [
-  { path : '', component : ListComponent },
+  { path : '', redirectTo : '/client/auth/login', pathMatch : 'full' },
   { path : 'lesson/list', component : ListComponent },
   { path : 'lesson/create', component : CreateComponent},
   { path : 'lesson/update/:name', component : UpdateComponent},
