@@ -11,7 +11,7 @@ import { CreateComponent } from './test/component/lesson/create/create.component
 import { UpdateComponent } from './test/component/lesson/update/update.component';
 import { ListComponent } from './test/component/lesson/list/list.component';
 import { HomeComponent } from './test/component/home/home.component';
-import { FooterComponent } from './common/partials/footer/footer.component';
+import { FooterComponent } from './commons/partials/footer/footer.component';
 import { HomeClientComponent } from './client/pages/home-client/home-client.component';
 import { HeaderClientComponent } from './client/partials/header-client/header-client.component';
 import { NavClientComponent } from './client/partials/nav-client/nav-client.component';
@@ -27,7 +27,8 @@ import { DragDropComponent } from './test/component/drag-drop/drag-drop.componen
 import { VoitureCreateComponent } from './client/pages/voiture/voiture-create/voiture-create.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
-import { SharedModule } from './common/shared.module';
+import { SharedModule } from './commons/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SharedModule } from './common/shared.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
     DragDropModule,
     CKEditorModule,
   ],

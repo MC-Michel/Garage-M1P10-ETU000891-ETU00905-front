@@ -8,8 +8,10 @@ import { ClientComponent } from './client.component';
 import { HomeClientComponent } from './pages/home-client/home-client.component';
 import { LoginClientComponent } from './pages/auth/login-client/login-client.component';
 import { SigninClientComponent } from './pages/auth/signin-client/signin-client.component';
-import { SharedModule } from '../common/shared.module';
+import { SharedModule } from '../commons/shared.module';
 import { VoitureCreateComponent } from './pages/voiture/voiture-create/voiture-create.component';
+import { CarCreationFormComponent } from './components/car-creation-form/car-creation-form.component';
+import { CarUpdateFormComponent } from './components/car-update-form/car-update-form.component';
 
 @NgModule({
   declarations: [ 
@@ -20,6 +22,8 @@ import { VoitureCreateComponent } from './pages/voiture/voiture-create/voiture-c
     LoginClientComponent,
     SigninClientComponent,
     VoitureCreateComponent,
+    CarCreationFormComponent,
+    CarUpdateFormComponent,
     
   ],
   imports: [

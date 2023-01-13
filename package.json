@@ -23,6 +23,7 @@
     "@angular/router": "^14.0.0",
     "@ckeditor/ckeditor5-angular": "^4.0.0",
     "@ckeditor/ckeditor5-build-classic": "^35.4.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "jquery": "^3.6.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
