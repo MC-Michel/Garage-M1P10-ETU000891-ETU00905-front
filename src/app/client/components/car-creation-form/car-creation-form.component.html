@@ -41,7 +41,7 @@
 
 <ng-template #footerTemplate>
     <button type="button" class="btn btn-outline-dark" (click)="handleCancel()">Annuler</button>
-    <app-gen-button [text]="'Enregistrer'" [disabled]="form.valid" [isLoading]="isLoading" (click)="handleOk()"></app-gen-button>
+    <app-gen-button [text]="'Enregistrer'" [disabled]="!form.valid" [isLoading]="isLoading" (click)="handleOk()"></app-gen-button>
    
 </ng-template> 
 

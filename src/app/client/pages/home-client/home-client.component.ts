@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { lastValueFrom, Subscription } from 'rxjs';
 import { CarService } from 'src/app/services/car.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
@@ -7,9 +7,10 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './home-client.component.html',
   styleUrls: ['./home-client.component.scss']
 })
-export class HomeClientComponent implements OnInit {
+export class HomeClientComponent implements OnInit, OnDestroy {
   cars: any[] = [];
   isCreationModalVisible: boolean = false;
+  carsUpdateSub: Subscription;
   constructor(private carService: CarService) { }
 
   
@@ -23,6 +24,9 @@ export class HomeClientComponent implements OnInit {
     if(ans.data) this.cars= ans.data;
   }
   async ngOnInit() {
+    this.carsUpdateSub = this.carService.carCollectionUpdate.subscribe(async ()=>{
+      await this.loadCars();
+    })
     try{
       console.log('Here')
       await this.loadCars();
@@ -32,5 +36,7 @@ export class HomeClientComponent implements OnInit {
       console.log(e);
     }
   }
-
+  ngOnDestroy(): void {
+    this.carsUpdateSub.unsubscribe();
+  }
 }

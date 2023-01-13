@@ -1,8 +1,7 @@
 import { Component, OnDestroy, Input, OnChanges, Output, EventEmitter, TemplateRef, SimpleChanges, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref';
-import {Subscription} from 'rxjs';
+import {lastValueFrom} from 'rxjs';
+import { CarService } from 'src/app/services/car.service';
 @Component({
   selector: 'app-car-creation-form',
   templateUrl: './car-creation-form.component.html',
@@ -17,11 +16,11 @@ export class CarCreationFormComponent {
     this.isVisible = b;
     this.isVisibleChange.emit(b);
   }
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private carService: CarService) { 
     this.form = fb.group({
-      brand: ['',[Validators.required]],
-      numberPlate: ['',[Validators.required]],
-      description: ['',[Validators.required]],
+      brand: [null,[Validators.required]],
+      numberPlate: [null,[Validators.required]],
+      description: [null,[Validators.required]],
     })
   }
   
@@ -31,7 +30,7 @@ export class CarCreationFormComponent {
   async handleOk(){
     this.isLoading = true;
     try{
-      console.log(this.form.value)
+      await lastValueFrom(this.carService.createCar(this.form.value))
       this.setIsVisible(false);
     }catch(e: any){
       console.log(e);
