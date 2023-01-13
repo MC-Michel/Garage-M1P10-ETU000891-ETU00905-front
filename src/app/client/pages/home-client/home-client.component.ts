@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { lastValueFrom, Subscription } from 'rxjs';
 import { CarService } from 'src/app/services/car.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { MessageService } from 'src/app/commons/services/message.service';
 @Component({
   selector: 'app-home-client',
   templateUrl: './home-client.component.html',
@@ -11,7 +12,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   cars: any[] = [];
   isCreationModalVisible: boolean = false;
   carsUpdateSub: Subscription;
-  constructor(private carService: CarService) { }
+  constructor(private carService: CarService, private messageService: MessageService) { }
 
   
   openModal(){
@@ -28,9 +29,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       await this.loadCars();
     })
     try{
-      console.log('Here')
       await this.loadCars();
-      console.log('There')
     }catch(e: any){
       //Afficher error dans alert par exemple
       console.log(e);
@@ -39,4 +38,5 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.carsUpdateSub.unsubscribe();
   }
+   
 }

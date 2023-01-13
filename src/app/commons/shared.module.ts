@@ -4,6 +4,8 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { GenModalComponent } from './components/gen-modal/gen-modal.component';
 import { FormsModule } from '@angular/forms';
 import { GenButtonComponent } from './components/gen-button/gen-button.component';
+import { GenMessageComponent } from './components/gen-message/gen-message.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -11,16 +13,19 @@ import { GenButtonComponent } from './components/gen-button/gen-button.component
   declarations: [
     FooterComponent,
     GenModalComponent,
-    GenButtonComponent
+    GenButtonComponent,
+    GenMessageComponent
   ],
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgbModule
   ],
   exports:[
     FooterComponent,
     GenModalComponent,
-    GenButtonComponent
+    GenButtonComponent,
+    GenMessageComponent
   ]
 })
 export class SharedModule { }
