@@ -1,4 +1,5 @@
 import { Component, OnDestroy, Input, OnChanges, Output, EventEmitter, TemplateRef, SimpleChanges, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref';
 import {Subscription} from 'rxjs';
@@ -7,42 +8,35 @@ import {Subscription} from 'rxjs';
   templateUrl: './car-creation-form.component.html',
   styleUrls: ['./car-creation-form.component.scss']
 })
-export class CarCreationFormComponent implements   OnChanges {
-  
+export class CarCreationFormComponent {
+  form: FormGroup;
+  isLoading:boolean= false;
   @Input() isVisible: boolean = false;
   @Output() isVisibleChange = new EventEmitter<boolean>();
-  @ViewChild('carCreationModal',{static: true}) modal: TemplateRef<any>;
-  modalRef: NgbModalRef;
-
-  
-  constructor(private modalService: NgbModal) { }
-  
-
-  ngOnChanges(changes: SimpleChanges): void {
-   if(changes['isVisible']){
-    if(changes['isVisible'].currentValue != changes['isVisible'].previousValue){
-      if(changes['isVisible'].currentValue)
-        this.openModal(this.modal);
-      else
-        this.closeModal();
-    }
-   }
+  setIsVisible(b: boolean){
+    this.isVisible = b;
+    this.isVisibleChange.emit(b);
   }
- 
-  openModal(content: any){
-    this.modalRef = this.modalService.open(content);
-    this.modalRef.dismissed.subscribe(()=>{ 
-      this.isVisible = false;
-      this.isVisibleChange.emit(false);
-    });
-    this.modalRef.closed.subscribe(()=>{
-      this.isVisible = false;
-      this.isVisibleChange.emit(false);
-    });
+  constructor(private fb: FormBuilder) { 
+    this.form = fb.group({
+      brand: ['',[Validators.required]],
+      numberPlate: ['',[Validators.required]],
+      description: ['',[Validators.required]],
+    })
   }
-
-  closeModal(){
-    if(this.modalRef) this.modalRef.close();
+  
+  handleCancel(){
+    this.setIsVisible(false);
+  }
+  async handleOk(){
+    this.isLoading = true;
+    try{
+      console.log(this.form.value)
+      this.setIsVisible(false);
+    }catch(e: any){
+      console.log(e);
+    } 
+    this.isLoading = false;
   }
 
 }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
+  carCollectionUpdate: Subject<any> = new Subject<any>()
   wsUrl: string;
   constructor(private http: HttpClient) { 
     this.wsUrl = environment.wsUrl;
@@ -15,7 +16,10 @@ export class CarService {
   createCar(data: any){
     const url = this.wsUrl+"/cars";
     console.log('Here')
-    return this.http.post(url,data );
+    return this.http.post(url,data).pipe(map((res)=>{
+      this.carCollectionUpdate.next(null);
+      return res;
+    }));
   }
   getCars(): Observable<any[]>{
     const url = this.wsUrl+"/cars";

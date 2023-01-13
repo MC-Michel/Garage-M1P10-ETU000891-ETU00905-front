@@ -16,6 +16,7 @@ export class HomeClientComponent implements OnInit {
   openModal(){
     this.isCreationModalVisible = true;
   }
+  
 
   async loadCars(){
     const ans: any = await lastValueFrom<any[]>(this.carService.getCars())

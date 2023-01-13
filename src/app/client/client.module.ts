@@ -12,6 +12,7 @@ import { SharedModule } from '../commons/shared.module';
 import { VoitureCreateComponent } from './pages/voiture/voiture-create/voiture-create.component';
 import { CarCreationFormComponent } from './components/car-creation-form/car-creation-form.component';
 import { CarUpdateFormComponent } from './components/car-update-form/car-update-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ 
@@ -29,7 +30,9 @@ import { CarUpdateFormComponent } from './components/car-update-form/car-update-
   imports: [
     SharedModule,
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+    FormsModule,
+    ReactiveFormsModule 
   ]
 })
 export class ClientModule { }
