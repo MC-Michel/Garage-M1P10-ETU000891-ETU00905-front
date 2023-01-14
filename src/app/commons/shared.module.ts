@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { GenButtonComponent } from './components/gen-button/gen-button.component';
 import { GenMessageComponent } from './components/gen-message/gen-message.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GenDatatableComponent } from './components/gen-datatable/gen-datatable.component';
 
 
 
@@ -14,7 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     GenModalComponent,
     GenButtonComponent,
-    GenMessageComponent
+    GenMessageComponent,
+    GenDatatableComponent
   ],
   imports: [
     FormsModule,
@@ -25,7 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     GenModalComponent,
     GenButtonComponent,
-    GenMessageComponent
+    GenMessageComponent,
+    GenDatatableComponent
   ]
 })
 export class SharedModule { }
