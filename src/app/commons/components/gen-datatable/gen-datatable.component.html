@@ -56,3 +56,14 @@
       
     </tbody>
 </table>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center mt-4">
+        <li 
+            *ngFor="let paginationElmt of paginationElmts" 
+            [ngClass]="getPaginationElmtClass(paginationElmt)"
+            (click)="goToPage(paginationElmt)"
+            ><a class="page-link"> {{ (paginationElmt.type === 'number')? paginationElmt.page : '' }} </a>
+        </li>
+    </ul>
+</nav>

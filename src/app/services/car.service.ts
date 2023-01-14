@@ -21,9 +21,9 @@ export class CarService {
       return res;
     }));
   }
-  getCars(): Observable<any[]>{
+  getCars(options: any): Observable<any[]>{
     const url = this.wsUrl+"/cars";
-    return this.http.get<any[]>(url);
+    return this.http.get<any[]>(url, {params: options});
   }
   updateCar(data: any){
     const url = this.wsUrl+"/cars";

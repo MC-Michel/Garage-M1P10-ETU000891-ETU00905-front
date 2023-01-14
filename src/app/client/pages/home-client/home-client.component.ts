@@ -24,8 +24,8 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
 
   @ViewChild(GenDatatableComponent) datatable: GenDatatableComponent;
-  fetchData(){
-    return this.carService.getCars();
+  fetchData(options: any){
+    return this.carService.getCars(options);
   }
   
   openModal(){
