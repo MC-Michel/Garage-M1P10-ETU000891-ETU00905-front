@@ -1,9 +1,21 @@
-<table class="table table-bordered">
+<table class="table table-bordered dataTable">
     <thead>
         <tr>
-            <th *ngFor="let header of headers">
-               {{ header.title }}
-            </th>
+            <ng-container *ngFor="let header of headers">
+                <th
+                    *ngIf="header.isSortable"
+                    [ngClass]="getSortElmtClass(header.selector)"
+                    (click)="handleSort(header.selector)"
+                >
+                    {{ header.title }}
+                </th>
+                <th
+                    *ngIf="!header.isSortable"
+                >
+                    {{ header.title }}
+                </th>
+            </ng-container>
+           
             <th *ngIf="hasActionOptions()">
                 Actions
             </th>
@@ -13,7 +25,7 @@
         <tr style="min-height: 500px;" *ngIf="isLoading">
             <div class="d-flex justify-content-center">
                 <div class="spinner-border text-primary" role="status">
-                  <span class="sr-only">Loading...</span>
+                  
                 </div>
               </div>
         </tr>

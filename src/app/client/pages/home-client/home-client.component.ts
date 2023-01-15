@@ -46,7 +46,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
     },
     {
       title: "Immatriculation",
-      selector: "brand",
+      selector: "registerNumber",
       isSortable: true
     },
     {

@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core'; 
-import { lastValueFrom } from 'rxjs';
+import { lastValueFrom, retry } from 'rxjs';
 import { GenRequestOptions } from '../../interfaces/gen-request-options';
 import { GenTableActionOption } from '../../interfaces/gen-table-action-option';
 import { GenTableHeader } from '../../interfaces/gen-table-header';
@@ -74,6 +74,23 @@ export class GenDatatableComponent implements OnInit {
     this.requetsOptions.pagination.page = paginationElmt.page;
     await this.loadData();
   }
+
+  async handleSort(columnName: string){
+    const orderByArr = this.requetsOptions.pagination.orderBy;
+    if(orderByArr.length === 0) {
+      orderByArr.push({column: columnName, order: "asc"});
+    
+    }else if(orderByArr[0].column === columnName){
+      orderByArr[0].order = orderByArr[0].order === 'asc' ? 'desc' : 'asc' ;
+    }else{
+      orderByArr.pop();
+      orderByArr.push({column: columnName, order: "asc"});
+    }
+  
+    console.log(this.requetsOptions);
+    
+    await this.loadData();
+  }
   getPaginationElmtClass(paginationElmt: any){
     let className = 'page-item ';
     if(paginationElmt.type === 'previous') className += ' prev-item ';
@@ -82,6 +99,15 @@ export class GenDatatableComponent implements OnInit {
     if(paginationElmt.isDisabled) className +=  ' disabled ';
     return className;
      
+  }
+
+  getSortElmtClass(currentColumn: string){
+    let ans = ' sorting ';
+    const orderByArr = this.requetsOptions.pagination.orderBy;
+    if(orderByArr.length === 0) return ans;
+    if(orderByArr[0].column !== currentColumn) return ans;
+    if(orderByArr[0].order === 'asc') return ` ${ans} sorting_asc`
+    return ` ${ans} sorting_desc`;
   }
 
   //Pagination
