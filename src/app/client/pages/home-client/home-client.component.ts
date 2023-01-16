@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { lastValueFrom, Subscription } from 'rxjs';
 import { CarService } from 'src/app/services/car.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +24,10 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
 
   @ViewChild(GenDatatableComponent) datatable: GenDatatableComponent;
+
+  // This will contain the <ng-template #exempleColonne>...</ng-template>
+  @ViewChild("exempleColonne", {static: true}) exempleColonneTemplate: TemplateRef<any>;
+
   fetchData(options: any){
     return this.carService.getCars(options);
   }
@@ -53,6 +57,12 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       title: "Description",
       selector: "description",
       isSortable: true
+    },
+    {
+      title: "Exemple colonne",
+      selector: "description", //Anything goes here it's not important
+      template: this.exempleColonneTemplate,
+      isSortable: false
     },
    ]
   }
