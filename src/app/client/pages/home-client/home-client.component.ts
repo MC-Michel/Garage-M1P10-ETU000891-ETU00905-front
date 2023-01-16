@@ -6,6 +6,7 @@ import { MessageService } from 'src/app/commons/services/message.service';
 import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-home-client',
   templateUrl: './home-client.component.html',
@@ -46,7 +47,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
     },
     {
       title: "Immatriculation",
-      selector: "registerNumber",
+      selector: "numberPlate",
       isSortable: true
     },
     {
@@ -54,10 +55,35 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       selector: "description",
       isSortable: true
     },
-   ]
+   ];
+   this.actionOptions = {
+    updateMethod : this.updateCar,
+    deleteMethod : this.deleteCar
+   };
   }
   ngOnDestroy(): void {
     this.carsUpdateSub.unsubscribe();
+  }
+
+  updateCar(id : string){
+
+  }
+
+  deleteCar(id : string){
+
+  }
+
+  async depositCar(id : string){
+    // this.isLoading = true;
+    try{
+      await lastValueFrom(this.carService.depositCar({_id : id, status : environment.carStatus.deposited}));
+      // this.setIsVisible(false);
+      this.messageService.showSuccess("Voiture déposée avec succès")
+    }catch(e: any){
+      console.log(e);
+      this.messageService.showError(e.message)
+    } 
+    // this.isLoading = false;
   }
    
 }
