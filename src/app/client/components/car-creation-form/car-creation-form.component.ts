@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {lastValueFrom} from 'rxjs';
 import { MessageService } from 'src/app/commons/services/message.service';
 import { CarService } from 'src/app/services/car.service';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-car-creation-form',
   templateUrl: './car-creation-form.component.html',
@@ -25,6 +26,7 @@ export class CarCreationFormComponent {
       brand: [null,[Validators.required]],
       numberPlate: [null,[Validators.required]],
       description: [null,[Validators.required]],
+      status : [environment.carStatus.created, [Validators.required]]
     })
   }
   
@@ -36,7 +38,7 @@ export class CarCreationFormComponent {
     try{
       await lastValueFrom(this.carService.createCar(this.form.value))
       this.setIsVisible(false);
-      this.messageService.showSuccess("Voiture ajoutée avec succes")
+      this.messageService.showSuccess("Voiture ajoutée avec succès")
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e.message)
