@@ -28,6 +28,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
   // This will contain the <ng-template #exempleColonne>...</ng-template>
   @ViewChild("exempleColonne", {static: true}) exempleColonneTemplate: TemplateRef<any>;
+  @ViewChild("depositCarColumn", {static: true}) depositCarColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
     return this.carService.getCars(options);
@@ -60,9 +61,9 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       isSortable: true
     },
     {
-      title: "Exemple colonne",
+      title: "Déposer",
       selector: "description", //Anything goes here it's not important
-      template: this.exempleColonneTemplate,
+      template: this.depositCarColumnTemplate,
       isSortable: false
     },
    ];
