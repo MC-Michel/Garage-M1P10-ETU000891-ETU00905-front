@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeAdminAtelierComponent } from './admin/atelier/component/home-admin-atelier/home-admin-atelier.component';
 import { HomeAdminFinancierComponent } from './admin/financier/component/home-admin-financier/home-admin-financier.component';
 import { ClientModule } from './client/client.module';
 import { LoginClientComponent } from './client/pages/auth/login-client/login-client.component';
@@ -27,7 +26,8 @@ const routes: Routes = [
   { path : 'client/auth/login', component : LoginClientComponent},
   { path : 'client/auth/signin', component : SigninClientComponent},
 
-  { path : 'atelier', component : HomeAdminAtelierComponent},
+  //Responsable atelier
+  { path : 'atelier', loadChildren: ()=> import("./client/client.module").then((m) => ClientModule) },
   { path : 'financier', component : HomeAdminFinancierComponent},
 ];
 
