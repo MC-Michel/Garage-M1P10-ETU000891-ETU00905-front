@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AtelierModule } from './admin/atelier/atelier.module';
-import { HomeAdminFinancierComponent } from './admin/financier/component/home-admin-financier/home-admin-financier.component';
 import { ClientModule } from './client/client.module';
 import { LoginClientComponent } from './client/pages/auth/login-client/login-client.component';
 import { SigninClientComponent } from './client/pages/auth/signin-client/signin-client.component';
-import { HomeClientComponent } from './client/pages/home-client/home-client.component';
 import { VoitureCreateComponent } from './client/pages/voiture/voiture-create/voiture-create.component';
 import { DragDropComponent } from './test/component/drag-drop/drag-drop.component';
 import { HomeComponent } from './test/component/home/home.component';
@@ -30,6 +28,7 @@ const routes: Routes = [
   },
   //Responsable atelier
   { path : 'admin/atelier', loadChildren: ()=> import("./admin/atelier/atelier.module").then((m) => AtelierModule)},
+  { path: 'admin/financier', loadChildren: () => import('./admin/financier/financier.module').then(m => m.FinancierModule) },
 ];
 
 @NgModule({
