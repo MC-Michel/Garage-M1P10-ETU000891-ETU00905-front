@@ -11,7 +11,19 @@ export class UserService {
   constructor(private http: HttpClient) {
     this.wsUrl = environment.wsUrl;
    }
+   getUserData(){
+    const url = `${this.wsUrl}/users/user-data`;
+    return this.http.get(url);
+  }
 
+  logout(){
+    const url = `${this.wsUrl}/users/logout`;
+    return this.http.get(url).pipe(map((res: any)=>{
+      this.removeToken();
+      return res;
+    }));
+  }
+  
   login(data: any) {
     const url = `${this.wsUrl}/users/login`
     return this.http.post(url, data).pipe(map((res: any)=>{
@@ -19,11 +31,15 @@ export class UserService {
       return res;
     }));
   }
+
   saveToken(token: string){
     localStorage.setItem('token', token);
   }
   getCurrentToken():string|null{
     return localStorage.getItem('token')
+  }
+  removeToken(){
+    localStorage.removeItem('token');
   }
   getNextLink(roleId: number){
     const paths: any = {
@@ -37,4 +53,5 @@ export class UserService {
       return res.canAccess;
     }));
   }
+ 
 }

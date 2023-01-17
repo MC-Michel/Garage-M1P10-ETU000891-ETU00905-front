@@ -20,6 +20,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
 
   addAuthToken(request: HttpRequest<any>) {
     const token:string|null = this.userService.getCurrentToken(); 
+    if(!token) return request;
     return request.clone({
         setHeaders: {
           token: token as string
