@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AtelierModule } from './admin/atelier/atelier.module';
-import { HomeAdminFinancierComponent } from './admin/financier/component/home-admin-financier/home-admin-financier.component';
 import { ClientModule } from './client/client.module';
 import { LoginClientComponent } from './client/pages/auth/login-client/login-client.component';
 import { SigninClientComponent } from './client/pages/auth/signin-client/signin-client.component';
