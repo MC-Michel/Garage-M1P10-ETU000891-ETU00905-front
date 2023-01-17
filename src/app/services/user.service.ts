@@ -22,6 +22,9 @@ export class UserService {
   saveToken(token: string){
     localStorage.setItem('token', token);
   }
+  getCurrentToken():string|null{
+    return localStorage.getItem('token')
+  }
   getNextLink(roleId: number){
     const paths: any = {
       '1': '/client'

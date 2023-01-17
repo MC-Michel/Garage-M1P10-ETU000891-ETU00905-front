@@ -6,11 +6,12 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserService } from '../services/user.service';
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     request = this.addAuthToken(request);
@@ -18,11 +19,10 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   }
 
   addAuthToken(request: HttpRequest<any>) {
-    const token = "An example of token to give (with condition based on baseUrl)";
-    console.log(request.url)
+    const token:string|null = this.userService.getCurrentToken(); 
     return request.clone({
         setHeaders: {
-          Authorization: token
+          Authorization: token as string
         }
     });
   }
