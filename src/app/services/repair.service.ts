@@ -33,4 +33,12 @@ export class RepairService {
     const url = this.wsUrl+"/repairs/"+id;
     return this.http.delete(url );
   }
+  getRepairsPaiementToValid(options: any): Observable<any[]>{
+    const url = this.wsUrl+"/repairs/valid";
+    return this.http.get<any[]>(url, {params: options});
+  }
+  validPaiement(data: any){
+    const url = this.wsUrl+"/repairs/valid";
+    return this.http.patch(url, data);
+  }
 }
