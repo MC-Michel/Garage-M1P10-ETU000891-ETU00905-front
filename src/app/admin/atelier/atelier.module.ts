@@ -7,6 +7,8 @@ import { HomeAtelierComponent } from './pages/home-atelier/home-atelier.componen
 import { HeaderAtelierComponent } from './partials/header-atelier/header-atelier.component';
 import { NavAtelierComponent } from './partials/nav-atelier/nav-atelier.component';
 import { SharedModule } from 'src/app/commons/shared.module';
+import { ReceptionAtelierComponent } from './pages/reception-atelier/reception-atelier.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,12 +16,15 @@ import { SharedModule } from 'src/app/commons/shared.module';
     AtelierComponent,
     HomeAtelierComponent,
     HeaderAtelierComponent,
-    NavAtelierComponent
+    NavAtelierComponent,
+    ReceptionAtelierComponent
   ],
   imports: [
     SharedModule,
     CommonModule,
-    AtelierRoutingModule
+    AtelierRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AtelierModule { }

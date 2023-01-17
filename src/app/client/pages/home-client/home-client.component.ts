@@ -27,7 +27,6 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   @ViewChild(GenDatatableComponent) datatable: GenDatatableComponent;
 
   // This will contain the <ng-template #exempleColonne>...</ng-template>
-  @ViewChild("exempleColonne", {static: true}) exempleColonneTemplate: TemplateRef<any>;
   @ViewChild("depositCarColumn", {static: true}) depositCarColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){

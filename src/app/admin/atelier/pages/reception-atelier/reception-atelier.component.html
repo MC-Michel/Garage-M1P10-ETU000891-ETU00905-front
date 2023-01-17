@@ -1,0 +1,113 @@
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section class="form-control-repeater">
+                <div class="row">
+                    <!-- Invoice repeater -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Récéption d'une voiture</h2>
+                            </div>
+                            <div class="card-body">
+                                <form [formGroup]="receptionForm" (ngSubmit)="onSubmit()" class="invoice-repeater">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mb-1">
+                                                <label class="form-label" for="receptionDate">Date de récéption</label>
+                                                <input type="date" class="form-control" id="receptionDate" aria-describedby="receptionDate" formControlName="receptionDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-1">
+                                                <label class="form-label" for="receptionTime"></label>
+                                                <input type="time" class="form-control" id="receptionTime" aria-describedby="receptionTime" formControlName="receptionTime"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-repeater-list="invoice">
+                                        <h4>Réparations</h4>
+                                        <div formArrayName="repairs">
+                                            <div class="row d-flex align-items-end"  *ngFor="let repair of repairs.controls; let i=index" [formGroupName]="i">
+                                                    <div class="col-md-4 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="intitule">Intitulé</label>
+                                                            <input type="text" class="form-control" id="intitule" aria-describedby="intitule" placeholder="ex : Réparation moteur" formControlName="label"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="description">Description</label>
+                                                            <input type="text" class="form-control" id="description" aria-describedby="description" placeholder="ex : Démontage, huilage, ..." formControlName="description" />
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-2 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="prix">Prix</label>
+                                                            <input type="number" class="form-control" id="prix" aria-describedby="prix" placeholder="50000" formControlName="price" (blur)="refreshPrice()" />
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-2 col-12 mb-50">
+                                                        <div class="mb-1">
+                                                            <button class="btn btn-outline-danger text-nowrap px-1" (click)="remove(i)" type="button">
+                                                                <span>Supprimer</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <hr />
+                                            <div class="price-details">
+                                                <h6 class="price-title">Détails des prix</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="price-detail">
+                                                        <div class="detail-title">Prix sans TVA : {{price.withoutTva}}</div>
+                                                    </li>
+                                                    <li class="price-detail">
+                                                        <div class="detail-title">TVA (20%) : {{price.tva}}</div>
+                                                    </li>
+                                                </ul>
+                                                <hr />
+                                                <ul class="list-unstyled">
+                                                    <li class="price-detail">
+                                                        <div class="detail-title detail-total">Total : {{price.totalPrice}}</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button class="btn btn-icon btn-primary" type="button" (click)="add()">
+                                                <i data-feather="plus" class="me-25"></i>
+                                                <span>Ajouter</span>
+                                            </button>
+                                            <app-gen-button [text]="'Enregistrer'" [type]="'success mx-2'" [disabled]="!receptionForm.valid" [isLoading]="isLoading" (click)="onSubmit()"></app-gen-button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Invoice repeater -->
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- Car creation modal -->
+
+
+<!-- Car update modal-->
+
+
