@@ -1,4 +1,4 @@
-<button [ngClass]="'btn btn-'+type" type="button" [disabled]="disabled">
+<button (click)="clicked()" [style.pointer-events]="disabled || isLoading ? 'none' : 'auto'" [ngClass]="'btn btn-'+type+' '+customClass" type="button" [disabled]="disabled || isLoading">
     <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     <span [ngClass]="isLoading ? 'visually-hidden' : '' ">{{ text }}</span>
   </button>

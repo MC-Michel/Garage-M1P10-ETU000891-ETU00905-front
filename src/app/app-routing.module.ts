@@ -12,6 +12,7 @@ import { HomeComponent } from './test/component/home/home.component';
 import { CreateComponent } from './test/component/lesson/create/create.component';
 import { ListComponent } from './test/component/lesson/list/list.component';
 import { UpdateComponent } from './test/component/lesson/update/update.component';
+import { UserModule } from './user/user.module';
 
 const routes: Routes = [
   { path : '', redirectTo : '/client/auth/login', pathMatch : 'full' },
@@ -21,12 +22,12 @@ const routes: Routes = [
   { path : 'home', component : HomeComponent},
   { path : 'drag-drop', component : DragDropComponent},
 
-  //Ny liens rehetra momba an client atao any am ClientRoutingModule
-  { path : 'client', loadChildren: ()=> import("./client/client.module").then((m) => ClientModule) },
-  { path : 'client/voiture/create', component : VoitureCreateComponent},
-  { path : 'client/auth/login', component : LoginClientComponent},
-  { path : 'client/auth/signin', component : SigninClientComponent},
-
+  //Client
+  { path : 'client', loadChildren: () => import("./client/client.module").then((m) => ClientModule) },
+  //User
+  {
+    path: 'user', loadChildren: () => import("./user/user.module").then((m)=> UserModule)
+  },
   //Responsable atelier
   { path : 'admin/atelier', loadChildren: ()=> import("./admin/atelier/atelier.module").then((m) => AtelierModule)},
 ];

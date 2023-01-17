@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-gen-button',
@@ -10,7 +10,14 @@ export class GenButtonComponent  {
   @Input() isLoading: boolean= false;
   @Input()disabled: boolean = false
   @Input() text: string = '';
+  @Input() customClass: string = '';
+
+  @Output() genClick = new EventEmitter<any>();
+
   constructor() { }
 
- 
+  clicked(){
+    if(!this.disabled && !this.isLoading)
+      this.genClick.emit();
+  }
 }
