@@ -31,4 +31,10 @@ export class UserService {
     }
     return paths[roleId+''];
   }
+  checkIfAllowed(roleIds: number[]){
+    const url = `${this.wsUrl}/users/can-access`
+    return this.http.post(url, {roleIds}).pipe(map((res: any)=>{
+      return res.canAccess;
+    }));
+  }
 }

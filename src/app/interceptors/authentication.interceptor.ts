@@ -22,7 +22,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
     const token:string|null = this.userService.getCurrentToken(); 
     return request.clone({
         setHeaders: {
-          Authorization: token as string
+          token: token as string
         }
     });
   }
