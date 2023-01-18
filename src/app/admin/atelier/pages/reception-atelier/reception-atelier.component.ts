@@ -34,10 +34,10 @@ export class ReceptionAtelierComponent implements OnInit{
     private messageService: MessageService,
     private route : ActivatedRoute,
     private repairService : RepairService,
+    private carService : CarService,
     ) {
 
     this.receptionForm = this.fb.group({
-      carId : '',
       status : '',
       receptionDate : '',
       receptionTime : '',
@@ -79,9 +79,11 @@ export class ReceptionAtelierComponent implements OnInit{
   async onSubmit() {
     this.isLoading = true;
     try{
-      this.receptionForm.value.carId = this.carId;
       this.receptionForm.value.status = environment.status.created;
-      await lastValueFrom(this.repairService.createRepair(this.receptionForm.value));
+      await lastValueFrom(this.carService.addCurrentRepair({
+        _id : this.carId,
+        currentRepair : this.receptionForm.value
+      }));
       
       this.setIsVisible(false);
       this.messageService.showSuccess("Les réparations pour cette voiture sont bien ajoutées avec succès")

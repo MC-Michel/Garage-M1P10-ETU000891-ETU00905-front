@@ -37,5 +37,9 @@ export class CarService {
     const url = this.wsUrl+"/cars/deposit";
     return this.http.patch(url, data);
   }
+  addCurrentRepair(data : any){
+    const url = this.wsUrl+"/cars/add_current_repair";
+    return this.http.patch(url,data );
+  }
   
 }
