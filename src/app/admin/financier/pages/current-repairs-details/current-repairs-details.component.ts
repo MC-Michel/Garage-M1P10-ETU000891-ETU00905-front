@@ -59,11 +59,10 @@ export class CurrentRepairsDetailsComponent implements OnInit {
     this.carsUpdateSub = this.carService.carCollectionUpdate.subscribe(async ()=>{
       this.datatable.loadData();
     });
-    this.car._id = this.route.snapshot.paramMap.get("id"); 
-    this.carService.getCars({_id:this.car._id}).subscribe((data : any)=>{
+    this.car._id = this.route.snapshot.paramMap.get("id");
+    this.carService.getCurrentRepairByCarAtelier({id : this.car._id}).subscribe((data : any)=>{      
       if(data.data && data.data.length > 0){
-        // asiana option de avadika oe car 1 iany no alaina de indice 0 iany no atao
-        this.car = data.data[4];
+        this.car = data.data[0];
         this.refreshPrice();
       }      
     });

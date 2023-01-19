@@ -49,5 +49,8 @@ export class CarService {
     const url = this.wsUrl+"/cars/valid_paiement";
     return this.http.patch(url,data );
   }
-  
+  getCurrentRepairByCarAtelier(options: any): Observable<any[]>{
+    const url = this.wsUrl+"/cars/atelier/current_repair";
+    return this.http.get<any[]>(url, {params: options});
+  }
 }
