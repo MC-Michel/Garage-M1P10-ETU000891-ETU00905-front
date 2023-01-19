@@ -70,6 +70,6 @@ export class ReparationAtelierComponent implements OnInit {
   }
 
   showRepairDetails(id : string){
-    this.router.navigate([`/admin/atelier/repair-details/${id}`]);
+    this.router.navigate([`/admin/atelier/reparation/${id}`]);
   }
 }

@@ -4,6 +4,7 @@ import { AtelierComponent } from './atelier.component';
 import { HomeAtelierComponent } from './pages/home-atelier/home-atelier.component';
 import { ReceptionAtelierComponent } from './pages/reception-atelier/reception-atelier.component';
 import { ReparationAtelierComponent } from './pages/reparation-atelier/reparation-atelier.component';
+import { ReparationDetailAtelierComponent } from './pages/reparation-detail-atelier/reparation-detail-atelier.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: "reparation",
         component: ReparationAtelierComponent
+      },
+      {
+        path: "reparation/:id",
+        component: ReparationDetailAtelierComponent
       },
     ]
   }

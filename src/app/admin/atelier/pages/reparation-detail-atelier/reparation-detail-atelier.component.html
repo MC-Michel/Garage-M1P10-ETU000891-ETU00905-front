@@ -1,0 +1,89 @@
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Informations générales
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Récéption</th>
+                                                    <th>Voiture</th>
+                                                    <th>Immatriculation</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        {{car.currentRepair.receptionDate}} 
+                                                        {{car.currentRepair.receptionTime}}
+                                                    </td>
+                                                    <td>{{car.brand}}</td>
+                                                    <td>{{car.numberPlate}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="list">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Liste des réparations à faire</h4>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Intitulé</th>
+                                            <th>Description</th>
+                                            <th>Prix</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let repair of car.currentRepair.repairs">
+                                            <td>{{repair.label}}</td>
+                                            <td>{{repair.description}}</td>
+                                            <td>{{repair.price}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- Car creation modal -->
+
+
+<!-- Car update modal-->
+
+
