@@ -46,36 +46,46 @@
                     </div>
                 </div>
             </section>
-            <section id="list">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Liste des réparations à faire</h4>
-                            </div>
-
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Intitulé</th>
-                                            <th>Description</th>
-                                            <th>Prix</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let repair of car.currentRepair.repairs">
-                                            <td>{{repair.label}}</td>
-                                            <td>{{repair.description}}</td>
-                                            <td>{{repair.price}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+            
+            <div class="mt-2" cdkDropListGroup>
+    
+                <div class="example-container">
+                  <h2>Réparation à faire</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="todo"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                  </div>
                 </div>
-            </section>
+              
+                <div class="example-container">
+                  <h2>En cours</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="inProgress"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let item of inProgress" cdkDrag>{{item}}</div>
+                  </div>
+                </div>
+              
+                <div class="example-container">
+                  <h2>Terminée</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="ended"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let item of ended" cdkDrag>{{item}}</div>
+                  </div>
+                </div>
+            </div>
+              
         </div>
     </div>
 </div>

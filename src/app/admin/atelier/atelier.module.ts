@@ -11,6 +11,7 @@ import { ReceptionAtelierComponent } from './pages/reception-atelier/reception-a
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReparationAtelierComponent } from './pages/reparation-atelier/reparation-atelier.component';
 import { ReparationDetailAtelierComponent } from './pages/reparation-detail-atelier/reparation-detail-atelier.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ReparationDetailAtelierComponent } from './pages/reparation-detail-atel
     CommonModule,
     AtelierRoutingModule,
     FormsModule,
+    DragDropModule,
     ReactiveFormsModule
   ]
 })

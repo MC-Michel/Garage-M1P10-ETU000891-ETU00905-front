@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription, lastValueFrom } from 'rxjs';
@@ -14,6 +15,12 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./reparation-detail-atelier.component.scss']
 })
 export class ReparationDetailAtelierComponent implements OnInit {
+
+  todo : any [] = [];
+
+  inProgress : any [] = [];
+
+  ended : any [] = [];
 
   car : any = {
     brand : '',
@@ -63,6 +70,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       if(data.data && data.data.length > 0){
         this.car = data.data[0];
         this.refreshPrice();
+        this.refreshDragDropData();
       }      
     });
     this.headers = [
@@ -109,6 +117,37 @@ export class ReparationDetailAtelierComponent implements OnInit {
       this.messageService.showError(e.message)
     } 
     this.isLoading = false;
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
+
+  refreshDragDropData(){
+    for(let repair  of this.car.currentRepair.repairs){
+      if(repair.label){
+        switch (repair.status) {
+          case environment.repairStatus.ended:
+            this.ended.push(repair.label);
+            break;
+          case environment.repairStatus.inprogress:
+            this.inProgress.push(repair.label);
+            break;
+          default:
+            this.todo.push(repair.label);
+            break;
+        }
+      }
+    }
   }
 
 }
