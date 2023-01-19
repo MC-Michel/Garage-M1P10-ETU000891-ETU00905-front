@@ -1,9 +1,11 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { lastValueFrom, Subscription } from 'rxjs';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
 import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
 import { MessageService } from 'src/app/commons/services/message.service';
+import { CarService } from 'src/app/services/car.service';
 import { RepairService } from 'src/app/services/repair.service';
 import { environment } from 'src/environments/environment';
 
@@ -15,8 +17,12 @@ import { environment } from 'src/environments/environment';
 export class HomeFinancierComponent implements OnInit {
   repairs: any[] = [];
   isCreationModalVisible: boolean = false;
-  repairsUpdateSub: Subscription;
-  constructor(private repairService: RepairService, private messageService: MessageService) {
+  carsUpdateSub: Subscription;
+  constructor(
+    private carService : CarService,
+    private messageService: MessageService,
+    private router : Router
+    ) {
     this.fetchData = this.fetchData.bind(this)
    }
 
@@ -27,53 +33,48 @@ export class HomeFinancierComponent implements OnInit {
   @ViewChild(GenDatatableComponent) datatable: GenDatatableComponent;
 
   // This will contain the <ng-template #exempleColonne>...</ng-template>
-  @ViewChild("validPaiementColumn", {static: true}) validPaiementColumnTemplate: TemplateRef<any>;
+  @ViewChild("showCurrentRepairsColumn", {static: true}) showCurrentRepairsColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
-    return this.repairService.getRepairsPaiementToValid(options);
+    return this.carService.getCurrentRepairToValid(options);
   }
 
   async ngOnInit() {
-    this.repairsUpdateSub = this.repairService.repairCollectionUpdate.subscribe(async ()=>{
+    this.carsUpdateSub = this.carService.carCollectionUpdate.subscribe(async ()=>{
       this.datatable.loadData();
     })
-   this.headers = [
+    this.headers = [
     {
-      title: "Identifiant de la voiture",
-      selector: "carId",
+      title: "Marque",
+      selector: "brand",
       isSortable: true
     },
     {
-      title: "Date de récéption",
-      selector: "receptionDate",
+      title: "Immatriculation",
+      selector: "numberPlate",
       isSortable: true
     },
     {
-      title: "Heure",
-      selector: "receptionTime",
+      title: "Description",
+      selector: "description",
       isSortable: true
     },
     {
-      title: "Réparation",
-      selector: "repairs",
-      isSortable: true
-    },
-    {
-      title: "Valider",
+      title: "Réparation en cours",
       selector: "description", //Anything goes here it's not important
-      template: this.validPaiementColumnTemplate,
+      template: this.showCurrentRepairsColumnTemplate,
       isSortable: false
     },
-   ];
+    ];
   }
   ngOnDestroy(): void {
-    this.repairsUpdateSub.unsubscribe();
+    this.carsUpdateSub.unsubscribe();
   }
   
   async validPaiement(id : string){
     // this.isLoading = true;
     try{
-      await lastValueFrom(this.repairService.validPaiement({_id : id, status : environment.status.validated}));
+      // await lastValueFrom(this.repairService.validPaiement({_id : id, status : environment.status.validated}));
       // this.setIsVisible(false);
       this.messageService.showSuccess("Voiture déposée avec succès")
     }catch(e: any){
@@ -81,5 +82,9 @@ export class HomeFinancierComponent implements OnInit {
       this.messageService.showError(e.message)
     } 
     // this.isLoading = false;
+  }
+
+  showCurrentRepair(id : string){
+    this.router.navigate([`/admin/financier/current_repairs/${id}`]);
   }
 }

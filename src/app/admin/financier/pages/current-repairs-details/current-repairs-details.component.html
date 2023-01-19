@@ -1,0 +1,116 @@
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Informations générales
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-4">Voiture</th>
+                                                    <td class="col-8">{{car.brand}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-4">Numéro d'immatriculation</th>
+                                                    <td class="col-8">{{car.numberPlate}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-4">Date de récéption</th>
+                                                    <td class="col-8">{{car.currentRepair.receptionDate}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-4">Heure</th>
+                                                    <td class="col-8">{{car.currentRepair.receptionTime}}</td>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="list">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Liste des réparations à faire</h4>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Intitulé</th>
+                                            <th>Description</th>
+                                            <th>Prix</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let repair of car.currentRepair.repairs">
+                                            <td>{{repair.label}}</td>
+                                            <td>{{repair.description}}</td>
+                                            <td>{{repair.price}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="price-details">
+                                    <h6 class="price-title">Détails des prix</h6>
+                                    <ul class="list-unstyled">
+                                        <li class="price-detail">
+                                            <div class="detail-title">Prix sans TVA : {{price.withoutTva}}</div>
+                                        </li>
+                                        <li class="price-detail">
+                                            <div class="detail-title">TVA (20%) : {{price.tva}}</div>
+                                        </li>
+                                    </ul>
+                                    <hr />
+                                    <ul class="list-unstyled">
+                                        <li class="price-detail">
+                                            <div class="detail-title detail-total">Total : {{price.totalPrice}}</div>
+                                        </li>
+                                    </ul>
+                                    <app-gen-button [text]="'Valider le paiement'" type="success" [isLoading]="isLoading" (click)="validPaiement()"></app-gen-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- Car creation modal -->
+
+
+<!-- Car update modal-->
+
+

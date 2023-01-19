@@ -95,8 +95,8 @@
                                     [actionOptions]="actionOptions"
                                 >
                                 </app-gen-datatable>
-                                <ng-template #validPaiementColumn let-row="row">
-                                    <button class="btn btn-primary" (click)="validPaiement(row._id)">Valider</button>
+                                <ng-template #showCurrentRepairsColumn let-row="row">
+                                    <button class="btn btn-primary" (click)="showCurrentRepair(row._id)">Réparation en cours</button>
                                 </ng-template>
                               
                             </div>

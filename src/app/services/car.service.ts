@@ -41,5 +41,13 @@ export class CarService {
     const url = this.wsUrl+"/cars/add_current_repair";
     return this.http.patch(url,data );
   }
+  getCurrentRepairToValid(options: any): Observable<any[]>{
+    const url = this.wsUrl+"/cars/current_repair_to_valid";
+    return this.http.get<any[]>(url, {params: options});
+  }
+  validPaiement(data : any){
+    const url = this.wsUrl+"/cars/valid_paiement";
+    return this.http.patch(url,data );
+  }
   
 }

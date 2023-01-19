@@ -8,6 +8,7 @@ import { HeaderFinancierComponent } from './partials/header-financier/header-fin
 import { NavFinancierComponent } from './partials/nav-financier/nav-financier.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/commons/shared.module';
+import { CurrentRepairsDetailsComponent } from './pages/current-repairs-details/current-repairs-details.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedModule } from 'src/app/commons/shared.module';
     FinancierComponent,
     HomeFinancierComponent,
     HeaderFinancierComponent,
-    NavFinancierComponent
+    NavFinancierComponent,
+    CurrentRepairsDetailsComponent
   ],
   imports: [
     SharedModule,
