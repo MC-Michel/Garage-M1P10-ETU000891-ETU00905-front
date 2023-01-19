@@ -53,4 +53,8 @@ export class CarService {
     const url = this.wsUrl+"/cars/atelier/current_repair";
     return this.http.get<any[]>(url, {params: options});
   }
+  getRepairsAtelier(options: any): Observable<any[]>{
+    const url = this.wsUrl+"/cars/atelier/repair";
+    return this.http.get<any[]>(url, {params: options});
+  }
 }

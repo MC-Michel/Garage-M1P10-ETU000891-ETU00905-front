@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AtelierComponent } from './atelier.component';
 import { HomeAtelierComponent } from './pages/home-atelier/home-atelier.component';
 import { ReceptionAtelierComponent } from './pages/reception-atelier/reception-atelier.component';
+import { ReparationAtelierComponent } from './pages/reparation-atelier/reparation-atelier.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,11 @@ const routes: Routes = [
       {
         path: "reception/:id",
         component: ReceptionAtelierComponent
-      }
+      },
+      {
+        path: "reparation",
+        component: ReparationAtelierComponent
+      },
     ]
   }
 ];

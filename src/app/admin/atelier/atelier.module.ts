@@ -9,6 +9,7 @@ import { NavAtelierComponent } from './partials/nav-atelier/nav-atelier.componen
 import { SharedModule } from 'src/app/commons/shared.module';
 import { ReceptionAtelierComponent } from './pages/reception-atelier/reception-atelier.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReparationAtelierComponent } from './pages/reparation-atelier/reparation-atelier.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeAtelierComponent,
     HeaderAtelierComponent,
     NavAtelierComponent,
-    ReceptionAtelierComponent
+    ReceptionAtelierComponent,
+    ReparationAtelierComponent
   ],
   imports: [
     SharedModule,
