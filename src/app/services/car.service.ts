@@ -29,6 +29,10 @@ export class CarService {
     const url = this.wsUrl+"/cars";
     return this.http.patch(url,data );
   }
+  updateCarRepairsProgression(data: any){    
+    const url = this.wsUrl+"/cars/repairs_progression";
+    return this.http.patch(url,data );
+  }
   deleteCar(id: string){
     const url = this.wsUrl+"/cars/"+id;
     return this.http.delete(url );

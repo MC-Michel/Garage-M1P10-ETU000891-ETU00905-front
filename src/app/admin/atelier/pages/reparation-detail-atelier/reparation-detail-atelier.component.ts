@@ -18,7 +18,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
 
   todo : any [] = [];
 
-  inProgress : any [] = [];
+  inprogress : any [] = [];
 
   ended : any [] = [];
 
@@ -69,8 +69,8 @@ export class ReparationDetailAtelierComponent implements OnInit {
     this.carService.getCurrentRepairByCarAtelier({id : this.car._id}).subscribe((data : any)=>{      
       if(data.data && data.data.length > 0){
         this.car = data.data[0];
-        this.refreshPrice();
         this.refreshDragDropData();
+        this.refreshPrice();
       }      
     });
     this.headers = [
@@ -97,8 +97,10 @@ export class ReparationDetailAtelierComponent implements OnInit {
 
   refreshPrice(){
     let totalPrice = 0.0;
-    for(let repair of this.car.currentRepair.repairs){
-      totalPrice += repair.price;
+    for(let index in this.car.currentRepair.repairs){
+      for(let repair of this.car.currentRepair.repairs[index]){
+        totalPrice += repair.price;
+      }
     }
     this.price.totalPrice = totalPrice;
     this.price.tva = this.price.totalPrice / (100+environment.tva) * environment.tva;
@@ -119,7 +121,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
     this.isLoading = false;
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  async drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -130,24 +132,21 @@ export class ReparationDetailAtelierComponent implements OnInit {
         event.currentIndex,
       );
     }
+    this.refreshCar();
+    await this.carService.updateCarRepairsProgression(this.car);
   }
 
-  refreshDragDropData(){
-    for(let repair  of this.car.currentRepair.repairs){
-      if(repair.label){
-        switch (repair.status) {
-          case environment.repairStatus.ended:
-            this.ended.push(repair.label);
-            break;
-          case environment.repairStatus.inprogress:
-            this.inProgress.push(repair.label);
-            break;
-          default:
-            this.todo.push(repair.label);
-            break;
-        }
-      }
-    }
+  refreshDragDropData(){    
+    let repairs = this.car.currentRepair.repairs;
+    this.todo = repairs.todo;
+    this.inprogress = repairs.inprogress;
+    this.ended = repairs.ended;
+  }
+
+  refreshCar(){
+    this.car.currentRepair.repairs.todo = this.todo;
+    this.car.currentRepair.repairs.inprogress = this.inprogress;
+    this.car.currentRepair.repairs.ended = this.ended;
   }
 
 }
