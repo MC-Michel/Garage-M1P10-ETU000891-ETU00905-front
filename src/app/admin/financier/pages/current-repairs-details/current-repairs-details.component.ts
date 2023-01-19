@@ -90,7 +90,7 @@ export class CurrentRepairsDetailsComponent implements OnInit {
 
   refreshPrice(){
     let totalPrice = 0.0;
-    for(let repair of this.car.currentRepair.repairs){
+    for(let repair of this.car.currentRepair.repairs.todo){
       totalPrice += repair.price;
     }
     this.price.totalPrice = totalPrice;

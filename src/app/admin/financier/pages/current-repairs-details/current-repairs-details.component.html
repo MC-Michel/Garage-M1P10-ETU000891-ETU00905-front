@@ -65,7 +65,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let repair of car.currentRepair.repairs">
+                                        <tr *ngFor="let repair of car.currentRepair.repairs.todo">
                                             <td>{{repair.label}}</td>
                                             <td>{{repair.description}}</td>
                                             <td>{{repair.price}}</td>

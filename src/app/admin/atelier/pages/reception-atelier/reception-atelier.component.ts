@@ -80,9 +80,15 @@ export class ReceptionAtelierComponent implements OnInit{
     this.isLoading = true;
     try{
       this.receptionForm.value.status = environment.status.created;
+      let currentRepair = this.receptionForm.value;
+      currentRepair.repairs = {
+        todo : currentRepair.repairs,
+        inprogress : [],
+        ended : []
+      };
       await lastValueFrom(this.carService.addCurrentRepair({
         _id : this.carId,
-        currentRepair : this.receptionForm.value
+        currentRepair : currentRepair
       }));
       
       this.setIsVisible(false);
