@@ -1,0 +1,109 @@
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">
+                                    Informations générales
+                                </h4>
+                                <div class="button">
+                                    <button class="btn btn-outline-primary">
+                                        Télécharger facture
+                                    </button>
+                                    <button class="btn btn-outline-primary mx-2">
+                                        Etat de paiement
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Récéption</th>
+                                                    <th>Voiture</th>
+                                                    <th>Immatriculation</th>
+                                                    <th>Prix totale</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        {{car.currentRepair.receptionDate}} 
+                                                        {{car.currentRepair.receptionTime}}
+                                                    </td>
+                                                    <td>{{car.brand}}</td>
+                                                    <td>{{car.numberPlate}}</td>
+                                                    <td>{{price.totalPrice}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="mt-2" cdkDropListGroup>
+    
+                <div class="example-container">
+                  <h2>Réparation à faire</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="todo"
+                    class="example-list"
+                    >
+                    <div class="example-box" *ngFor="let item of todo" >{{item.label}}</div>
+                  </div>
+                </div>
+              
+                <div class="example-container">
+                  <h2>En cours</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="inprogress"
+                    class="example-list"
+                    >
+                    <div class="example-box" *ngFor="let item of inprogress" >{{item.label}}</div>
+                  </div>
+                </div>
+              
+                <div class="example-container">
+                  <h2>Terminée</h2>
+              
+                  <div
+                    cdkDropList
+                    [cdkDropListData]="ended"
+                    class="example-list"
+                    >
+                    <div class="example-box" *ngFor="let item of ended" >{{item.label}}</div>
+                  </div>
+                </div>
+            </div>
+              
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- Car creation modal -->
+
+
+<!-- Car update modal-->
+
+

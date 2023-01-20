@@ -13,6 +13,8 @@ import { VoitureCreateComponent } from './pages/voiture/voiture-create/voiture-c
 import { CarCreationFormComponent } from './components/car-creation-form/car-creation-form.component';
 import { CarUpdateFormComponent } from './components/car-update-form/car-update-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CurrentRepairClientComponent } from './pages/car/current-repair-client/current-repair-client.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [ 
@@ -25,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     VoitureCreateComponent,
     CarCreationFormComponent,
     CarUpdateFormComponent,
+    CurrentRepairClientComponent,
     
   ],
   imports: [
@@ -32,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ClientRoutingModule,
     FormsModule,
+    DragDropModule,
     ReactiveFormsModule 
   ]
 })
