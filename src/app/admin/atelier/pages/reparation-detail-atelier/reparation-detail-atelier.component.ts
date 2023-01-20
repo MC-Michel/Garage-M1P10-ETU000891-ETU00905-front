@@ -133,7 +133,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       );
     }
     this.refreshCar();
-    await this.carService.updateCarRepairsProgression(this.car);
+    await lastValueFrom(this.carService.updateCarRepairsProgression(this.car));
   }
 
   refreshDragDropData(){    
