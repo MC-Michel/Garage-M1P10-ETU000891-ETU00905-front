@@ -6,12 +6,14 @@ import { UserComponent } from './user.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from '../commons/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './pages/signin/signin.component';
 
 
 @NgModule({
   declarations: [
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     CommonModule,

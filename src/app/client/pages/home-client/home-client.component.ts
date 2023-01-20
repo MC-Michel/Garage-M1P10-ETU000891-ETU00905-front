@@ -31,6 +31,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   @ViewChild("historicRepairsCarColumn", {static: true}) historicRepairsCarColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
+    
     return this.carService.getCars(options);
   }
   

@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   //User
   {
-    path: 'user', loadChildren: () => import("./user/user.module").then((m)=> UserModule)
+    path: 'users', loadChildren: () => import("./user/user.module").then((m)=> UserModule)
   },
   //Responsable atelier
   { path : 'admin/atelier', loadChildren: ()=> import("./admin/atelier/atelier.module").then((m) => AtelierModule)},

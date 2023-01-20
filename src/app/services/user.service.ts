@@ -31,7 +31,10 @@ export class UserService {
       return res;
     }));
   }
-
+  signin(data: any){
+    const url = `${this.wsUrl}/users/signin`;
+    return this.http.post(url,data);
+  }
   saveToken(token: string){
     localStorage.setItem('token', token);
   }

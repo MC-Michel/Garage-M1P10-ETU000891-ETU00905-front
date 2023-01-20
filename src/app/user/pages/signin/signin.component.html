@@ -26,7 +26,7 @@
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <h2 class="card-title fw-bold text-center mb-1">Inscrivez-vous sur K-OJAO! 👋</h2>
-                                <form class="auth-login-form mt-2" (ngSubmit)="onSubmit()">
+                                <form class="auth-login-form mt-2" [formGroup]="form">
                                     <div class="mb-1">
                                         <label class="form-label" for="nom">Nom(s)</label>
                                         <input class="form-control" id="nom" type="text" formControlName="firstName" placeholder="Jean" aria-describedby="nom" autofocus="" tabindex="1"/>
@@ -42,7 +42,7 @@
                                     
                                     <div class="mb-1">
                                         <label class="form-label" for="email">Type de permis</label>
-                                        <input class="form-control" id="email" type="email" formControlName="licenceType" placeholder="A" aria-describedby="email" autofocus="" tabindex="1"/>
+                                        <input class="form-control" id="email" type="email" formControlName="customerData.licenceType" placeholder="A" aria-describedby="email" autofocus="" tabindex="1"/>
                                     </div>
                                     <div class="mb-1">
                                         <div class="d-flex justify-content-between">
@@ -64,11 +64,11 @@
                                             <!-- <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span> -->
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary w-100" tabindex="4">S'inscrire</button>
+                                  <app-gen-button (genClick)="submit()" [text]="'S\'inscrire'" [customClass]="'w-100'" [disabled]="!form.valid" [isLoading]="isLoading"></app-gen-button>
                                 </form>
                                 <p class="text-center mt-2"><span>Déjà un compte?</span><a routerLink="/client/auth/login"><span>&nbsp;Connectez-vous</span></a></p>
                             </div>
-                        </div>
+                        </div> 
                         <!-- /Register-->
                     </div>
                 </div>
@@ -78,3 +78,4 @@
     <!-- END: Content-->
 </div>
 <!-- END: Body-->
+ 
