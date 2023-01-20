@@ -104,6 +104,9 @@
                                     <button *ngIf="!row.currentRepair" class="btn btn-primary" (click)="depositCar(row._id)">Déposer</button>
                                     <button *ngIf="row.currentRepair" class="btn btn-info" routerLink="/client/car/current-repair/{{row._id}}">Réparation en cours</button>
                                 </ng-template>
+                                <ng-template #historicRepairsCarColumn let-row="row">
+                                    <button class="btn btn-primary" routerLink="/client/car/repairs/{{row._id}}">Voir</button>
+                                </ng-template>
                             </div>
                         </div>
                     </div>

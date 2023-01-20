@@ -28,6 +28,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
   // This will contain the <ng-template #exempleColonne>...</ng-template>
   @ViewChild("depositCarColumn", {static: true}) depositCarColumnTemplate: TemplateRef<any>;
+  @ViewChild("historicRepairsCarColumn", {static: true}) historicRepairsCarColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
     return this.carService.getCars(options);
@@ -63,6 +64,12 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       title: "Déposer",
       selector: "description", //Anything goes here it's not important
       template: this.depositCarColumnTemplate,
+      isSortable: false
+    },
+    {
+      title: "Historique",
+      selector: "description", //Anything goes here it's not important
+      template: this.historicRepairsCarColumnTemplate,
       isSortable: false
     },
    ];
