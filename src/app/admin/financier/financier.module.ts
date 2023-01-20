@@ -9,6 +9,8 @@ import { NavFinancierComponent } from './partials/nav-financier/nav-financier.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/commons/shared.module';
 import { CurrentRepairsDetailsComponent } from './pages/current-repairs-details/current-repairs-details.component';
+import { ExpensesComponent } from './pages/expenses/expenses.component';
+import { ExpensesCreationComponent } from './pages/expenses-creation/expenses-creation.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { CurrentRepairsDetailsComponent } from './pages/current-repairs-details/
     HomeFinancierComponent,
     HeaderFinancierComponent,
     NavFinancierComponent,
-    CurrentRepairsDetailsComponent
+    CurrentRepairsDetailsComponent,
+    ExpensesComponent,
+    ExpensesCreationComponent
   ],
   imports: [
     SharedModule,

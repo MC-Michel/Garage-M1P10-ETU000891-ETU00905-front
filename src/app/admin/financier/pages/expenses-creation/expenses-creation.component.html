@@ -1,0 +1,116 @@
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section class="form-control-repeater">
+                <div class="row">
+                    <!-- Invoice repeater -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Création dépense</h2>
+                                <button class="btn btn-primary" routerLink="/admin/financier/expenses">
+                                    Liste
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <form [formGroup]="expensesForm" (ngSubmit)="onSubmit()" class="invoice-repeater">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mb-1">
+                                                <label class="form-label" for="expensesDate">Date</label>
+                                                <input type="date" class="form-control" id="expensesDate" aria-describedby="expensesDate" formControlName="expensesDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-1">
+                                                <label class="form-label" for="expensesTime"></label>
+                                                <input type="time" class="form-control" id="expensesTime" aria-describedby="expensesTime" formControlName="expensesTime"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-repeater-list="invoice">
+                                        <h4>Détails</h4>
+                                        <div formArrayName="details">
+                                            <div class="row d-flex align-items-end"  *ngFor="let expenses of details.controls; let i=index" [formGroupName]="i">
+                                                    <div class="col-md-4 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="type">Type</label>
+                                                            <input type="text" class="form-control" id="type" aria-describedby="type" placeholder="ex : Salaire, achat matériel, ..." formControlName="type"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="description">Description</label>
+                                                            <input type="text" class="form-control" id="description" aria-describedby="description" placeholder="ex : Salaire mois de janvier ..." formControlName="description" />
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-2 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="prix">Prix</label>
+                                                            <input type="number" class="form-control" id="prix" aria-describedby="prix" placeholder="50000" formControlName="price" (blur)="refreshPrice()" />
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-2 col-12 mb-50">
+                                                        <div class="mb-1">
+                                                            <button class="btn btn-outline-danger text-nowrap px-1" (click)="remove(i)" type="button">
+                                                                <span>Supprimer</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <hr />
+                                            <div class="price-details">
+                                                <h6 class="price-title">Détails des prix</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="price-detail">
+                                                        <div class="detail-title">Prix sans TVA : {{price.withoutTva}}</div>
+                                                    </li>
+                                                    <li class="price-detail">
+                                                        <div class="detail-title">TVA (20%) : {{price.tva}}</div>
+                                                    </li>
+                                                </ul>
+                                                <hr />
+                                                <ul class="list-unstyled">
+                                                    <li class="price-detail">
+                                                        <div class="detail-title detail-total">Total : {{price.totalPrice}}</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button class="btn btn-icon btn-primary" type="button" (click)="add()">
+                                                <i data-feather="plus" class="me-25"></i>
+                                                <span>Ajouter</span>
+                                            </button>
+                                            <app-gen-button [text]="'Enregistrer'" [type]="'success mx-2'" [disabled]="!expensesForm.valid" [isLoading]="isLoading" (click)="onSubmit()"></app-gen-button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Invoice repeater -->
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- Car creation modal -->
+
+
+<!-- Car update modal-->
+
+
