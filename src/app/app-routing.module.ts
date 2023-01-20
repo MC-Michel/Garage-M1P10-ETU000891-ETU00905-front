@@ -26,8 +26,8 @@ const routes: Routes = [
   { 
     path : 'client', 
     loadChildren: () => import("./client/client.module").then((m) => ClientModule) ,
-    canActivate:[AuthGuard],
-    data: {roleIds: [1]}
+    //canActivate:[AuthGuard],
+    //data: {roleIds: [1]}
   },
   //User
   {
