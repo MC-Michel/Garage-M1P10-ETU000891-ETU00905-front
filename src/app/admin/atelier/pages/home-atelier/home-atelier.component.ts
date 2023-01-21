@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HomeAtelierComponent implements OnInit {
   cars: any[] = [];
+  carStatus = environment.carStatus;
   isCreationModalVisible: boolean = false;
   carsUpdateSub: Subscription;
   constructor(private carService: CarService, private messageService: MessageService) {
@@ -28,7 +29,7 @@ export class HomeAtelierComponent implements OnInit {
 
   // This will contain the <ng-template #exempleColonne>...</ng-template>
   @ViewChild("receiveCarColumn", {static: true}) receiveCarColumnTemplate: TemplateRef<any>;
-
+  @ViewChild("statusColumn", {static: true}) statusColumnTemplate: TemplateRef<any>;
   fetchData(options: any){
     return this.carService.getCars(options);
   }
@@ -57,6 +58,12 @@ export class HomeAtelierComponent implements OnInit {
     {
       title: "Description",
       selector: "description",
+      isSortable: true
+    },
+    {
+      title: "Statut",
+      selector: "description",
+      template: this.statusColumnTemplate,
       isSortable: true
     },
     {

@@ -66,7 +66,7 @@ export class GenDatatableComponent implements OnInit {
         this.createPaginationElmt();
       }catch(e: any){
         console.log(e);
-        this.messageService.showError(e.message);
+        this.messageService.showError(e);
       }
       this.isLoading = false;
   }

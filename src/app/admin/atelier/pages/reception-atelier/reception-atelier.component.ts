@@ -95,7 +95,7 @@ export class ReceptionAtelierComponent implements OnInit{
       this.messageService.showSuccess("Les réparations pour cette voiture sont bien ajoutées avec succès")
     }catch(e: any){
       console.log(e);
-      this.messageService.showError(e.message)
+      this.messageService.showError(e)
     } 
     this.isLoading = false;
   }

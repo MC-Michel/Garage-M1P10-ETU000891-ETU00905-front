@@ -116,7 +116,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       this.messageService.showSuccess("Paiement validée avec succès")
     }catch(e: any){
       console.log(e);
-      this.messageService.showError(e.message)
+      this.messageService.showError(e)
     } 
     this.isLoading = false;
   }

@@ -29,7 +29,7 @@ export class LoginComponent   {
       this.router.navigate([nextPath]);
     }catch(e: any){
       console.log(e);
-      this.message.showError(e.message);
+      this.message.showError(e);
     }
     this.isLoading = false;
    }

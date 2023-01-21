@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GenDatatableComponent } from './components/gen-datatable/gen-datatable.component';
 import { AccessDeniedComponent } from './pages/access-denied/access-denied.component';
 import { GenConfirmComponent } from './components/gen-confirm/gen-confirm.component';
+import { CarStatusComponent } from './components/car-status/car-status.component';
 
 
 
@@ -20,7 +21,8 @@ import { GenConfirmComponent } from './components/gen-confirm/gen-confirm.compon
     GenMessageComponent,
     GenDatatableComponent,
     AccessDeniedComponent,
-    GenConfirmComponent
+    GenConfirmComponent,
+    CarStatusComponent
   ],
   imports: [
     FormsModule,
@@ -34,7 +36,8 @@ import { GenConfirmComponent } from './components/gen-confirm/gen-confirm.compon
     GenMessageComponent,
     GenDatatableComponent,
     AccessDeniedComponent,
-    GenConfirmComponent
+    GenConfirmComponent,
+    CarStatusComponent
   ]
 })
 export class SharedModule { }

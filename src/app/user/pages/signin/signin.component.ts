@@ -34,7 +34,7 @@ export class SigninComponent {
       this.message.showSuccess('Client enregistre, veuillez vous connecter');
     }catch(e: any){
       console.log(e);
-      this.message.showError(e.message)
+      this.message.showError(e)
     }
     this.isLoading = false;
    }

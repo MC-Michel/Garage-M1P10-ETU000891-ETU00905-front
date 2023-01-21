@@ -22,7 +22,11 @@ export class CarService {
     }));
   }
   getCars(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/cars";
+    const url = this.wsUrl+"/cars/customer";
+    return this.http.get<any[]>(url, {params: options});
+  }
+  getCarsForAdmin(options: any): Observable<any[]>{
+    const url = this.wsUrl+"/cars/admin";
     return this.http.get<any[]>(url, {params: options});
   }
   updateCar(data: any){

@@ -22,6 +22,9 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   constructor(private carService: CarService, private messageService: MessageService, private confirmService: ConfirmService) {
     this.fetchData = this.fetchData.bind(this)
     this.showDeposit = this.showDeposit.bind(this)
+    this.updateCar = this.updateCar.bind(this)
+    this.deleteCar = this.deleteCar.bind(this)
+    this.redirectHistory = this.redirectHistory.bind(this)
    }
 
   headers: GenTableHeader[];
@@ -111,12 +114,13 @@ export class HomeClientComponent implements OnInit, OnDestroy {
         actionFunction: this.redirectHistory
       }, 
     ];
-    actionOptions.push({
-      label: 'Deposer',
-        actionFunction: this.showDeposit
+   
+    if(row.status === environment.carStatus.inCirculation) {
+      actionOptions.push({
+        label: 'Deposer',
+          actionFunction: this.showDeposit
     });
-    if(row.status === environment.carStatus.inCirculation) 
-   {}
+   }
     return actionOptions;
   }
 
@@ -141,7 +145,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       this.datatable.loadData();
     }catch(e: any){
       console.log(e);
-      this.messageService.showError(e.message)
+      this.messageService.showError(e)
     } 
   }
    

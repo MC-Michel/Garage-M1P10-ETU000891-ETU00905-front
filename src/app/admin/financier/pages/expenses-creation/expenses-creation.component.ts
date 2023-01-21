@@ -77,7 +77,7 @@ export class ExpensesCreationComponent implements OnInit {
       this.setIsVisible(false);
       this.messageService.showSuccess("Les dépenses sont bien ajoutées avec succès")
     }catch(e: any){
-      this.messageService.showError(e.message)
+      this.messageService.showError(e)
     } 
     this.isLoading = false;
   }

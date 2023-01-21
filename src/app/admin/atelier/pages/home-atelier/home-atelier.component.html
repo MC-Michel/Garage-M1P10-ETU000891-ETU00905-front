@@ -96,7 +96,10 @@
                                 >
                                 </app-gen-datatable>
                                 <ng-template #receiveCarColumn let-row="row">
-                                    <button class="btn btn-primary" routerLink="/admin/atelier/reception/{{row._id}}">Récéption</button>
+                                    <button *ngIf="row.status === carStatus.deposited" class="btn btn-success" routerLink="/admin/atelier/reception/{{row._id}}">Récéption</button>
+                                </ng-template>
+                                <ng-template #statusColumn let-row="row">
+                                    <app-car-status [status]="row.status"></app-car-status>
                                 </ng-template>
                               
                             </div>
