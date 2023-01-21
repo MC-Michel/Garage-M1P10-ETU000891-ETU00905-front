@@ -52,11 +52,11 @@
                             <i data-feather="more-vertical"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a *ngIf="actionOptions?.updateMethod" (click)="onUpdateClick(row)">
+                            <a *ngIf="actionOptions?.updateMethod" (click)="onUpdateClick(row)" class="dropdown-item">
                                 <i data-feather='edit' class="me-50"></i>
                                 <span>Modifier</span>
                             </a>
-                            <a *ngIf="actionOptions?.deleteMethod" (click)="onDeleteClick(row)">
+                            <a *ngIf="actionOptions?.deleteMethod" (click)="onDeleteClick(row)" class="dropdown-item">
                                 <i data-feather='trash' class="me-50"></i>
                                 <span>Supprimer</span>
                             </a>

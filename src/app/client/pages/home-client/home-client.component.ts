@@ -7,6 +7,7 @@ import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
 import { environment } from 'src/environments/environment';
+import { GenTableCustomActionOption } from 'src/app/commons/interfaces/gen-table-custom-action-option';
 @Component({
   selector: 'app-home-client',
   templateUrl: './home-client.component.html',
@@ -25,10 +26,10 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
 
   @ViewChild(GenDatatableComponent) datatable: GenDatatableComponent;
-
-  // This will contain the <ng-template #exempleColonne>...</ng-template>
+ 
   @ViewChild("depositCarColumn", {static: true}) depositCarColumnTemplate: TemplateRef<any>;
-  @ViewChild("historicRepairsCarColumn", {static: true}) historicRepairsCarColumnTemplate: TemplateRef<any>;
+  @ViewChild("actionColumn", {static: true}) actionColumnTemplate: TemplateRef<any>;
+  @ViewChild("statusColumn", {static: true}) statusColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
     
@@ -62,33 +63,57 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       isSortable: true
     },
     {
-      title: "Déposer",
-      selector: "description", //Anything goes here it's not important
-      template: this.depositCarColumnTemplate,
-      isSortable: false
+      title: "Statut",
+      selector: "description",
+      template: this.statusColumnTemplate,
+      isSortable: true
     },
     {
-      title: "Historique",
+      title: "Action",
       selector: "description", //Anything goes here it's not important
-      template: this.historicRepairsCarColumnTemplate,
+      template: this.actionColumnTemplate,
       isSortable: false
     },
+   
    ];
-   this.actionOptions = {
-    updateMethod : this.updateCar,
-    deleteMethod : this.deleteCar
-   };
+  
   }
   ngOnDestroy(): void {
     this.carsUpdateSub.unsubscribe();
   }
 
-  updateCar(id : string){
+  updateCar(row: any){
 
   }
 
-  deleteCar(id : string){
+  deleteCar(row: any){
 
+  }
+  redirectHistory(row: any){
+
+  }
+
+  getActionOptions(row: any){
+    const actionOptions: GenTableCustomActionOption[] = [
+      {
+        label: 'Modifier',
+        actionFunction: this.updateCar
+      }, 
+      {
+        label: 'Supprimer',
+        actionFunction: this.deleteCar
+      }, 
+      {
+        label: 'Historique',
+        actionFunction: this.redirectHistory
+      }, 
+    ];
+    if(row.status === environment.carStatus.inCirculation) 
+      actionOptions.push({
+        label: 'Deposer',
+          actionFunction: this.depositCar
+      });
+    return actionOptions;
   }
 
   async depositCar(id : string){

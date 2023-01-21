@@ -104,8 +104,24 @@
                                     <button *ngIf="!row.currentRepair" class="btn btn-primary" (click)="depositCar(row._id)">Déposer</button>
                                     <button *ngIf="row.currentRepair" class="btn btn-info" routerLink="/client/car/current-repair/{{row._id}}">Réparation en cours</button>
                                 </ng-template>
-                                <ng-template #historicRepairsCarColumn let-row="row">
-                                    <button class="btn btn-primary" routerLink="/client/car/repairs/{{row._id}}">Voir</button>
+
+                                <ng-template #statusColumn let-row="row">
+                                    <span *ngIf="row.status === 0" class="badge rounded-pill badge-light-primary me-1">En circulation</span>
+                                    <span *ngIf="row.status === 0.5" class="badge rounded-pill badge-light-warning me-1">En cours de validation</span>
+                                    <span *ngIf="row.status === 1" class="badge rounded-pill badge-light-warning me-1">En cours de reparation</span>
+                                </ng-template>
+                              
+                                <ng-template #actionColumn let-row="row">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a *ngFor="let action of getActionOptions(row)" (click)="action.actionFunction(row)" class="dropdown-item">
+                                            <i data-feather='trash' class="me-50"></i>
+                                            <span>{{action.label}}</span>
+                                        </a>
+                                        
+                                    </div>
                                 </ng-template>
                             </div>
                         </div>

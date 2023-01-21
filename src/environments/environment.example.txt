@@ -8,6 +8,17 @@ export const environment = {
   wsUrl : "https://garage-back.tobywallet.fr/",
   // baseUrl : "http://localhost:4200",
   // wsUrl : "http://localhost:3000",
+   status : {
+    deleted : -1,
+    created : 0,
+    validated : 1
+  },
+  carStatus : {
+    inCirculation : 0,
+    beingValidated: 0.5,
+    deposited : 1
+  },
+  tva: 20
 };
 
 /*

@@ -26,7 +26,7 @@ export class CarCreationFormComponent {
       brand: [null,[Validators.required]],
       numberPlate: [null,[Validators.required]],
       description: [null,[Validators.required]],
-      status : [environment.carStatus.created, [Validators.required]]
+      status : [environment.carStatus.inCirculation, [Validators.required]]
     })
   }
   

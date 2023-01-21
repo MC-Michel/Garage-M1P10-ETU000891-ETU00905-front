@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { lastValueFrom, retry } from 'rxjs';
 import { GenRequestOptions } from '../../interfaces/gen-request-options';
 import { GenTableActionOption } from '../../interfaces/gen-table-action-option';
+import { GenTableCustomActionOption } from '../../interfaces/gen-table-custom-action-option';
 import { GenTableHeader } from '../../interfaces/gen-table-header';
 import { MessageService } from '../../services/message.service';
 
@@ -16,6 +17,7 @@ export class GenDatatableComponent implements OnInit {
   @Input() headers: GenTableHeader[];
   @Input() fetchData: Function;
   @Input() actionOptions: GenTableActionOption = {};
+  @Input() custonActionOptions: GenTableCustomActionOption[] = [];
 
   isLoading: boolean = false;
   dataList: any[];

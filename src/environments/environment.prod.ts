@@ -8,7 +8,8 @@ export const environment = {
     validated : 1
   },
   carStatus : {
-    created : 0,
+    inCirculation : 0,
+    beingValidated: 0.5,
     deposited : 1
   }
   // baseUrl : "http://localhost:4200",
