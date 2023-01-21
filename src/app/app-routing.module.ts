@@ -15,7 +15,7 @@ import { UpdateComponent } from './test/component/lesson/update/update.component
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
-  { path : '', redirectTo : '/user/login', pathMatch : 'full' },
+  { path : '', redirectTo : '/users/login', pathMatch : 'full' },
   { path : 'lesson/list', component : ListComponent },
   { path : 'lesson/create', component : CreateComponent},
   { path : 'lesson/update/:name', component : UpdateComponent},
