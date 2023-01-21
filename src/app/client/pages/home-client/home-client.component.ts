@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, TemplateRef, ViewChild,  } from '@angular/core';
 import { lastValueFrom, Subscription } from 'rxjs';
 import { CarService } from 'src/app/services/car.service';
+import { HttpParams } from '@angular/common/http';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from 'src/app/commons/services/message.service';
 import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
@@ -9,6 +10,7 @@ import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-actio
 import { environment } from 'src/environments/environment';
 import { GenTableCustomActionOption } from 'src/app/commons/interfaces/gen-table-custom-action-option';
 import { ConfirmService } from 'src/app/commons/services/confirm.service';
+import { flattenObject } from 'src/app/commons/functions/flatten-object';
 @Component({
   selector: 'app-home-client',
   templateUrl: './home-client.component.html',
@@ -37,13 +39,23 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   @ViewChild("actionColumn", {static: true}) actionColumnTemplate: TemplateRef<any>;
   @ViewChild("statusColumn", {static: true}) statusColumnTemplate: TemplateRef<any>;
 
-  fetchData(options: any){
-    
+  fetchData(options: HttpParams){
+    const flattened = flattenObject (this.filter, 'filter'); 
+    for(const key in flattened) {
+      options = options.set(key, flattened[key]);
+    }
+    console.log(flattened)
     return this.carService.getCars(options);
   }
   
   openModal(){
     this.isCreationModalVisible = true;
+  }
+
+  filter: any=[];
+  async filterResults(filter: any){ 
+    this.filter = filter;
+    await this.datatable.loadData();
   }
   
 
@@ -87,9 +99,11 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.carsUpdateSub.unsubscribe();
   }
-
+  currentUpdateCarId: string;
+  isUpdateModalVisible: boolean = false;
   updateCar(row: any){
-
+    this.currentUpdateCarId = row._id;
+    this.isUpdateModalVisible = true;
   }
 
   deleteCar(row: any){

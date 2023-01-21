@@ -10,6 +10,7 @@ import { GenDatatableComponent } from './components/gen-datatable/gen-datatable.
 import { AccessDeniedComponent } from './pages/access-denied/access-denied.component';
 import { GenConfirmComponent } from './components/gen-confirm/gen-confirm.component';
 import { CarStatusComponent } from './components/car-status/car-status.component';
+import { CarFilterComponent } from './components/car-filter/car-filter.component';
 
 
 
@@ -22,7 +23,8 @@ import { CarStatusComponent } from './components/car-status/car-status.component
     GenDatatableComponent,
     AccessDeniedComponent,
     GenConfirmComponent,
-    CarStatusComponent
+    CarStatusComponent,
+    CarFilterComponent
   ],
   imports: [
     FormsModule,
@@ -37,7 +39,8 @@ import { CarStatusComponent } from './components/car-status/car-status.component
     GenDatatableComponent,
     AccessDeniedComponent,
     GenConfirmComponent,
-    CarStatusComponent
+    CarStatusComponent,
+    CarFilterComponent
   ]
 })
 export class SharedModule { }

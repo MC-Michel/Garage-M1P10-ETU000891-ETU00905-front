@@ -16,64 +16,7 @@
                                 <h4 class="card-title">Mes voitures</h4>
                             </div>
                             <div class="card-body">
-                                <div id="accordionIcon" class="accordion">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header text-body d-flex justify-content-between" id="accordionIconOne">
-                                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionIcon-1" aria-controls="accordionIcon-1">
-                                                Recherches et filtres
-                                            </button>
-                                        </h2>
-
-                                        <div id="accordionIcon-1" class="accordion-collapse collapse show" data-bs-parent="#accordionIcon">
-                                            <div class="accordion-body">
-                                                <form class="form">
-                                                    <div class="row">
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="mb-1">
-                                                                <label class="form-label" for="first-name-column">Marque de la voiture</label>
-                                                                <input type="text" id="first-name-column" class="form-control" placeholder="ex : Toyota" name="fname-column" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="mb-1">
-                                                                <label class="form-label" for="last-name-column">Numéro d'immatriculation</label>
-                                                                <input type="text" id="last-name-column" class="form-control" placeholder="ex : 5462 TAN" name="lname-column" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="mb-1">
-                                                                <label class="form-label" for="city-column">Description</label>
-                                                                <input type="text" id="city-column" class="form-control" placeholder="ex : Voiture de plaisir, voiture de location, ..." name="city-column" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="mb-1">
-                                                                <label class="form-label" for="basicSelect">Filtrer par </label>
-                                                                <select class="form-select" id="basicSelect">
-                                                                    <option>Marque de la voiture</option>
-                                                                    <option>Numéro d'immatriculation</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="mb-1">
-                                                                <label class="form-label" for="basicSelect">Ordre </label>
-                                                                <select class="form-select" id="basicSelect">
-                                                                    <option>ASC</option>
-                                                                    <option>DESC</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <button type="reset" class="btn btn-primary me-1">Rechercher</button>
-                                                            <button type="reset" class="btn btn-outline-secondary">Reinitialiser</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <app-car-filter (filterClicked)="filterResults($event)" ></app-car-filter>
                             </div>
                         </div>
                     </div>
@@ -127,7 +70,7 @@
                 </div>
 
     <app-car-creation-form [(isVisible)]="isCreationModalVisible"></app-car-creation-form>
-
+                <app-car-update-form  *ngIf="currentUpdateCarId" [(isVisible)]="isUpdateModalVisible" [carId]="currentUpdateCarId"></app-car-update-form>
 
 
 

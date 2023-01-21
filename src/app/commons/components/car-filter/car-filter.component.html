@@ -1,0 +1,41 @@
+<div id="accordionIcon" class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header text-body d-flex justify-content-between" id="accordionIconOne">
+            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionIcon-1" aria-controls="accordionIcon-1">
+                Recherches et filtres
+            </button>
+        </h2>
+
+        <div id="accordionIcon-1" class="accordion-collapse collapse show" data-bs-parent="#accordionIcon">
+            <div class="accordion-body">
+               
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="first-name-column">Marque de la voiture</label>
+                                <input  [(ngModel)]="filterValues.brand" type="text" id="first-name-column" class="form-control" placeholder="ex : Toyota" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="last-name-column">Numéro d'immatriculation</label>
+                                <input type="text" id="last-name-column" class="form-control" placeholder="ex : 5462 TAN" [(ngModel)]="filterValues.numberPlate"  />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="mb-1">
+                                <label class="form-label" for="city-column">Description</label>
+                                <input type="text" id="city-column" class="form-control" placeholder="ex : Voiture de plaisir, voiture de location, ..."  [(ngModel)]="filterValues.description"/>
+                            </div>
+                        </div>
+                       
+                        <div class="col-12">
+                            <app-gen-button [text]="'Rechercher'" [customClass]="'me-1'"  [isLoading]="isLoading" (click)="clickFilter()"></app-gen-button>
+                            <button type="reset" class="btn btn-outline-secondary" (click)="init()">Reinitialiser</button>
+                        </div>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

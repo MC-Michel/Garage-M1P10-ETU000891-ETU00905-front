@@ -6,6 +6,7 @@ import { GenTableActionOption } from '../../interfaces/gen-table-action-option';
 import { GenTableCustomActionOption } from '../../interfaces/gen-table-custom-action-option';
 import { GenTableHeader } from '../../interfaces/gen-table-header';
 import { MessageService } from '../../services/message.service';
+import { flattenObject } from '../../functions/flatten-object';
 
 @Component({
   selector: 'app-gen-datatable',
@@ -33,24 +34,11 @@ export class GenDatatableComponent implements OnInit {
   };
   totalElmtCount: number;
 
-  flattenObject(obj: any, mainKey=''){
-    let ans: any = {};
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        const currentKey = mainKey !== '' ? mainKey+'['+key+']' : key;
-        if (typeof obj[key] === 'object'){
-          ans = {...ans, ...this.flattenObject(obj[key], currentKey)}
-        }else{
-          ans[currentKey] = obj[key];
-        }
-      }
-    }
-    return ans;
-  }
+ 
 
   createHttpParams(obj: any){
     let params = new HttpParams;
-    obj = this.flattenObject(obj);
+    obj =  flattenObject(obj);
     for (const key in obj) {
       params = params.append(key, obj[key]);
     } 

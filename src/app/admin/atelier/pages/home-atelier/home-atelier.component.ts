@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './home-atelier.component.html',
   styleUrls: ['./home-atelier.component.scss']
 })
-export class HomeAtelierComponent implements OnInit {
+export class HomeAtelierComponent implements OnInit, OnDestroy {
   cars: any[] = [];
   carStatus = environment.carStatus;
   isCreationModalVisible: boolean = false;

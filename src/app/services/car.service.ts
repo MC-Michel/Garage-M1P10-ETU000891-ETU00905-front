@@ -12,10 +12,12 @@ export class CarService {
   constructor(private http: HttpClient) { 
     this.wsUrl = environment.wsUrl;
   }
-
+  findById(id: string){
+    const url = this.wsUrl+"/cars/customer/"+id;
+    return this.http.get<any[]>(url);
+  }
   createCar(data: any){
-    const url = this.wsUrl+"/cars";
-    console.log('Here')
+    const url = this.wsUrl+"/cars"; 
     return this.http.post(url,data).pipe(map((res)=>{
       this.carCollectionUpdate.next(null);
       return res;

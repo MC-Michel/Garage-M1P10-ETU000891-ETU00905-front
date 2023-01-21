@@ -1,1 +1,55 @@
-<p>car-update-form works!</p>
+<app-gen-modal 
+[(isVisible)]="isVisible" 
+[bodyTemplate]="bodyTemplate" 
+[headerTemplate]="headerTemplate"
+[footerTemplate]="footerTemplate"
+></app-gen-modal>
+
+<ng-template #bodyTemplate>
+    <div *ngIf="isLoadingCar" class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          
+        </div>
+    </div>
+    <div class="card"  *ngIf="!isLoadingCar">
+        <div class="card-body">
+            <form class="form form-vertical" [formGroup]="form">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-1">
+                            <label class="form-label" for="first-name-column">Marque de la voiture</label>
+                            <input type="text" id="first-name-column" class="form-control" placeholder="ex : Toyota" formControlName="brand" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-1">
+                            <label class="form-label" for="last-name-column">Numéro d'immatriculation</label>
+                            <input type="text" id="last-name-column" class="form-control" placeholder="ex : 5462 TAN" formControlName="numberPlate" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-1">
+                            <label class="form-label" for="city-column">Description</label>
+                            <textarea  id="city-column" class="form-control" placeholder="ex : Voiture de plaisir, voiture de location, ..." formControlName="description" rows="3" placeholder="Textarea"></textarea>
+                        </div>
+                    </div>
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #headerTemplate>
+    <h4 class="modal-title" id="modal-basic-title">Modifier une voiture</h4>
+</ng-template> 
+
+<ng-template #footerTemplate>
+    <button type="button" class="btn btn-outline-dark" (click)="handleCancel()">Annuler</button>
+
+    <app-gen-button *ngIf="!isLoadingCar" [text]="'Enregistrer'" [disabled]="!form.valid" [isLoading]="isLoading" (click)="handleOk()"></app-gen-button>
+   
+</ng-template> 
+
+
+
