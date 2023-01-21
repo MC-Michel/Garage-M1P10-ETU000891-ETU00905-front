@@ -8,6 +8,7 @@ import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
 import { environment } from 'src/environments/environment';
 import { GenTableCustomActionOption } from 'src/app/commons/interfaces/gen-table-custom-action-option';
+import { ConfirmService } from 'src/app/commons/services/confirm.service';
 @Component({
   selector: 'app-home-client',
   templateUrl: './home-client.component.html',
@@ -18,7 +19,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   cars: any[] = [];
   isCreationModalVisible: boolean = false;
   carsUpdateSub: Subscription;
-  constructor(private carService: CarService, private messageService: MessageService) {
+  constructor(private carService: CarService, private messageService: MessageService, private confirmService: ConfirmService) {
     this.fetchData = this.fetchData.bind(this)
     this.showDeposit = this.showDeposit.bind(this)
    }
@@ -110,40 +111,38 @@ export class HomeClientComponent implements OnInit, OnDestroy {
         actionFunction: this.redirectHistory
       }, 
     ];
+    actionOptions.push({
+      label: 'Deposer',
+        actionFunction: this.showDeposit
+    });
     if(row.status === environment.carStatus.inCirculation) 
-      actionOptions.push({
-        label: 'Deposer',
-          actionFunction: this.showDeposit
-      });
+   {}
     return actionOptions;
   }
 
 
-  //Deposit modal 
-  depositModalVisible = false;
-  isDepositButtonLoading = false;
+  //Deposit modal   
   currentlyDeposing: any;
 
   showDeposit(row: any){
     this.currentlyDeposing = row;
-    this.depositModalVisible = true;
+    this.confirmService.showConfirm('Deposer cette voiture?', async ()=>{
+      await this.depositCar( this.currentlyDeposing.id);
+    })
   }
 
 
 
 
   async depositCar(id : string){
-    this.isDepositButtonLoading = true;
     try{
       await lastValueFrom(this.carService.depositCar({_id : id, status : environment.carStatus.deposited}));
       this.messageService.showSuccess("Voiture déposée avec succès")
-      this.depositModalVisible = false;
       this.datatable.loadData();
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e.message)
     } 
-    this.isDepositButtonLoading = false;
   }
    
 }
