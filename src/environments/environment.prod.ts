@@ -8,9 +8,9 @@ export const environment = {
     validated : 1
   },
   carStatus : {
-    inCirculation : 0,
-    beingValidated: 0.5,
-    deposited : 1
+    inCirculation : 0, 
+    deposited : 1,
+    inReparation: 2
   }
   // baseUrl : "http://localhost:4200",
   // wsUrl : "http://localhost:3000",

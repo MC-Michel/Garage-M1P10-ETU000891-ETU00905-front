@@ -14,6 +14,7 @@ import { GenTableCustomActionOption } from 'src/app/commons/interfaces/gen-table
   styleUrls: ['./home-client.component.scss']
 })
 export class HomeClientComponent implements OnInit, OnDestroy {
+  carStatus = environment.carStatus;
   cars: any[] = [];
   isCreationModalVisible: boolean = false;
   carsUpdateSub: Subscription;

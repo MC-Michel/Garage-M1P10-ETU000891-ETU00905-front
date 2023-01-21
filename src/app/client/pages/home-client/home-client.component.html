@@ -106,9 +106,9 @@
                                 </ng-template>
 
                                 <ng-template #statusColumn let-row="row">
-                                    <span *ngIf="row.status === 0" class="badge rounded-pill badge-light-primary me-1">En circulation</span>
-                                    <span *ngIf="row.status === 0.5" class="badge rounded-pill badge-light-warning me-1">En cours de validation</span>
-                                    <span *ngIf="row.status === 1" class="badge rounded-pill badge-light-warning me-1">En cours de reparation</span>
+                                    <span *ngIf="row.status === carStatus.inCirculation" class="badge rounded-pill badge-light-primary me-1">En circulation</span>
+                                    <span *ngIf="row.status ===  carStatus.deposited" class="badge rounded-pill badge-light-warning me-1">En cours de validation</span>
+                                    <span *ngIf="row.status ===  carStatus.inReparation" class="badge rounded-pill badge-light-success me-1">En cours de reparation</span>
                                 </ng-template>
                               
                                 <ng-template #actionColumn let-row="row">
