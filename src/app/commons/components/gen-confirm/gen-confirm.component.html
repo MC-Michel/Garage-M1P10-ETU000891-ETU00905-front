@@ -1,0 +1,20 @@
+<app-gen-modal
+[(isVisible)]="isVisible" 
+[bodyTemplate]="bodyTemplate" 
+[headerTemplate]="headerTemplate"
+[footerTemplate]="footerTemplate"
+>
+<ng-template #headerTemplate>
+    <h4 class="modal-title" id="modal-basic-title">Confirmation</h4>
+</ng-template>
+
+<ng-template #bodyTemplate>
+    {{ message }}
+</ng-template>
+
+<ng-template #footerTemplate>
+    <button type="button" class="btn btn-outline-dark" (click)="handleCancel()">Annuler</button>
+    <app-gen-button [text]="'Confirmer'"  [isLoading]="isLoading" (click)="handleOk()"></app-gen-button>
+</ng-template>
+
+</app-gen-modal>

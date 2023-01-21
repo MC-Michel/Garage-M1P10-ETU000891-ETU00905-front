@@ -20,6 +20,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   carsUpdateSub: Subscription;
   constructor(private carService: CarService, private messageService: MessageService) {
     this.fetchData = this.fetchData.bind(this)
+    this.showDeposit = this.showDeposit.bind(this)
    }
 
   headers: GenTableHeader[];
@@ -112,22 +113,37 @@ export class HomeClientComponent implements OnInit, OnDestroy {
     if(row.status === environment.carStatus.inCirculation) 
       actionOptions.push({
         label: 'Deposer',
-          actionFunction: this.depositCar
+          actionFunction: this.showDeposit
       });
     return actionOptions;
   }
 
+
+  //Deposit modal 
+  depositModalVisible = false;
+  isDepositButtonLoading = false;
+  currentlyDeposing: any;
+
+  showDeposit(row: any){
+    this.currentlyDeposing = row;
+    this.depositModalVisible = true;
+  }
+
+
+
+
   async depositCar(id : string){
-    // this.isLoading = true;
+    this.isDepositButtonLoading = true;
     try{
       await lastValueFrom(this.carService.depositCar({_id : id, status : environment.carStatus.deposited}));
-      // this.setIsVisible(false);
       this.messageService.showSuccess("Voiture déposée avec succès")
+      this.depositModalVisible = false;
+      this.datatable.loadData();
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e.message)
     } 
-    // this.isLoading = false;
+    this.isDepositButtonLoading = false;
   }
    
 }

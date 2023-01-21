@@ -8,6 +8,7 @@ import { GenMessageComponent } from './components/gen-message/gen-message.compon
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GenDatatableComponent } from './components/gen-datatable/gen-datatable.component';
 import { AccessDeniedComponent } from './pages/access-denied/access-denied.component';
+import { GenConfirmComponent } from './components/gen-confirm/gen-confirm.component';
 
 
 
@@ -18,7 +19,8 @@ import { AccessDeniedComponent } from './pages/access-denied/access-denied.compo
     GenButtonComponent,
     GenMessageComponent,
     GenDatatableComponent,
-    AccessDeniedComponent
+    AccessDeniedComponent,
+    GenConfirmComponent
   ],
   imports: [
     FormsModule,
@@ -31,7 +33,8 @@ import { AccessDeniedComponent } from './pages/access-denied/access-denied.compo
     GenButtonComponent,
     GenMessageComponent,
     GenDatatableComponent,
-    AccessDeniedComponent
+    AccessDeniedComponent,
+    GenConfirmComponent
   ]
 })
 export class SharedModule { }
