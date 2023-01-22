@@ -35,11 +35,7 @@
                                         [actionOptions]="actionOptions"
                                     >
                                     </app-gen-datatable>
-                                    <ng-template #actionColumn let-row="row">
-                                        <button class="btn btn-primary">
-                                            Selectionner
-                                        </button>
-                                    </ng-template>
+                                 
                                 </div>
                             </div>
                         </div>
@@ -59,4 +55,8 @@
 </ng-template> 
 
 
-
+<ng-template #actionColumn let-row="row">
+    <button class="btn btn-primary">
+        Selectionner
+    </button>
+</ng-template>
