@@ -46,7 +46,13 @@
                     </div>
                 </div>
             </section>
-            
+            <div class="row mt-2">
+                <div class="col-12 text-end">
+                    <button *ngIf="isRepairFinished" (click)="generateExitSlip()" class="btn btn-primary">
+                        Générer bon de sortie
+                    </button>
+                </div>
+            </div>
             <div class="mt-2" cdkDropListGroup>
     
                 <div class="example-container">

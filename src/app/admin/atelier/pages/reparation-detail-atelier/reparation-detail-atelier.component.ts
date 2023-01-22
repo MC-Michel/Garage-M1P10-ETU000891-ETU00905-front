@@ -22,6 +22,8 @@ export class ReparationDetailAtelierComponent implements OnInit {
 
   ended : any [] = [];
 
+  isRepairFinished : boolean = false;
+
   car : any = {
     brand : '',
     numberPlate : '',
@@ -70,6 +72,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       if(data.data && data.data.length > 0){
         this.car = data.data[0];
         this.refreshDragDropData();
+        this.refreshIsFinished();
         this.refreshPrice();
       }      
     });
@@ -133,6 +136,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       );
     }
     this.refreshCar();
+    this.refreshIsFinished();
     await lastValueFrom(this.carService.updateCarRepairsProgression(this.car));
   }
 
@@ -147,6 +151,24 @@ export class ReparationDetailAtelierComponent implements OnInit {
     this.car.currentRepair.repairs.todo = this.todo;
     this.car.currentRepair.repairs.inprogress = this.inprogress;
     this.car.currentRepair.repairs.ended = this.ended;
+  }
+
+  refreshIsFinished(){
+    this.isRepairFinished = this.ended.length > 0 
+                            && this.inprogress.length === 0 
+                            && this.todo.length === 0;
+  }
+
+  async generateExitSlip(){
+    // Générer pdf ? ...
+    try{
+      this.car.status = environment.carStatus.waitExit;
+      await lastValueFrom(this.carService.generateExitSlip(this.car));
+      this.messageService.showSuccess("Bon de sortie générer avec succès")
+    }catch(e: any){
+      console.log(e);
+      this.messageService.showError(e)
+    } 
   }
 
 }
