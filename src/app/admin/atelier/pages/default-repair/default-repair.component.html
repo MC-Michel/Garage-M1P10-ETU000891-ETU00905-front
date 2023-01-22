@@ -1,0 +1,81 @@
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section id="seach-filter">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Réparation par défaut</h4>
+                            </div>
+                            <div class="card-body">
+                                <app-default-repair-filter (filterClicked)="filterResults($event)" ></app-default-repair-filter>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="list">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Liste</h4>
+                               
+                                <button class="btn btn-primary" (click)="openModal()">
+                                    <i data-feather="plus"></i>
+                                    Ajouter
+                                </button>
+                            </div>
+
+                            <div class="table-responsive">
+                                <app-gen-datatable
+                                    [headers]="headers"
+                                    [fetchData]="fetchData"
+                                    [actionOptions]="actionOptions"
+                                >
+                                </app-gen-datatable>
+                              
+                                <ng-template #actionColumn let-row="row">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a *ngFor="let action of getActionOptions(row)" (click)="action.actionFunction(row)" class="dropdown-item">
+                                            <i data-feather='trash' class="me-50"></i>
+                                            <span>{{action.label}}</span>
+                                        </a>
+                                        
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <app-default-repair-creation-form [(isVisible)]="isCreationModalVisible"></app-default-repair-creation-form>
+    <app-default-repair-update-form  *ngIf="currentUpdateDefaultRepairId" [(isVisible)]="isUpdateModalVisible" [defaultRepairId]="currentUpdateDefaultRepairId"></app-default-repair-update-form>
+
+
+
+
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- Car creation modal -->
+
+
+<!-- Car update modal-->
+
+

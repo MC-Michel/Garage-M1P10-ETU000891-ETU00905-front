@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReparationAtelierComponent } from './pages/reparation-atelier/reparation-atelier.component';
 import { ReparationDetailAtelierComponent } from './pages/reparation-detail-atelier/reparation-detail-atelier.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DefaultRepairComponent } from './pages/default-repair/default-repair.component';
+import { DefaultRepairCreationFormComponent } from './component/default-repair-creation-form/default-repair-creation-form.component';
+import { DefaultRepairUpdateFormComponent } from './component/default-repair-update-form/default-repair-update-form.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NavAtelierComponent,
     ReceptionAtelierComponent,
     ReparationAtelierComponent,
-    ReparationDetailAtelierComponent
+    ReparationDetailAtelierComponent,
+    DefaultRepairComponent,
+    DefaultRepairCreationFormComponent,
+    DefaultRepairUpdateFormComponent
   ],
   imports: [
     SharedModule,

@@ -1,0 +1,55 @@
+<app-gen-modal 
+[(isVisible)]="isVisible" 
+[bodyTemplate]="bodyTemplate" 
+[headerTemplate]="headerTemplate"
+[footerTemplate]="footerTemplate"
+></app-gen-modal>
+
+<ng-template #bodyTemplate>
+    <div *ngIf="isLoadingDefaultRepair" class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          
+        </div>
+    </div>
+    <div class="card"  *ngIf="!isLoadingDefaultRepair">
+        <div class="card-body">
+            <form class="form form-vertical" [formGroup]="form">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-1">
+                            <label class="form-label" for="first-name-column">Intitulé de la réparation</label>
+                            <input type="text" id="first-name-column" class="form-control" placeholder="ex : Vidange, ..." formControlName="label" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-1">
+                            <label class="form-label" for="last-name-column">Description</label>
+                            <input type="text" id="last-name-column" class="form-control" placeholder="ex : Changement d'huile" formControlName="description" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-1">
+                            <label class="form-label" for="city-column">Prix</label>
+                            <input type="text" id="last-name-column" class="form-control" placeholder="ex : 1000" formControlName="price" />
+                        </div>
+                    </div>
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #headerTemplate>
+    <h4 class="modal-title" id="modal-basic-title">Modifier une voiture</h4>
+</ng-template> 
+
+<ng-template #footerTemplate>
+    <button type="button" class="btn btn-outline-dark" (click)="handleCancel()">Annuler</button>
+
+    <app-gen-button *ngIf="!isLoadingDefaultRepair" [text]="'Enregistrer'" [disabled]="!form.valid" [isLoading]="isLoading" (click)="handleOk()"></app-gen-button>
+   
+</ng-template> 
+
+
+

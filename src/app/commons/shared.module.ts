@@ -11,6 +11,7 @@ import { AccessDeniedComponent } from './pages/access-denied/access-denied.compo
 import { GenConfirmComponent } from './components/gen-confirm/gen-confirm.component';
 import { CarStatusComponent } from './components/car-status/car-status.component';
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
+import { DefaultRepairFilterComponent } from './components/default-repair-filter/default-repair-filter.component';
 
 
 
@@ -24,7 +25,8 @@ import { CarFilterComponent } from './components/car-filter/car-filter.component
     AccessDeniedComponent,
     GenConfirmComponent,
     CarStatusComponent,
-    CarFilterComponent
+    CarFilterComponent,
+    DefaultRepairFilterComponent,
   ],
   imports: [
     FormsModule,
@@ -40,7 +42,8 @@ import { CarFilterComponent } from './components/car-filter/car-filter.component
     AccessDeniedComponent,
     GenConfirmComponent,
     CarStatusComponent,
-    CarFilterComponent
+    CarFilterComponent,
+    DefaultRepairFilterComponent,
   ]
 })
 export class SharedModule { }

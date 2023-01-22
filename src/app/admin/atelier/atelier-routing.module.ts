@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AtelierComponent } from './atelier.component';
+import { DefaultRepairComponent } from './pages/default-repair/default-repair.component';
 import { HomeAtelierComponent } from './pages/home-atelier/home-atelier.component';
 import { ReceptionAtelierComponent } from './pages/reception-atelier/reception-atelier.component';
 import { ReparationAtelierComponent } from './pages/reparation-atelier/reparation-atelier.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: "reparation/:id",
         component: ReparationDetailAtelierComponent
+      },
+      {
+        path: "settings/default-repair",
+        component: DefaultRepairComponent
       },
     ]
   }
