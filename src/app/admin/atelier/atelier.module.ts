@@ -15,6 +15,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DefaultRepairComponent } from './pages/default-repair/default-repair.component';
 import { DefaultRepairCreationFormComponent } from './component/default-repair-creation-form/default-repair-creation-form.component';
 import { DefaultRepairUpdateFormComponent } from './component/default-repair-update-form/default-repair-update-form.component';
+import { DefaultRepairPopupComponent } from './component/default-repair-popup/default-repair-popup.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DefaultRepairUpdateFormComponent } from './component/default-repair-upd
     ReparationDetailAtelierComponent,
     DefaultRepairComponent,
     DefaultRepairCreationFormComponent,
-    DefaultRepairUpdateFormComponent
+    DefaultRepairUpdateFormComponent,
+    DefaultRepairPopupComponent
   ],
   imports: [
     SharedModule,

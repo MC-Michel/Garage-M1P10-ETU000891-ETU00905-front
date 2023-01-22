@@ -1,0 +1,62 @@
+<app-gen-modal 
+[(isVisible)]="isVisible" 
+[bodyTemplate]="bodyTemplate" 
+[headerTemplate]="headerTemplate"
+[footerTemplate]="footerTemplate"
+></app-gen-modal>
+
+<ng-template #bodyTemplate>
+    <div class="card">
+        <div class="card-body">
+            <div class="content-body">
+                <section id="seach-filter">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Réparation par défaut</h4>
+                                </div>
+                                <div class="card-body">
+                                    <app-default-repair-filter (filterClicked)="filterResults($event)" ></app-default-repair-filter>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+                <section id="list">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card">
+                                <div class="table-responsive">
+                                    <app-gen-datatable
+                                        [headers]="headers"
+                                        [fetchData]="fetchData"
+                                        [actionOptions]="actionOptions"
+                                    >
+                                    </app-gen-datatable>
+                                    <ng-template #actionColumn let-row="row">
+                                        <button class="btn btn-primary">
+                                            Selectionner
+                                        </button>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #headerTemplate>
+    <h4 class="modal-title" id="modal-basic-title">Choix réparation</h4>
+</ng-template> 
+
+<ng-template #footerTemplate>
+    <button type="button" class="btn btn-outline-dark" (click)="handleCancel()">Annuler</button>   
+</ng-template> 
+
+
+

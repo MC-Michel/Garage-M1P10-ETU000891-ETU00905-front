@@ -17,6 +17,7 @@ export class ReceptionAtelierComponent implements OnInit{
   carId : string | null = '';
   receptionForm : FormGroup;
   isLoading:boolean= false;
+  isCreationModalVisible : boolean = false;
   @Input() isVisible: boolean = false;
   @Output() isVisibleChange = new EventEmitter<boolean>();
   setIsVisible(b: boolean){
@@ -109,6 +110,10 @@ export class ReceptionAtelierComponent implements OnInit{
     this.price.tva = this.price.totalPrice / (100+environment.tva) * environment.tva;
     this.price.tva = Math.floor(this.price.tva * 100) / 100;
     this.price.withoutTva = this.price.totalPrice - this.price.tva;
+  }
+
+  openPopup(i : number){
+    this.isCreationModalVisible = true;
   }
 
 }
