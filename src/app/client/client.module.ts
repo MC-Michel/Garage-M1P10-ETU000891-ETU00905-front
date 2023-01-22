@@ -9,7 +9,6 @@ import { HomeClientComponent } from './pages/home-client/home-client.component';
 import { LoginClientComponent } from './pages/auth/login-client/login-client.component';
 import { SigninClientComponent } from './pages/auth/signin-client/signin-client.component';
 import { SharedModule } from '../commons/shared.module';
-import { VoitureCreateComponent } from './pages/voiture/voiture-create/voiture-create.component';
 import { CarCreationFormComponent } from './components/car-creation-form/car-creation-form.component';
 import { CarUpdateFormComponent } from './components/car-update-form/car-update-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +23,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ClientComponent,
     LoginClientComponent,
     SigninClientComponent,
-    VoitureCreateComponent,
     CarCreationFormComponent,
     CarUpdateFormComponent,
     CurrentRepairClientComponent,

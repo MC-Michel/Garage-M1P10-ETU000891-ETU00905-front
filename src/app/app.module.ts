@@ -14,7 +14,6 @@ import { HomeComponent } from './test/component/home/home.component';
 import { LoginClientComponent } from './client/pages/auth/login-client/login-client.component';
 import { SigninClientComponent } from './client/pages/auth/signin-client/signin-client.component';
 import { DragDropComponent } from './test/component/drag-drop/drag-drop.component';
-import { VoitureCreateComponent } from './client/pages/voiture/voiture-create/voiture-create.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
 import { SharedModule } from './commons/shared.module';
