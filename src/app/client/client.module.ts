@@ -14,6 +14,7 @@ import { CarUpdateFormComponent } from './components/car-update-form/car-update-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CurrentRepairClientComponent } from './pages/car/current-repair-client/current-repair-client.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { RepairsHistoricComponent } from './pages/repairs-historic/repairs-historic.component';
 
 @NgModule({
   declarations: [ 
@@ -26,6 +27,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CarCreationFormComponent,
     CarUpdateFormComponent,
     CurrentRepairClientComponent,
+    RepairsHistoricComponent,
     
   ],
   imports: [

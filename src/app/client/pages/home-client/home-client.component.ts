@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { GenTableCustomActionOption } from 'src/app/commons/interfaces/gen-table-custom-action-option';
 import { ConfirmService } from 'src/app/commons/services/confirm.service';
 import { flattenObject } from 'src/app/commons/functions/flatten-object';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home-client',
   templateUrl: './home-client.component.html',
@@ -21,7 +22,12 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   cars: any[] = [];
   isCreationModalVisible: boolean = false;
   carsUpdateSub: Subscription;
-  constructor(private carService: CarService, private messageService: MessageService, private confirmService: ConfirmService) {
+  constructor(
+    private carService: CarService, 
+    private messageService: MessageService, 
+    private confirmService: ConfirmService,
+    private router : Router
+  ) {
     this.fetchData = this.fetchData.bind(this)
     this.showDeposit = this.showDeposit.bind(this)
     this.updateCar = this.updateCar.bind(this)
@@ -110,7 +116,8 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
   }
   redirectHistory(row: any){
-
+    console.log(row);
+    this.router.navigate([`/client/car/${row._id}/repairs-historic`]);
   }
 
   getActionOptions(row: any){
