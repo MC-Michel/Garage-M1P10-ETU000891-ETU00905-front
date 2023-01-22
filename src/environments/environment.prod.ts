@@ -11,7 +11,7 @@ export const environment = {
     inCirculation : 0, 
     deposited : 1,
     inReparation: 2,
-    waitExit: 3
+    waitExit : 3,
   },
   repairStatus : {
     todo : 0,
