@@ -4,7 +4,6 @@ import { AtelierModule } from './admin/atelier/atelier.module';
 import { ClientModule } from './client/client.module';
 import { LoginClientComponent } from './client/pages/auth/login-client/login-client.component';
 import { SigninClientComponent } from './client/pages/auth/signin-client/signin-client.component';
-import { VoitureCreateComponent } from './client/pages/voiture/voiture-create/voiture-create.component';
 import { AccessDeniedComponent } from './commons/pages/access-denied/access-denied.component';
 import { AuthGuard } from './guards/auth.guard';
 import { DragDropComponent } from './test/component/drag-drop/drag-drop.component';
