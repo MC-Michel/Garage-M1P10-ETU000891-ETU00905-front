@@ -16,8 +16,8 @@ export class RepairHistoricService {
     const url = this.wsUrl+"/repairs-historic/customer/"+id;
     return this.http.get<any[]>(url);
   }
-  getRepairsHistorics(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/repairs-historic/customer";
+  getRepairsHistorics(carId : string, options: any): Observable<any[]>{
+    const url = this.wsUrl+`/repairs-historic/${carId}/customer`;
     return this.http.get<any[]>(url, {params: options});
   }
   getRepairsHistoricsForAdmin(options: any): Observable<any[]>{

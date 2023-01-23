@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom, Subscription } from 'rxjs';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
 import { flattenObject } from 'src/app/commons/functions/flatten-object';
@@ -19,6 +19,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./repairs-historic.component.scss']
 })
 export class RepairsHistoricComponent implements OnInit {
+  carId : string | null = '';
   repairsHistoric: any[] = [];
   repairsHistoricUpdateSub: Subscription;
   constructor(
@@ -26,7 +27,8 @@ export class RepairsHistoricComponent implements OnInit {
     private repairHistoricService: RepairHistoricService, 
     private messageService: MessageService, 
     private confirmService: ConfirmService,
-    private router : Router
+    private router : Router,
+    private route : ActivatedRoute
   ) {
     this.fetchData = this.fetchData.bind(this)
    }
@@ -44,7 +46,11 @@ export class RepairsHistoricComponent implements OnInit {
     for(const key in flattened) {
       options = options.set(key, flattened[key]);
     }
-    return this.repairHistoricService.getRepairsHistorics(options);
+    let carId = '';
+    if(this.carId){
+      carId = this.carId;
+    }
+    return this.repairHistoricService.getRepairsHistorics(carId, options);
   }
 
   filter: any=[];
@@ -56,6 +62,7 @@ export class RepairsHistoricComponent implements OnInit {
 
    
   async ngOnInit() {
+    this.carId = this.route.snapshot.paramMap.get("id"); 
     this.repairsHistoricUpdateSub = this.repairHistoricService.repairsHistoricCollectionUpdate.subscribe(async ()=>{
       this.datatable.loadData();
     })
