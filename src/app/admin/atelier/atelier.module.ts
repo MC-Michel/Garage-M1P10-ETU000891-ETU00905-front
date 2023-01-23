@@ -16,6 +16,7 @@ import { DefaultRepairComponent } from './pages/default-repair/default-repair.co
 import { DefaultRepairCreationFormComponent } from './component/default-repair-creation-form/default-repair-creation-form.component';
 import { DefaultRepairUpdateFormComponent } from './component/default-repair-update-form/default-repair-update-form.component';
 import { DefaultRepairPopupComponent } from './component/default-repair-popup/default-repair-popup.component';
+import { RepairsHistoricAtelierComponent } from './pages/repairs-historic-atelier/repairs-historic-atelier.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { DefaultRepairPopupComponent } from './component/default-repair-popup/de
     DefaultRepairComponent,
     DefaultRepairCreationFormComponent,
     DefaultRepairUpdateFormComponent,
-    DefaultRepairPopupComponent
+    DefaultRepairPopupComponent,
+    RepairsHistoricAtelierComponent
   ],
   imports: [
     SharedModule,

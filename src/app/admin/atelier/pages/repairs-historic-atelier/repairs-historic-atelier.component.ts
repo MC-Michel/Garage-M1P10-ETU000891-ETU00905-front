@@ -1,7 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { lastValueFrom, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
 import { flattenObject } from 'src/app/commons/functions/flatten-object';
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
@@ -11,14 +11,13 @@ import { ConfirmService } from 'src/app/commons/services/confirm.service';
 import { MessageService } from 'src/app/commons/services/message.service';
 import { CarService } from 'src/app/services/car.service';
 import { RepairHistoricService } from 'src/app/services/repair-historic.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-repairs-historic',
-  templateUrl: './repairs-historic.component.html',
-  styleUrls: ['./repairs-historic.component.scss']
+  selector: 'app-repairs-historic-atelier',
+  templateUrl: './repairs-historic-atelier.component.html',
+  styleUrls: ['./repairs-historic-atelier.component.scss']
 })
-export class RepairsHistoricComponent implements OnInit {
+export class RepairsHistoricAtelierComponent implements OnInit {
   repairsHistoric: any[] = [];
   repairsHistoricUpdateSub: Subscription;
   constructor(
@@ -44,7 +43,7 @@ export class RepairsHistoricComponent implements OnInit {
     for(const key in flattened) {
       options = options.set(key, flattened[key]);
     }
-    return this.repairHistoricService.getRepairsHistorics(options);
+    return this.repairHistoricService.getRepairsHistoricsForAdmin(options);
   }
 
   filter: any=[];

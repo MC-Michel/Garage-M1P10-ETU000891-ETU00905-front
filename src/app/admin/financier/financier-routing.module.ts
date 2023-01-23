@@ -5,6 +5,7 @@ import { CurrentRepairsDetailsComponent } from './pages/current-repairs-details/
 import { ExpensesCreationComponent } from './pages/expenses-creation/expenses-creation.component';
 import { ExpensesComponent } from './pages/expenses/expenses.component';
 import { HomeFinancierComponent } from './pages/home-financier/home-financier.component';
+import { RepairsHistoricFinancierComponent } from './pages/repairs-historic-financier/repairs-historic-financier.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
       {
         path: "",
         component: HomeFinancierComponent
+      },
+      {
+        path: "historic",
+        component: RepairsHistoricFinancierComponent
       },
       {
         path: "expenses",

@@ -1,0 +1,66 @@
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section id="seach-filter">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Historique des réparations</h4>
+                            </div>
+                            <div class="card-body">
+                                <app-car-filter (filterClicked)="filterResults($event)" ></app-car-filter>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="list">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Liste</h4>
+                            </div>
+
+                            <div class="table-responsive">
+                                <app-gen-datatable
+                                    [headers]="headers"
+                                    [fetchData]="fetchData"
+                                    [actionOptions]="actionOptions"
+                                >
+                                </app-gen-datatable>
+                                <ng-template #detailsColumn let-row="row">
+                                    <ul>
+                                        <li *ngFor="let item of row.repairs.ended">
+                                            {{item.label}} ({{item.price}})
+                                        </li>
+                                    </ul>
+                                </ng-template>
+                                <ng-template #priceColumn let-row="row">
+                                    {{ getPrice(row) }}
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- Car creation modal -->
+
+
+<!-- Car update modal-->
+
+
