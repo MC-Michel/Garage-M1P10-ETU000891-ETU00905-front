@@ -21,19 +21,20 @@
             </th>
         </tr>
     </thead>
-    <tbody>
-        <tr style="min-height: 500px;" *ngIf="isLoading">
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border text-primary" role="status">
-                  
-                </div>
-              </div>
-        </tr>
-        <ng-container  *ngIf="!isLoading && (!dataList || dataList.length === 0) ">
-            <div class="text-center">
-                Aucune liste à afficher
+    <ng-container style="min-height: 500px;" *ngIf="isLoading">
+        <div class="w-100 d-flex justify-content-center">
+            <div class="spinner-border text-primary" role="status">
+              
             </div>
-        </ng-container>
+          </div>
+    </ng-container>
+    <ng-container  *ngIf="!isLoading && (!dataList || dataList.length === 0) ">
+        <div class="w-100 text-center">
+            Aucune liste à afficher
+        </div>
+    </ng-container>
+    <tbody>
+      
         <ng-container *ngIf="!isLoading && dataList && dataList.length > 0">
             <tr *ngFor="let row of dataList">
                 <td *ngFor="let header of headers">
@@ -70,7 +71,7 @@
 </table>
 
 <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center mt-4">
+    <ul class="pagination justify-content-center mt-4"  *ngIf="paginationElmts.length !== 2">
         <li 
             *ngFor="let paginationElmt of paginationElmts" 
             [ngClass]="getPaginationElmtClass(paginationElmt)"

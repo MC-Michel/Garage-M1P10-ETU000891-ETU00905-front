@@ -40,7 +40,7 @@ export class CarService {
     return this.http.patch(url,data );
   }
   deleteCar(id: string){
-    const url = this.wsUrl+"/cars/"+id;
+    const url = this.wsUrl+"/cars/customer/"+id;
     return this.http.delete(url );
   }
   depositCar(data: any){

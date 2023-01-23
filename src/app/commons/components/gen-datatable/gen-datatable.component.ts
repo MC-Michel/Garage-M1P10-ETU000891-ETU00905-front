@@ -49,6 +49,7 @@ export class GenDatatableComponent implements OnInit {
       this.isLoading = true;
       try {
         const fecthResults = await lastValueFrom<any>(this.fetchData(this.createHttpParams(this.requetsOptions)));
+      
         this.dataList = fecthResults.data;
         this.totalElmtCount = fecthResults.meta.totalElmtCount;
         this.createPaginationElmt();

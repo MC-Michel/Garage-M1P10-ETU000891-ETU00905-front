@@ -113,7 +113,11 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   }
 
   deleteCar(row: any){
-
+    this.confirmService.showConfirm('Supprimer cette voiture?', async ()=>{
+      await lastValueFrom(this.carService.deleteCar(row._id));
+      this.datatable.loadData();
+      this.messageService.showSuccess('Voiture retiree');
+    })
   }
   redirectHistory(row: any){
     console.log(row);
