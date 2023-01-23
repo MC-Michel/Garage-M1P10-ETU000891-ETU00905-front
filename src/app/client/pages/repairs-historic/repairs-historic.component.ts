@@ -38,13 +38,14 @@ export class RepairsHistoricComponent implements OnInit {
 
 
   @ViewChild(GenDatatableComponent) datatable: GenDatatableComponent;
+  @ViewChild("detailsColumn", {static: true}) detailsColumnTemplate: TemplateRef<any>;
+  @ViewChild("priceColumn", {static: true}) priceColumnTemplate: TemplateRef<any>;
 
   fetchData(options: HttpParams){
     const flattened = flattenObject (this.filter, 'filter'); 
     for(const key in flattened) {
       options = options.set(key, flattened[key]);
     }
-    console.log(flattened)
     return this.repairHistoricService.getRepairsHistorics(options);
   }
 
@@ -67,9 +68,16 @@ export class RepairsHistoricComponent implements OnInit {
       isSortable: true
     },
     {
-      title: "Identifiant voiture",
-      selector: "carId",
-      isSortable: true
+      title: "Détail",
+      selector: "description", //Anything goes here it's not important
+      template: this.detailsColumnTemplate,
+      isSortable: false
+    },
+    {
+      title: "Prix total",
+      selector: "description", //Anything goes here it's not important
+      template: this.priceColumnTemplate,
+      isSortable: false
     },
    
    ];
@@ -85,5 +93,12 @@ export class RepairsHistoricComponent implements OnInit {
     const actionOptions: GenTableCustomActionOption[] = [
     ];
     return actionOptions;
+  }
+  getPrice(repairData : any){
+    let totalPrice = 0;
+    for(let item of repairData.repairs.ended){
+      totalPrice += item.price;
+    }
+    return totalPrice;
   }   
 }
