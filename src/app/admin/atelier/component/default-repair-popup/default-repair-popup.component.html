@@ -56,7 +56,7 @@
 
 
 <ng-template #actionColumn let-row="row">
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" (click)="selectItem(row)">
         Selectionner
     </button>
 </ng-template>

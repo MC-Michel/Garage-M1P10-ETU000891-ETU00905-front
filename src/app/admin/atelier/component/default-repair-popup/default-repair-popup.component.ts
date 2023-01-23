@@ -19,8 +19,10 @@ import { DefaultRepairService } from 'src/app/services/default-repair.service';
 })
 export class DefaultRepairPopupComponent {
   isLoading:boolean= false;
+  @Input() form : any = null;
   @Input() isVisible: boolean = false;
   @Output() isVisibleChange = new EventEmitter<boolean>();
+  @Output() formChange = new EventEmitter<boolean>();
   setIsVisible(b: boolean){
     this.isVisible = b;
     this.isVisibleChange.emit(b);
@@ -102,7 +104,12 @@ export class DefaultRepairPopupComponent {
     this.setIsVisible(false);
   }
 
-  selectItem(index : number){
-    
+  selectItem(row : any){
+    this.form.setValue({
+      label : row.label,
+      description : row.description,
+      price : row.price
+    });
+    this.setIsVisible(false);
   }
 }

@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./reception-atelier.component.scss']
 })
 export class ReceptionAtelierComponent implements OnInit{
-
+  popupRepair : any = null;
   carId : string | null = '';
   receptionForm : FormGroup;
   isLoading:boolean= false;
@@ -112,7 +112,8 @@ export class ReceptionAtelierComponent implements OnInit{
     this.price.withoutTva = this.price.totalPrice - this.price.tva;
   }
 
-  openPopup(i : number){
+  openPopup(repair : any){
+    this.popupRepair = repair;
     this.isCreationModalVisible = true;
   }
 
