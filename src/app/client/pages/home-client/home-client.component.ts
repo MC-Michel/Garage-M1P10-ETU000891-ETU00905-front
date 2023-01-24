@@ -50,7 +50,6 @@ export class HomeClientComponent implements OnInit, OnDestroy {
     for(const key in flattened) {
       options = options.set(key, flattened[key]);
     }
-    console.log(flattened)
     return this.carService.getCars(options);
   }
   

@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { lastValueFrom, Subscription } from 'rxjs';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
+import { flattenObject } from 'src/app/commons/functions/flatten-object';
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
 import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
 import { MessageService } from 'src/app/commons/services/message.service';
@@ -36,7 +37,16 @@ export class HomeFinancierComponent implements OnInit {
   @ViewChild("showCurrentRepairsColumn", {static: true}) showCurrentRepairsColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
+    const flattened = flattenObject (this.filter, 'filter'); 
+    for(const key in flattened) {
+      options = options.set(key, flattened[key]);
+    }
     return this.carService.getCurrentRepairToValid(options);
+  }
+  filter: any=[];
+  async filterResults(filter: any){ 
+    this.filter = filter;
+    await this.datatable.loadData();
   }
 
   async ngOnInit() {

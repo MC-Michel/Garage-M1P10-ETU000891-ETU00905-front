@@ -6,6 +6,7 @@ import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
 import { environment } from 'src/environments/environment';
+import { flattenObject } from 'src/app/commons/functions/flatten-object';
 
 @Component({
   selector: 'app-home-atelier',
@@ -31,7 +32,16 @@ export class HomeAtelierComponent implements OnInit, OnDestroy {
   @ViewChild("receiveCarColumn", {static: true}) receiveCarColumnTemplate: TemplateRef<any>;
   @ViewChild("statusColumn", {static: true}) statusColumnTemplate: TemplateRef<any>;
   fetchData(options: any){
+    const flattened = flattenObject (this.filter, 'filter'); 
+    for(const key in flattened) {
+      options = options.set(key, flattened[key]);
+    }
     return this.carService.getCars(options);
+  }
+  filter: any=[];
+  async filterResults(filter: any){ 
+    this.filter = filter;
+    await this.datatable.loadData();
   }
   
   openModal(){
