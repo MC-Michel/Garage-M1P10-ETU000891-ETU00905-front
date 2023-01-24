@@ -46,7 +46,13 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr *ngFor="let row of results">
+                            <td>{{row.dateKey}}</td>
+                            <td>{{row.ca}}</td>
+                            <td>{{row.expenses}}</td>
+                            <td>{{row.benef}}</td>
+                            <td>{{row.repairCount}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
