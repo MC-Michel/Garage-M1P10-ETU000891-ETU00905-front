@@ -24,6 +24,8 @@ export class ExpensesComponent implements OnInit {
 
 
   @ViewChild(GenDatatableComponent) datatable: GenDatatableComponent;
+  @ViewChild("detailsColumn", {static: true}) detailsColumnTemplate: TemplateRef<any>;
+  @ViewChild("priceColumn", {static: true}) priceColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
     return this.expensesService.get(options);
@@ -44,21 +46,30 @@ export class ExpensesComponent implements OnInit {
       selector: "expensesTime",
       isSortable: true
     },
+    {
+      title: "Détail",
+      selector: "description", //Anything goes here it's not important
+      template: this.detailsColumnTemplate,
+      isSortable: false
+    },
+    {
+      title: "Prix total",
+      selector: "description", //Anything goes here it's not important
+      template: this.priceColumnTemplate,
+      isSortable: false
+    },
    ];
    this.actionOptions = {
-    updateMethod : this.updateExpenses,
-    deleteMethod : this.deleteExpenses
    };
   }
   ngOnDestroy(): void {
     this.expensesUpdateSub.unsubscribe();
   }
-
-  updateExpenses(id : string){
-
-  }
-
-  deleteExpenses(id : string){
-
-  }
+  getPrice(expenses : any){
+    let totalPrice = 0;
+    for(let item of expenses.details){
+      totalPrice += item.price;
+    }
+    return totalPrice;
+  } 
 }
