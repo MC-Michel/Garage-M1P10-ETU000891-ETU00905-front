@@ -102,7 +102,11 @@ export class DefaultRepairComponent implements OnInit {
   }
 
   deleteDefaultRepair(row: any){
-
+    this.confirmService.showConfirm('Supprimer cet élément?', async ()=>{
+      await lastValueFrom(this.defaultRepairService.deleteDefaultRepair(row._id));
+      this.datatable.loadData();
+      this.messageService.showSuccess('Réparation par défaut retirée');
+    })
   }
 
   getActionOptions(row: any){

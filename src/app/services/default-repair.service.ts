@@ -16,6 +16,10 @@ export class DefaultRepairService {
     const url = this.wsUrl+"/default-repairs/customer/"+id;
     return this.http.get<any[]>(url);
   }
+  findByIdAdmin(id: string){
+    const url = this.wsUrl+"/default-repairs/admin/"+id;
+    return this.http.get<any[]>(url);
+  }
   createDefaultRepair(data: any){
     const url = this.wsUrl+"/default-repairs"; 
     return this.http.post(url,data).pipe(map((res)=>{

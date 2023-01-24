@@ -34,8 +34,7 @@ export class DefaultRepairUpdateFormComponent implements OnInit {
   }
   async loadDefaultRepair(){
     try{
-      this.currentDefaultRepair = await lastValueFrom(this.defaultRepairService.findById(this.defaultRepairId));
-      console.log(this.currentDefaultRepair)
+      this.currentDefaultRepair = await lastValueFrom(this.defaultRepairService.findByIdAdmin(this.defaultRepairId));
       this.form = this.fb.group({
         label: [this.currentDefaultRepair.label,[Validators.required]],
         description: [this.currentDefaultRepair.description,[Validators.required]],
