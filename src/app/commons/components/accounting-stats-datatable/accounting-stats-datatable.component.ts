@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StatsService } from 'src/app/services/stats.service';
 import { MessageService } from '../../services/message.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-accounting-stats-datatable',
@@ -13,7 +15,7 @@ export class AccountingStatsDatatableComponent implements OnInit {
   groupByValueLimitMonth: any;
   isLoading: boolean;
   results: any;
-  constructor(private message: MessageService) { }
+  constructor(private message: MessageService, private statsService: StatsService) { }
   isValidForm(){
     return this.groupByType && (this.groupByValueLimitMonth || this.groupByValueLimitYear)
   }
@@ -27,16 +29,19 @@ export class AccountingStatsDatatableComponent implements OnInit {
   }
 
   async fetch(){
+    this.isLoading = true;
     try{
       const data = {
         groupByType: this.groupByType,
         groupByValueLimit: this.pickGroupByValue() 
       };
       
+      this.results = await lastValueFrom(this.statsService.findAccountingStats(data));
     }catch(e: any){
       console.log(e);
       this.message.showError(e);      
     }
+    this.isLoading = false;
   }
 
 }

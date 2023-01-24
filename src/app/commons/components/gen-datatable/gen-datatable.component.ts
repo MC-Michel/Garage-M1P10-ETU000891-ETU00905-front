@@ -7,6 +7,7 @@ import { GenTableCustomActionOption } from '../../interfaces/gen-table-custom-ac
 import { GenTableHeader } from '../../interfaces/gen-table-header';
 import { MessageService } from '../../services/message.service';
 import { flattenObject } from '../../functions/flatten-object';
+import { createHttpParams } from '../../functions/create-http-params';
 
 @Component({
   selector: 'app-gen-datatable',
@@ -36,19 +37,11 @@ export class GenDatatableComponent implements OnInit {
 
  
 
-  createHttpParams(obj: any){
-    let params = new HttpParams;
-    obj =  flattenObject(obj);
-    for (const key in obj) {
-      params = params.append(key, obj[key]);
-    } 
-    return params;
-  }
 
   async loadData (){
       this.isLoading = true;
       try {
-        const fecthResults = await lastValueFrom<any>(this.fetchData(this.createHttpParams(this.requetsOptions)));
+        const fecthResults = await lastValueFrom<any>(this.fetchData(createHttpParams(this.requetsOptions)));
       
         this.dataList = fecthResults.data;
         this.totalElmtCount = fecthResults.meta.totalElmtCount;
