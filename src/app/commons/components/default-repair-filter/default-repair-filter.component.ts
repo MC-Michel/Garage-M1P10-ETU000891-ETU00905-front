@@ -12,12 +12,13 @@ export class DefaultRepairFilterComponent{
   filterValues: any = {
     label: '',
     description: '',
-    price: ''
+    priceMin: '',
+    priceMax: '',
   }
 
   generateFilter(){
     const ans: any = [];
-    if(this.filterValues.brand) {
+    if(this.filterValues.label) {
       ans.push({
         column: 'label',
         comparator: 'like',
@@ -25,7 +26,7 @@ export class DefaultRepairFilterComponent{
         type: 'string'
       })
     }
-    if(this.filterValues.numberPlate) {
+    if(this.filterValues.description) {
       ans.push({
         column: 'description',
         comparator: 'like',
@@ -33,11 +34,19 @@ export class DefaultRepairFilterComponent{
         type: 'string'
       })
     }
-    if(this.filterValues.description) {
+    if(this.filterValues.priceMin) {
       ans.push({
         column: 'price',
-        comparator: '=',
-        value: this.filterValues.price,
+        comparator: '>=',
+        value: this.filterValues.priceMin,
+        type: 'float'
+      })
+    }
+    if(this.filterValues.priceMax) {
+      ans.push({
+        column: 'price',
+        comparator: '<=',
+        value: this.filterValues.priceMax,
         type: 'float'
       })
     }
@@ -54,7 +63,8 @@ export class DefaultRepairFilterComponent{
   this.filterValues =  {
     label: '',
     description: '',
-    price: ''
+    priceMin: '',
+    priceMax: '',
   }
  }
 }
