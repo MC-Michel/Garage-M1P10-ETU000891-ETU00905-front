@@ -34,6 +34,7 @@ export class GenModalComponent implements OnChanges {
  
   openModal(content: any){
     this.modalRef = this.modalService.open(content, {
+      size : 'lg',
       beforeDismiss: ()=> false
     });
     this.modalRef.dismissed.subscribe(()=>{ 
