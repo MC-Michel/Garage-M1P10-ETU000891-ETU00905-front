@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">
+            Transactions
+        </h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <label for="">Statistiques par:</label>
+                <select [(ngModel)]="groupByType" class="form-control">
+                    <option value="month">mois</option>
+                    <option value="year">an</option>
+                </select>
+            </div>
+            <div class="col-4" *ngIf="groupByType === 'month'">
+                <label for="">Mois:</label>
+                <input [(ngModel)]="groupByValueLimitMonth" type="month" class="form-control">
+            </div>
+            <div class="col-4" *ngIf="groupByType === 'year'">
+                <label for="">Annee:</label>
+                <input [(ngModel)]="groupByValueLimitYear" type="number" step="1" class="form-control">
+            </div>
+        </div>
+        <div class="mt-3 row">
+            <div class="d-flex justify-content-center col-8">
+                <app-gen-button [text]="'Voir'" [disabled]="!isValidForm()" [isLoading]="isLoading" (click)="fetch()"></app-gen-button>
+               
+            </div>
+            
+        </div>
+        <div class="mt-3 row">
+            <div class="col-12">
+
+                <p class="text-center" *ngIf="results && results.length === 0">
+                    Aucun resultat
+                </p>
+                <table class="table table-bordered" *ngIf="results && results.length !== 0">
+                    <thead>
+                        <tr>
+                            <th>{{groupByType === 'month' ? 'Jour': 'Mois' }}</th>
+                            <th>Chiffre d'affaires</th>
+                            <th>Depenses</th>
+                            <th>Benefices</th>
+                            <th>Nombre de voitures reparees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { GenConfirmComponent } from './components/gen-confirm/gen-confirm.compon
 import { CarStatusComponent } from './components/car-status/car-status.component';
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 import { DefaultRepairFilterComponent } from './components/default-repair-filter/default-repair-filter.component';
+import { AccountingStatsDatatableComponent } from './components/accounting-stats-datatable/accounting-stats-datatable.component';
 
 
 
@@ -27,6 +28,7 @@ import { DefaultRepairFilterComponent } from './components/default-repair-filter
     CarStatusComponent,
     CarFilterComponent,
     DefaultRepairFilterComponent,
+    AccountingStatsDatatableComponent,
   ],
   imports: [
     FormsModule,
@@ -44,6 +46,7 @@ import { DefaultRepairFilterComponent } from './components/default-repair-filter
     CarStatusComponent,
     CarFilterComponent,
     DefaultRepairFilterComponent,
+    AccountingStatsDatatableComponent
   ]
 })
 export class SharedModule { }
