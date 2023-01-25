@@ -63,15 +63,15 @@
                 <td *ngIf="hasActionOptions()" class="text-center">
                     <div class="dropdown">
                         <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
-                            <i data-feather="more-vertical"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a *ngIf="actionOptions?.updateMethod" (click)="onUpdateClick(row)" class="dropdown-item">
-                                <i data-feather='edit' class="me-50"></i>
+                                <i class="fa-solid fa-pen-to-square me-50"></i>
                                 <span>Modifier</span>
                             </a>
                             <a *ngIf="actionOptions?.deleteMethod" (click)="onDeleteClick(row)" class="dropdown-item">
-                                <i data-feather='trash' class="me-50"></i>
+                                <i class="fa-solid fa-trash me-50"></i>
                                 <span>Supprimer</span>
                             </a>
                         </div>

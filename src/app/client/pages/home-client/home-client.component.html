@@ -31,7 +31,7 @@
                                 <h4 class="card-title">Liste</h4>
                                
                                 <button class="btn btn-primary" (click)="openModal()">
-                                    <i data-feather="plus"></i>
+                                    <i class="fa-solid fa-plus"></i>
                                     Ajouter
                                 </button>
                             </div>
@@ -54,11 +54,11 @@
                               
                                 <ng-template #actionColumn let-row="row">
                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0" data-bs-toggle="dropdown">
-                                        <i data-feather="more-vertical"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end">
                                         <a *ngFor="let action of getActionOptions(row)" (click)="action.actionFunction(row)" class="dropdown-item">
-                                            <i data-feather='trash' class="me-50"></i>
+                                            <i class="fa-solid fa-trash me-50"></i>
                                             <span>{{action.label}}</span>
                                         </a>
                                         
