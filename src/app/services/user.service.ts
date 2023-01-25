@@ -27,6 +27,8 @@ export class UserService {
   login(data: any) {
     const url = `${this.wsUrl}/users/login`
     return this.http.post(url, data).pipe(map((res: any)=>{
+      console.log(res);
+      this.saveUserData(res.user);
       this.saveToken(res.token);
       return res;
     }));
@@ -34,6 +36,11 @@ export class UserService {
   signin(data: any){
     const url = `${this.wsUrl}/users/signin`;
     return this.http.post(url,data);
+  }
+  saveUserData(data : any){
+    let userData = data;
+    delete userData._id;
+    localStorage.setItem('userData', JSON.stringify(userData));
   }
   saveToken(token: string){
     localStorage.setItem('token', token);
