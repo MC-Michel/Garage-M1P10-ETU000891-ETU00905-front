@@ -13,6 +13,7 @@ import { CarStatusComponent } from './components/car-status/car-status.component
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 import { DefaultRepairFilterComponent } from './components/default-repair-filter/default-repair-filter.component';
 import { AccountingStatsDatatableComponent } from './components/accounting-stats-datatable/accounting-stats-datatable.component';
+import { HistoricFilterComponent } from './components/historic-filter/historic-filter.component';
 
 
 
@@ -29,6 +30,7 @@ import { AccountingStatsDatatableComponent } from './components/accounting-stats
     CarFilterComponent,
     DefaultRepairFilterComponent,
     AccountingStatsDatatableComponent,
+    HistoricFilterComponent,
   ],
   imports: [
     FormsModule,
@@ -46,6 +48,7 @@ import { AccountingStatsDatatableComponent } from './components/accounting-stats
     CarStatusComponent,
     CarFilterComponent,
     DefaultRepairFilterComponent,
+    HistoricFilterComponent,
     AccountingStatsDatatableComponent
   ]
 })
