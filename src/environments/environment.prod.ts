@@ -2,6 +2,11 @@ export const environment = {
   production: true,
   baseUrl : "https://garage-front.tobywallet.fr/",
   wsUrl : "https://garage-back.tobywallet.fr/",
+  pipe : {
+    date : 'medium',
+    number : '0.2-2'
+  },
+  currency : 'Ar',
   status : {
     deleted : -1,
     created : 0,
@@ -19,6 +24,11 @@ export const environment = {
     ended : 2
   },
   tva : 20,
+  roles : {
+    "1" : "Client",
+    "2" : "Resp. Atelier",
+    "3" : "Resp. Financier",
+  }
   // baseUrl : "http://localhost:4200",
   // wsUrl : "http://localhost:3000",
 };
