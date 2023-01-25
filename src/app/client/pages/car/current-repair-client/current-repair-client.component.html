@@ -44,7 +44,7 @@
                                                     </td>
                                                     <td>{{car.brand}}</td>
                                                     <td>{{car.numberPlate}}</td>
-                                                    <td>{{price.totalPrice | number : '0.2-2'}} Ar</td>
+                                                    <td>{{price.totalPrice | number : env.pipe.number}} {{env.currency}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>

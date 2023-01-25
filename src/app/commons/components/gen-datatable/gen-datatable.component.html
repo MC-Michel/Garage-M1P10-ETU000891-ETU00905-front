@@ -41,13 +41,13 @@
                     <span *ngIf="!header.template">
                         <container-element [ngSwitch]="getType(header)">
                             <span *ngSwitchCase="'date'">
-                                {{ getBySelector(row, header.selector) | date:'medium' }}
+                                {{ getBySelector(row, header.selector) | date:env.pipe.date }}
                             </span>
                             <span *ngSwitchCase="'number'">
-                                {{ getBySelector(row, header.selector) | number : '0.2-2' }}
+                                {{ getBySelector(row, header.selector) | number : env.pipe.number }}
                             </span>
                             <span *ngSwitchCase="'money'">
-                                {{ getBySelector(row, header.selector) | number : '0.2-2'}} Ar
+                                {{ getBySelector(row, header.selector) | number : env.pipe.number}} {{env.currency}}
                             </span>
                             <span *ngSwitchDefault>
                                 {{ getBySelector(row, header.selector) }}

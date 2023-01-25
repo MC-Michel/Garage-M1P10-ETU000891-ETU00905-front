@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./reception-atelier.component.scss']
 })
 export class ReceptionAtelierComponent implements OnInit{
+  env : any = environment;
   popupRepair : any = null;
   carId : string | null = '';
   receptionForm : FormGroup;

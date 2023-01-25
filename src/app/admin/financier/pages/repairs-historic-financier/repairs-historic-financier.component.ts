@@ -11,6 +11,7 @@ import { ConfirmService } from 'src/app/commons/services/confirm.service';
 import { MessageService } from 'src/app/commons/services/message.service';
 import { CarService } from 'src/app/services/car.service';
 import { RepairHistoricService } from 'src/app/services/repair-historic.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-repairs-historic-financier',
@@ -20,6 +21,7 @@ import { RepairHistoricService } from 'src/app/services/repair-historic.service'
 export class RepairsHistoricFinancierComponent implements OnInit {
   epairsHistoric: any[] = [];
   repairsHistoricUpdateSub: Subscription;
+  env : any = environment;
   constructor(
     private carService: CarService, 
     private repairHistoricService: RepairHistoricService, 

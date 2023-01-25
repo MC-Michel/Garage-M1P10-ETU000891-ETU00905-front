@@ -5,6 +5,7 @@ import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-actio
 import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
 import { MessageService } from 'src/app/commons/services/message.service';
 import { ExpensesService } from 'src/app/services/expenses.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-expenses',
@@ -13,6 +14,7 @@ import { ExpensesService } from 'src/app/services/expenses.service';
 })
 export class ExpensesComponent implements OnInit {
 
+  env : any = environment;
   expenses: any[] = [];
   expensesUpdateSub: Subscription;
   constructor(private expensesService: ExpensesService, private messageService: MessageService) {

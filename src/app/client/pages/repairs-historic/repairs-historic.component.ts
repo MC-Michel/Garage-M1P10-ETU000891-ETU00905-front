@@ -22,6 +22,7 @@ export class RepairsHistoricComponent implements OnInit {
   carId : string | null = '';
   repairsHistoric: any[] = [];
   repairsHistoricUpdateSub: Subscription;
+  env : any = environment;
   constructor(
     private carService: CarService, 
     private repairHistoricService: RepairHistoricService, 

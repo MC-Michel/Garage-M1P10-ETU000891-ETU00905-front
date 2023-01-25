@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CurrentRepairsDetailsComponent implements OnInit {
 
+  env : any = environment;
   car : any = {
     brand : '',
     numberPlate : '',

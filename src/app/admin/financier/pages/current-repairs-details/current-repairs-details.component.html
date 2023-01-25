@@ -64,7 +64,7 @@
                                         <tr *ngFor="let repair of car.currentRepair.repairs.todo">
                                             <td>{{repair.label}}</td>
                                             <td>{{repair.description}}</td>
-                                            <td>{{repair.price | number : '0.2-2'}} Ar</td>
+                                            <td>{{repair.price | number : env.pipe.number}} {{env.currency}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -80,16 +80,16 @@
                                     <h6 class="price-title">Détails des prix</h6>
                                     <ul class="list-unstyled">
                                         <li class="price-detail">
-                                            <div class="detail-title">Prix sans TVA : {{price.withoutTva | number : '0.2-2'}} Ar</div>
+                                            <div class="detail-title">Prix sans TVA : {{price.withoutTva | number : env.pipe.number}} {{env.currency}}</div>
                                         </li>
                                         <li class="price-detail">
-                                            <div class="detail-title">TVA (20%) : {{price.tva | number : '0.2-2'}} Ar</div>
+                                            <div class="detail-title">TVA (20%) : {{price.tva | number : env.pipe.number}} {{env.currency}}</div>
                                         </li>
                                     </ul>
                                     <hr />
                                     <ul class="list-unstyled">
                                         <li class="price-detail">
-                                            <div class="detail-title detail-total">Total : {{price.totalPrice | number : '0.2-2'}} Ar</div>
+                                            <div class="detail-title detail-total">Total : {{price.totalPrice | number : env.pipe.number}} {{env.currency}}</div>
                                         </li>
                                     </ul>
                                     <app-gen-button [text]="'Valider le paiement'" type="success" [isLoading]="isLoading" (click)="validPaiement()"></app-gen-button>

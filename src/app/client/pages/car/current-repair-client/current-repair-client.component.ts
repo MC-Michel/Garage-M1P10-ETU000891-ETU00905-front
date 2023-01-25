@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CurrentRepairClientComponent implements OnInit {
 
+  env : any = environment;
   todo : any [] = [];
 
   inprogress : any [] = [];

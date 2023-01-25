@@ -8,6 +8,7 @@ import { GenTableHeader } from '../../interfaces/gen-table-header';
 import { MessageService } from '../../services/message.service';
 import { flattenObject } from '../../functions/flatten-object';
 import { createHttpParams } from '../../functions/create-http-params';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-gen-datatable',
@@ -21,6 +22,7 @@ export class GenDatatableComponent implements OnInit {
   @Input() actionOptions: GenTableActionOption = {};
   @Input() custonActionOptions: GenTableCustomActionOption[] = [];
 
+  env : any = environment;
   isLoading: boolean = false;
   dataList: any[];
   paginationElmts: any[] = [];

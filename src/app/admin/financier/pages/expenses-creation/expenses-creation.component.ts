@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ExpensesCreationComponent implements OnInit {
 
+  env : any = environment;
   expensesForm : FormGroup;
   isLoading:boolean= false;
   @Input() isVisible: boolean = false;
