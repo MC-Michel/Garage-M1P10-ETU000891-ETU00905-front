@@ -66,16 +66,16 @@
                                                 <h6 class="price-title">Détails des prix</h6>
                                                 <ul class="list-unstyled">
                                                     <li class="price-detail">
-                                                        <div class="detail-title">Prix sans TVA : {{price.withoutTva}}</div>
+                                                        <div class="detail-title">Prix sans TVA : {{price.withoutTva | number : '0.2-2'}} Ar</div>
                                                     </li>
                                                     <li class="price-detail">
-                                                        <div class="detail-title">TVA (20%) : {{price.tva}}</div>
+                                                        <div class="detail-title">TVA (20%) : {{price.tva | number : '0.2-2'}} Ar</div>
                                                     </li>
                                                 </ul>
                                                 <hr />
                                                 <ul class="list-unstyled">
                                                     <li class="price-detail">
-                                                        <div class="detail-title detail-total">Total : {{price.totalPrice}}</div>
+                                                        <div class="detail-title detail-total">Total : {{price.totalPrice | number : '0.2-2'}} Ar</div>
                                                     </li>
                                                 </ul>
                                             </div>

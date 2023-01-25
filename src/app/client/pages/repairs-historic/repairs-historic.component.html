@@ -41,12 +41,12 @@
                                 <ng-template #detailsColumn let-row="row">
                                     <ul>
                                         <li *ngFor="let item of row.repairs.ended">
-                                            {{item.label}} ({{item.price}})
+                                            {{item.label}} ({{item.price | number : '0.2-2'}} Ar)
                                         </li>
                                     </ul>
                                 </ng-template>
                                 <ng-template #priceColumn let-row="row">
-                                    {{ getPrice(row) }}
+                                    {{ getPrice(row) | number : '0.2-2'}} Ar
                                 </ng-template>
                             </div>
                         </div>

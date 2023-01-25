@@ -79,6 +79,7 @@ export class DefaultRepairComponent implements OnInit {
     {
       title: "Prix",
       selector: "price",
+      type: "money",
       isSortable: true
     },
     {

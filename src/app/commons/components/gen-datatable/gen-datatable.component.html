@@ -43,6 +43,12 @@
                             <span *ngSwitchCase="'date'">
                                 {{ getBySelector(row, header.selector) | date:'medium' }}
                             </span>
+                            <span *ngSwitchCase="'number'">
+                                {{ getBySelector(row, header.selector) | number : '0.2-2' }}
+                            </span>
+                            <span *ngSwitchCase="'money'">
+                                {{ getBySelector(row, header.selector) | number : '0.2-2'}} Ar
+                            </span>
                             <span *ngSwitchDefault>
                                 {{ getBySelector(row, header.selector) }}
                             </span>
