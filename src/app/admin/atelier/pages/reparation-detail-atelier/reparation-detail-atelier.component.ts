@@ -30,7 +30,6 @@ export class ReparationDetailAtelierComponent implements OnInit {
     description : '',
     currentRepair : {
       receptionDate : '',
-      receptionTime : '',
       repairs : []
     }
   };

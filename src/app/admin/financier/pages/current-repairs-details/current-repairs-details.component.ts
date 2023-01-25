@@ -22,7 +22,6 @@ export class CurrentRepairsDetailsComponent implements OnInit {
     description : '',
     currentRepair : {
       receptionDate : '',
-      receptionTime : '',
       repairs : []
     }
   };
@@ -93,6 +92,7 @@ export class CurrentRepairsDetailsComponent implements OnInit {
     for(let repair of this.car.currentRepair.repairs.todo){
       totalPrice += repair.price;
     }
+    
     this.price.totalPrice = totalPrice;
     this.price.tva = this.price.totalPrice / (100+environment.tva) * environment.tva;
     this.price.tva = Math.floor(this.price.tva * 100) / 100;

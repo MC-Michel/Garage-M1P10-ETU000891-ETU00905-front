@@ -41,7 +41,6 @@ export class ReceptionAtelierComponent implements OnInit{
     this.receptionForm = this.fb.group({
       status : '',
       receptionDate : '',
-      receptionTime : '',
       repairs : this.fb.array([
         this.new()
       ]),

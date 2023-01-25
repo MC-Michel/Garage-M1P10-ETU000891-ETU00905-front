@@ -28,7 +28,6 @@ export class CurrentRepairClientComponent implements OnInit {
     description : '',
     currentRepair : {
       receptionDate : '',
-      receptionTime : '',
       repairs : []
     }
   };
