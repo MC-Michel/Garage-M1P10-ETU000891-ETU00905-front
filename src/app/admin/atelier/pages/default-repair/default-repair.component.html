@@ -50,7 +50,6 @@
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end">
                                         <a *ngFor="let action of getActionOptions(row)" (click)="action.actionFunction(row)" class="dropdown-item">
-                                            <i class="fa-solid fa-trash me-50"></i>
                                             <span>{{action.label}}</span>
                                         </a>
                                         
