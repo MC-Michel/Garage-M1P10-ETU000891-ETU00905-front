@@ -53,7 +53,9 @@ export class UserService {
   }
   getNextLink(roleId: number){
     const paths: any = {
-      '1': '/client'
+      '1': '/client',
+      '2': '/admin/atelier',
+      '3': '/admin/financier'
     }
     return paths[roleId+''];
   }
