@@ -147,6 +147,12 @@ export class GenDatatableComponent implements OnInit {
       },row);
       return ans;
   }
+  getType(header : any){
+    if(header.type){
+      return header.type;
+    }
+    return "string";
+  }
   onUpdateClick(row: any){
     if(this.actionOptions.updateMethod)
       this.actionOptions.updateMethod(row);

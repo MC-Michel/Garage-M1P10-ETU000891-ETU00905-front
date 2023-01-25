@@ -39,7 +39,14 @@
             <tr *ngFor="let row of dataList">
                 <td *ngFor="let header of headers">
                     <span *ngIf="!header.template">
-                         {{ getBySelector(row, header.selector) }}
+                        <container-element [ngSwitch]="getType(header)">
+                            <span *ngSwitchCase="'date'">
+                                {{ getBySelector(row, header.selector) | date:'medium' }}
+                            </span>
+                            <span *ngSwitchDefault>
+                                {{ getBySelector(row, header.selector) }}
+                            </span>
+                        </container-element>
                     </span>
                     <ng-container 
                         *ngIf="header.template" 

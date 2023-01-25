@@ -39,6 +39,7 @@ export class ExpensesComponent implements OnInit {
     {
       title: "Date",
       selector: "expensesDate",
+      type: "date",
       isSortable: true
     },
     {

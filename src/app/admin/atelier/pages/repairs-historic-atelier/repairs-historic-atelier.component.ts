@@ -62,6 +62,7 @@ export class RepairsHistoricAtelierComponent implements OnInit {
     {
       title: "Date de récéption",
       selector: "receptionDate",
+      type: "date",
       isSortable: true
     },
     {
