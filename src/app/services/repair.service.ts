@@ -12,7 +12,10 @@ export class RepairService {
   constructor(private http: HttpClient) { 
     this.wsUrl = environment.wsUrl;
   }
-
+  generateInvoice(){
+    const url = `${this.wsUrl}/repairs/invoice`
+    return this.http.get(url, {responseType: 'blob'});
+  }
   createRepair(data: any){
     const url = this.wsUrl+"/repairs";
     console.log('Here')

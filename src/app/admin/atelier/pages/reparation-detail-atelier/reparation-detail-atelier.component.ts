@@ -7,6 +7,7 @@ import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-actio
 import { GenTableHeader } from 'src/app/commons/interfaces/gen-table-header';
 import { MessageService } from 'src/app/commons/services/message.service';
 import { CarService } from 'src/app/services/car.service';
+import { RepairService } from 'src/app/services/repair.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -47,7 +48,8 @@ export class ReparationDetailAtelierComponent implements OnInit {
   constructor(
     private carService : CarService,
     private messageService: MessageService,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private repairService:RepairService
     ) {
     this.fetchData = this.fetchData.bind(this)
    }
@@ -109,7 +111,22 @@ export class ReparationDetailAtelierComponent implements OnInit {
     this.price.tva = Math.floor(this.price.tva * 100) / 100;
     this.price.withoutTva = this.price.totalPrice - this.price.tva;
   }
-
+  async generateInvoice(){
+    try{
+      const response: any = await lastValueFrom(this.repairService.generateInvoice()); 
+      let dataType = response.type;
+      let binaryData = [];
+      binaryData.push(response);
+      let downloadLink = document.createElement('a');
+      downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, {type: dataType}));
+      downloadLink.setAttribute('download', 'facture.pdf');
+      document.body.appendChild(downloadLink)
+      downloadLink.click();
+    }catch(e: any){
+      console.log(e);
+      this.messageService.showError(e)
+    } 
+  }
   async validPaiement(){
     this.isLoading = true;
     try{
