@@ -31,7 +31,7 @@ export class SigninComponent {
       data['customerData'] = {'licenceType': data['customerData.licenceType']};
       await lastValueFrom(this.userService.signin(data));
       await this.router.navigateByUrl('/users/login');
-      this.message.showSuccess('Client enregistre, veuillez vous connecter');
+      this.message.showSuccess('Vous vous êtes bien enregistrés, veuillez vous connecter');
     }catch(e: any){
       console.log(e);
       this.message.showError(e)
