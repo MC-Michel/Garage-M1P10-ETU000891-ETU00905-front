@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CurrentRepairClientComponent } from './pages/car/current-repair-client/current-repair-client.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RepairsHistoricComponent } from './pages/repairs-historic/repairs-historic.component';
+import { DefaultRepairClientComponent } from './pages/default-repair-client/default-repair-client.component';
 
 @NgModule({
   declarations: [ 
@@ -28,6 +29,7 @@ import { RepairsHistoricComponent } from './pages/repairs-historic/repairs-histo
     CarUpdateFormComponent,
     CurrentRepairClientComponent,
     RepairsHistoricComponent,
+    DefaultRepairClientComponent,
     
   ],
   imports: [

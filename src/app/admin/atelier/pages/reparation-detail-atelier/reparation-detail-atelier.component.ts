@@ -180,7 +180,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
     try{
       this.car.status = environment.carStatus.waitExit;
       await lastValueFrom(this.carService.generateExitSlip(this.car));
-      this.messageService.showSuccess("Bon de sortie générer avec succès")
+      this.messageService.showSuccess("Bon de sortie généré avec succès")
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e)
