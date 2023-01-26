@@ -47,9 +47,8 @@
             </section>
             <div class="row mt-2">
                 <div class="col-12 text-end">
-                    <button *ngIf="isRepairFinished" (click)="generateInvoice()" class="ms-1 btn btn-primary">
-                        Facture
-                    </button>
+                    <app-gen-button [text]="'Facture'" [isLoading]="isInvoiceLoading" (genClick)="generateInvoice()" [customClass]="'ms-1 '"></app-gen-button>
+                   
                     <button *ngIf="isRepairFinished" (click)="generateExitSlip()" class="ms-1 btn btn-primary">
                         Générer bon de sortie
                     </button>

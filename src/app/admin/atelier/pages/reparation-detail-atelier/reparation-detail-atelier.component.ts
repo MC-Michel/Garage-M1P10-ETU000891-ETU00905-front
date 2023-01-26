@@ -111,7 +111,9 @@ export class ReparationDetailAtelierComponent implements OnInit {
     this.price.tva = Math.floor(this.price.tva * 100) / 100;
     this.price.withoutTva = this.price.totalPrice - this.price.tva;
   }
+  isInvoiceLoading: boolean= false;
   async generateInvoice(){
+    this.isInvoiceLoading = true;
     try{
       const response: any = await lastValueFrom(this.repairService.generateInvoice()); 
       let dataType = response.type;
@@ -126,6 +128,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       console.log(e);
       this.messageService.showError(e)
     } 
+    this.isInvoiceLoading = false;
   }
   async validPaiement(){
     this.isLoading = true;
