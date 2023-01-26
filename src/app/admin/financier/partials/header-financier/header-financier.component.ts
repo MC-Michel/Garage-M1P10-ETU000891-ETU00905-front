@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
 
@@ -24,8 +25,9 @@ export class HeaderFinancierComponent implements OnInit {
       this.userData = JSON.parse(userData);
     }
   }
-
-  logout(){
+  
+  async logout(){
+    const data = await lastValueFrom(this.userService.logout());
     this.router.navigate(['/users/login']);
   }
 
