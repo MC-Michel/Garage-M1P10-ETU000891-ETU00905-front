@@ -17,6 +17,8 @@ import { environment } from 'src/environments/environment';
 })
 export class ReparationDetailAtelierComponent implements OnInit {
 
+  env : any = environment;
+  globalProgression : number = 0;
   todo : any [] = [];
 
   inprogress : any [] = [];
@@ -73,6 +75,8 @@ export class ReparationDetailAtelierComponent implements OnInit {
       if(data.data && data.data.length > 0){
         this.car = data.data[0];
         this.refreshDragDropData();
+        this.refreshAllProgression();
+        this.refreshProgression();
         this.refreshIsFinished();
         this.refreshPrice();
       }      
@@ -156,6 +160,8 @@ export class ReparationDetailAtelierComponent implements OnInit {
     }
     this.refreshCar();
     this.refreshIsFinished();
+    this.refreshAllProgression();
+    this.refreshProgression();
     await lastValueFrom(this.carService.updateCarRepairsProgression(this.car));
   }
 
@@ -176,6 +182,31 @@ export class ReparationDetailAtelierComponent implements OnInit {
     this.isRepairFinished = this.ended.length > 0 
                             && this.inprogress.length === 0 
                             && this.todo.length === 0;
+  }
+
+  refreshProgression(){
+    let repairsNb = this.todo.length + this.inprogress.length + this.ended.length;
+    let percentageInProgress = 0;
+    for(let repair of this.inprogress){
+      percentageInProgress += repair.progression;
+    }
+    let percentageEnded = this.ended.length * 100;
+    let result = (percentageInProgress + percentageEnded) / repairsNb;
+    this.globalProgression = Math.floor(result * 100) / 100;
+  }
+
+  refreshAllProgression(){
+    for(let repair of this.car.currentRepair.repairs.todo){
+      repair.progression = 0;
+    }
+    for(let repair of this.car.currentRepair.repairs.ended){
+      repair.progression = 100;
+    }
+    for(let repair of this.car.currentRepair.repairs.inprogress){
+      if(repair.progression == 100){
+        repair.progression = 0;
+      }
+    }
   }
 
   async generateExitSlip(){

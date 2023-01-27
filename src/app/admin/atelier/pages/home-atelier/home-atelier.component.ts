@@ -36,7 +36,7 @@ export class HomeAtelierComponent implements OnInit, OnDestroy {
     for(const key in flattened) {
       options = options.set(key, flattened[key]);
     }
-    return this.carService.getCars(options);
+    return this.carService.getCarsForAdmin(options);
   }
   filter: any=[];
   async filterResults(filter: any){ 

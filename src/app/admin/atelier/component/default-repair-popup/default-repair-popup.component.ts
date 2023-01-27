@@ -108,7 +108,8 @@ export class DefaultRepairPopupComponent {
     this.form.setValue({
       label : row.label,
       description : row.description,
-      price : row.price
+      price : row.price,
+      progression : 0
     });
     this.setIsVisible(false);
   }

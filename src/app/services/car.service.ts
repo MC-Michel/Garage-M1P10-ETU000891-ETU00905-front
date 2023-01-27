@@ -28,7 +28,7 @@ export class CarService {
     return this.http.get<any[]>(url, {params: options});
   }
   getCarsForAdmin(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/cars/admin";
+    const url = this.wsUrl+"/cars/to-receive";
     return this.http.get<any[]>(url, {params: options});
   }
   updateCar(data: any){

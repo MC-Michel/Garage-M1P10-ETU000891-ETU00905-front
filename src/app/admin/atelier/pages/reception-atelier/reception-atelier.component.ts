@@ -63,7 +63,8 @@ export class ReceptionAtelierComponent implements OnInit{
     return this.fb.group({
       label : '',
       description : '',
-      price : 0
+      price : 0,
+      progression : 0
     });
   }
 
