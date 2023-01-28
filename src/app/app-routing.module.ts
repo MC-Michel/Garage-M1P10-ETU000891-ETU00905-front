@@ -25,16 +25,28 @@ const routes: Routes = [
   { 
     path : 'client', 
     loadChildren: () => import("./client/client.module").then((m) => ClientModule) ,
-    //canActivate:[AuthGuard],
-    //data: {roleIds: [1]}
+    canActivate:[AuthGuard],
+    data: {roleIds: [1]}
   },
   //User
   {
     path: 'users', loadChildren: () => import("./user/user.module").then((m)=> UserModule)
   },
   //Responsable atelier
-  { path : 'admin/atelier', loadChildren: ()=> import("./admin/atelier/atelier.module").then((m) => AtelierModule)},
-  { path: 'admin/financier', loadChildren: () => import('./admin/financier/financier.module').then(m => m.FinancierModule) },
+  { 
+    path : 'admin/atelier', 
+    loadChildren: ()=> import("./admin/atelier/atelier.module").then((m) => AtelierModule),
+    canActivate:[AuthGuard],
+    data: {roleIds: [2]}
+  },
+
+  //Responsable financier
+  { 
+    path: 'admin/financier', 
+    loadChildren: () => import('./admin/financier/financier.module').then(m => m.FinancierModule),
+    canActivate:[AuthGuard],
+    data: {roleIds: [3]}
+  },
 
   {path: 'forbidden', component: AccessDeniedComponent}
 ];
