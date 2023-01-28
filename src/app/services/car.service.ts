@@ -28,7 +28,7 @@ export class CarService {
     return this.http.get<any[]>(url, {params: options});
   }
   getCarsForAdmin(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/cars/to-receive";
+    const url = this.wsUrl+"/cars/admin";
     return this.http.get<any[]>(url, {params: options});
   }
   updateCar(data: any){
@@ -52,7 +52,7 @@ export class CarService {
     return this.http.patch(url,data );
   }
   getCurrentRepairToValid(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/cars/current_repair_to_valid";
+    const url = this.wsUrl+"/cars/_to_valid";
     return this.http.get<any[]>(url, {params: options});
   }
   validPaiement(data : any){
@@ -68,7 +68,7 @@ export class CarService {
     return this.http.get<any[]>(url, {params: options});
   }
   getCurrentRepairByCarClient(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/cars/client/current_repair";
+    const url = this.wsUrl+"/cars/customer/current_repair";
     return this.http.get<any[]>(url, {params: options});
   }
   getRepairsAtelier(options: any): Observable<any[]>{
