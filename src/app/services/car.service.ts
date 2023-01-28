@@ -32,7 +32,7 @@ export class CarService {
     return this.http.get<any[]>(url, {params: options});
   }
   updateCar(data: any){
-    const url = this.wsUrl+"/cars/update";
+    const url = this.wsUrl+"/cars/customer";
     return this.http.patch(url,data );
   }
   updateCarRepairsProgression(data: any){    

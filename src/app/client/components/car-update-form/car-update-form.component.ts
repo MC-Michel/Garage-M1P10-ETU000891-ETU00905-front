@@ -22,11 +22,20 @@ export class CarUpdateFormComponent implements OnInit, OnChanges {
     this.isVisible = b;
     this.isVisibleChange.emit(b);
   }
+  getFormObject(defaultValues: any = {}){
+    return {
+      brand: [defaultValues.brand,[Validators.required]],
+      numberPlate: [defaultValues.numberPlate,[Validators.required]],
+      description: [defaultValues.description,[Validators.required]],
+      _id: [defaultValues._id,[Validators.required]],
+    }
+  }
   constructor(
     private fb: FormBuilder, 
     private carService: CarService,
     private messageService: MessageService) { 
-  
+      this.form = this.fb.group(this.getFormObject());
+     
   }
   async ngOnChanges(changes: SimpleChanges) {
     if(changes['carId']){
@@ -37,12 +46,8 @@ export class CarUpdateFormComponent implements OnInit, OnChanges {
     try{
       this.currentCar = await lastValueFrom(this.carService.findById(this.carId));
       console.log(this.currentCar)
-      this.form = this.fb.group({
-        brand: [this.currentCar.brand,[Validators.required]],
-        numberPlate: [this.currentCar.numberPlate,[Validators.required]],
-        description: [this.currentCar.description,[Validators.required]],
-        _id: [this.currentCar._id,[Validators.required]],
-      })
+      this.form = this.fb.group(this.getFormObject(this.currentCar)
+      );
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e);
