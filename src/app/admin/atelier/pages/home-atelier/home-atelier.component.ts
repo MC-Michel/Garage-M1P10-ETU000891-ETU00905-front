@@ -32,6 +32,13 @@ export class HomeAtelierComponent implements OnInit, OnDestroy {
   @ViewChild("receiveCarColumn", {static: true}) receiveCarColumnTemplate: TemplateRef<any>;
   @ViewChild("statusColumn", {static: true}) statusColumnTemplate: TemplateRef<any>;
   fetchData(options: any){
+    if(!this.filter) this.filter = [];
+    this.filter.push({
+      column: 'status',
+      comparator: '=',
+      value: environment.carStatus.deposited,
+      type: 'number'
+    });
     const flattened = flattenObject (this.filter, 'filter'); 
     for(const key in flattened) {
       options = options.set(key, flattened[key]);
@@ -70,12 +77,7 @@ export class HomeAtelierComponent implements OnInit, OnDestroy {
       selector: "description",
       isSortable: true
     },
-    {
-      title: "Statut",
-      selector: "description",
-      template: this.statusColumnTemplate,
-      isSortable: true
-    },
+    
     {
       title: "Action",
       selector: "description", //Anything goes here it's not important
