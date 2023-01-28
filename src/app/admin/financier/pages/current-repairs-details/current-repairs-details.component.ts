@@ -60,7 +60,7 @@ export class CurrentRepairsDetailsComponent implements OnInit {
       this.datatable.loadData();
     });
     this.car._id = this.route.snapshot.paramMap.get("id");
-    this.carService.getCurrentRepairByCarAtelier({id : this.car._id}).subscribe((data : any)=>{      
+    this.carService.getCurrentRepairByCarAdmin({id : this.car._id}).subscribe((data : any)=>{      
       if(data.data && data.data.length > 0){
         this.car = data.data[0];
         this.refreshPrice();

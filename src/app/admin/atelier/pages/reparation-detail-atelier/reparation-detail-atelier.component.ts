@@ -1,6 +1,6 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, lastValueFrom } from 'rxjs';
 import { GenDatatableComponent } from 'src/app/commons/components/gen-datatable/gen-datatable.component';
 import { GenTableActionOption } from 'src/app/commons/interfaces/gen-table-action-option';
@@ -51,7 +51,8 @@ export class ReparationDetailAtelierComponent implements OnInit {
     private carService : CarService,
     private messageService: MessageService,
     private route : ActivatedRoute,
-    private repairService:RepairService
+    private repairService:RepairService,
+    private router: Router
     ) {
     this.fetchData = this.fetchData.bind(this)
    }
@@ -71,7 +72,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       this.datatable.loadData();
     });
     this.car._id = this.route.snapshot.paramMap.get("id");
-    this.carService.getCurrentRepairByCarAtelier({id : this.car._id}).subscribe((data : any)=>{      
+    this.carService.getCurrentRepairByCarAdmin({id : this.car._id}).subscribe((data : any)=>{      
       if(data.data && data.data.length > 0){
         this.car = data.data[0];
         this.refreshDragDropData();
@@ -215,6 +216,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
       this.car.status = environment.carStatus.waitExit;
       await lastValueFrom(this.carService.generateExitSlip(this.car));
       this.messageService.showSuccess("Bon de sortie généré avec succès")
+      this.router.navigate(['/admin/atelier']);
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e)

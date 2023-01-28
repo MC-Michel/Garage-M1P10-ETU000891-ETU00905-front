@@ -37,6 +37,7 @@ export class HomeFinancierComponent implements OnInit {
   @ViewChild("showCurrentRepairsColumn", {static: true}) showCurrentRepairsColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
+  
     const flattened = flattenObject (this.filter, 'filter'); 
     for(const key in flattened) {
       options = options.set(key, flattened[key]);

@@ -52,7 +52,7 @@ export class CarService {
     return this.http.patch(url,data );
   }
   getCurrentRepairToValid(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/cars/_to_valid";
+    const url = this.wsUrl+"/cars/admin";
     return this.http.get<any[]>(url, {params: options});
   }
   validPaiement(data : any){
@@ -63,10 +63,11 @@ export class CarService {
     const url = this.wsUrl+"/cars/exit_slip";
     return this.http.patch(url,data );
   }
-  getCurrentRepairByCarAtelier(options: any): Observable<any[]>{
-    const url = this.wsUrl+"/cars/atelier/current_repair";
+  getCurrentRepairByCarAdmin(options: any): Observable<any[]>{
+    const url = this.wsUrl+"/cars/admin/current_repair";
     return this.http.get<any[]>(url, {params: options});
   }
+  
   getCurrentRepairByCarClient(options: any): Observable<any[]>{
     const url = this.wsUrl+"/cars/customer/current_repair";
     return this.http.get<any[]>(url, {params: options});
