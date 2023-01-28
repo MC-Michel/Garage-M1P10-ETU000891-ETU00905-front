@@ -12,7 +12,7 @@
     </ng-template>
     
     <ng-template #text>
-        <span style="color: white;">{{ toast.textOrTpl }}</span>
+        <span style="color: white;" [innerHTML]="toast.textOrTpl"> </span>
     </ng-template>
     </ngb-toast>
 </div>

@@ -83,7 +83,7 @@ export class ReceptionAtelierComponent implements OnInit{
     this.isLoading = true;
     try{
       this.receptionForm.value.status = environment.status.created;
-      let currentRepair = {...this.receptionForm.value};
+      let currentRepair = {...this.receptionForm.value}; 
       currentRepair.repairs = {
         todo : currentRepair.repairs,
         inprogress : [],

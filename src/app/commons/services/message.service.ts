@@ -14,6 +14,7 @@ export class MessageService {
 		let message = dangerMessage;
 		if(typeof dangerMessage.message === 'string')message = dangerMessage.message;
 		if(typeof dangerMessage.error?.message === 'string')message = dangerMessage.error?.message; 
+		message = message.replaceAll('\n', '<br/>');
 		this.show(message, { classname: 'bg-danger text-light', delay: 5000 });
 	}
 

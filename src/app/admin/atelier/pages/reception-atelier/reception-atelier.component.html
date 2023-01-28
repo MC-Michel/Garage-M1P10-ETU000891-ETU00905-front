@@ -96,7 +96,7 @@
                     </div>
                     <!-- /Invoice repeater -->
                 </div>
-                <app-default-repair-popup [(form)]="popupRepair" [(isVisible)]="isCreationModalVisible"></app-default-repair-popup>
+                <app-default-repair-popup (formChange)="refreshPrice()" [(form)]="popupRepair" [(isVisible)]="isCreationModalVisible"></app-default-repair-popup>
             </section>
         </div>
     </div>

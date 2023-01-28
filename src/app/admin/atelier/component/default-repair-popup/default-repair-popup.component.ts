@@ -111,6 +111,7 @@ export class DefaultRepairPopupComponent {
       price : row.price,
       progression : 0
     });
+    this.formChange.emit()
     this.setIsVisible(false);
   }
 }
