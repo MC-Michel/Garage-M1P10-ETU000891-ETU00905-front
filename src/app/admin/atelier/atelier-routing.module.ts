@@ -7,7 +7,7 @@ import { ReceptionAtelierComponent } from './pages/reception-atelier/reception-a
 import { RepairsHistoricAtelierComponent } from './pages/repairs-historic-atelier/repairs-historic-atelier.component';
 import { ReparationAtelierComponent } from './pages/reparation-atelier/reparation-atelier.component';
 import { ReparationDetailAtelierComponent } from './pages/reparation-detail-atelier/reparation-detail-atelier.component';
-import { StatsComponent } from './pages/stats/stats.component';
+import { StatsComponent } from '../financier/pages/stats/stats.component';
 
 
 const routes: Routes = [

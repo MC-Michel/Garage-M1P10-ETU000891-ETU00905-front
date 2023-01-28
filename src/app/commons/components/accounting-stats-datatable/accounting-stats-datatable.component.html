@@ -10,7 +10,7 @@
                 <label for="">Statistiques par:</label>
                 <select [(ngModel)]="groupByType" class="form-control">
                     <option value="month">mois</option>
-                    <option value="year">an</option>
+                    <option value="year" selected="selected">an</option>
                 </select>
             </div>
             <div class="col-4" *ngIf="groupByType === 'month'">

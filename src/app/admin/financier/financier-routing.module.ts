@@ -6,6 +6,7 @@ import { ExpensesCreationComponent } from './pages/expenses-creation/expenses-cr
 import { ExpensesComponent } from './pages/expenses/expenses.component';
 import { HomeFinancierComponent } from './pages/home-financier/home-financier.component';
 import { RepairsHistoricFinancierComponent } from './pages/repairs-historic-financier/repairs-historic-financier.component';
+import { StatsComponent } from './pages/stats/stats.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: "current_repairs/:id",
         component: CurrentRepairsDetailsComponent
+      },
+      {
+        path: "stats",
+        component: StatsComponent
       },
     ]
   }

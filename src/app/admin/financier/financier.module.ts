@@ -12,6 +12,7 @@ import { CurrentRepairsDetailsComponent } from './pages/current-repairs-details/
 import { ExpensesComponent } from './pages/expenses/expenses.component';
 import { ExpensesCreationComponent } from './pages/expenses-creation/expenses-creation.component';
 import { RepairsHistoricFinancierComponent } from './pages/repairs-historic-financier/repairs-historic-financier.component';
+import { StatsComponent } from './pages/stats/stats.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { RepairsHistoricFinancierComponent } from './pages/repairs-historic-fina
     CurrentRepairsDetailsComponent,
     ExpensesComponent,
     ExpensesCreationComponent,
-    RepairsHistoricFinancierComponent
+    RepairsHistoricFinancierComponent,
+    StatsComponent
   ],
   imports: [
     SharedModule,

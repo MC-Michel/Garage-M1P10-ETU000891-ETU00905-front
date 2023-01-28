@@ -10,7 +10,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AccountingStatsDatatableComponent implements OnInit {
 
-  groupByType: string;
+  groupByType: string = "year";
   groupByValueLimitYear: any = 2023;
   groupByValueLimitMonth: any;
   isLoading: boolean;
