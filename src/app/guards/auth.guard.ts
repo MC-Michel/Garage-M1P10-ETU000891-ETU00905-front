@@ -13,16 +13,22 @@ export class AuthGuard implements CanActivate {
   async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot) {
-      const allowedRoles: any  = route.data['roleIds'] ? route.data['roleIds'] : [];
-      const token = this.userService.getCurrentToken();
-      if(!token){
+      try{
+        const allowedRoles: any  = route.data['roleIds'] ? route.data['roleIds'] : [];
+        const token = this.userService.getCurrentToken();
+        if(!token){
+          this.router.navigate(['/users/login']);
+          return false;
+        }
+        const allowed: any = await lastValueFrom(  this.userService.checkIfAllowed(allowedRoles));
+        if(allowed)
+          return true;
+        this.router.navigate(['/forbidden']);
+      }catch(e: any){
+        console.log(e);
         this.router.navigate(['/users/login']);
-        return false;
       }
-      const allowed: any = await lastValueFrom(  this.userService.checkIfAllowed(allowedRoles));
-      if(allowed)
-        return true;
-      this.router.navigate(['/forbidden']);
+    
       return false;
   }
   

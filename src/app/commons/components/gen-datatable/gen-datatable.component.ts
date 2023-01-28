@@ -17,7 +17,7 @@ import { environment } from 'src/environments/environment';
 })
 export class GenDatatableComponent implements OnInit {
 
-  @Input() headers: GenTableHeader[];
+  @Input() headers: GenTableHeader[] = [];
   @Input() fetchData: Function;
   @Input() actionOptions: GenTableActionOption = {};
   @Input() custonActionOptions: GenTableCustomActionOption[] = [];
@@ -86,7 +86,11 @@ export class GenDatatableComponent implements OnInit {
     return className;
      
   }
-
+  getColCount(){
+    let colCount = this.headers.length;
+    this.hasActionOptions() && colCount ++;
+    return colCount;
+  }
   getSortElmtClass(currentColumn: string){
     let ans = ' sorting ';
     const orderByArr = this.requetsOptions.pagination.orderBy;

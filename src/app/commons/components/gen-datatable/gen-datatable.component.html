@@ -21,17 +21,23 @@
             </th>
         </tr>
     </thead>
-    <ng-container style="min-height: 500px;" *ngIf="isLoading">
-        <div class="w-100 d-flex justify-content-center">
-            <div class="spinner-border text-primary" role="status">
+    <ng-container style="height: 500px;" *ngIf="isLoading">
+        <tr>
+            <td class=" d-flex justify-content-center"  [attr.colspan]="getColCount()" style="height: 100px;">
+                <div class="spinner-border text-primary" role="status">
               
-            </div>
-          </div>
+                </div>
+            </td>
+        </tr>
+      
     </ng-container>
     <ng-container  *ngIf="!isLoading && (!dataList || dataList.length === 0) ">
-        <div class="w-100 text-center">
-            Aucune liste à afficher
-        </div>
+        <tr>
+            <td class="text-center" [attr.colspan]="getColCount()" style="height: 100px;">
+                Aucune liste à afficher
+            </td>
+        </tr>
+      
     </ng-container>
     <tbody>
       
