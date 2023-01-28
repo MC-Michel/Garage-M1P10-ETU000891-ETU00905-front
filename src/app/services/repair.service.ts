@@ -12,8 +12,8 @@ export class RepairService {
   constructor(private http: HttpClient) { 
     this.wsUrl = environment.wsUrl;
   }
-  generateInvoice(){
-    const url = `${this.wsUrl}/repairs/invoice`
+  generateInvoice(repairId: any){
+    const url = `${this.wsUrl}/repairs/invoice/${repairId}`
     return this.http.get(url, {responseType: 'blob'});
   }
   createRepair(data: any){

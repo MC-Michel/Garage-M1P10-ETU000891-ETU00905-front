@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { MessageService } from 'src/app/commons/services/message.service';
 import { CarService } from 'src/app/services/car.service';
@@ -37,6 +37,7 @@ export class ReceptionAtelierComponent implements OnInit{
     private route : ActivatedRoute,
     private repairService : RepairService,
     private carService : CarService,
+    private router: Router
     ) {
 
     this.receptionForm = this.fb.group({
@@ -94,7 +95,8 @@ export class ReceptionAtelierComponent implements OnInit{
       }));
       
       this.setIsVisible(false);
-      this.messageService.showSuccess("Les réparations pour cette voiture sont bien ajoutées avec succès")
+      this.messageService.showSuccess("Les réparations pour cette voiture sont bien ajoutées avec succès");
+      this.router.navigate(['/admin/atelier']);
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e)
