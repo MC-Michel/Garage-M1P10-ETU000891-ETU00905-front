@@ -35,19 +35,18 @@ export class ExitFormComponent{
   }
   
   async handleOk(){
-    // Générer pdf ? ...
+    this.isLoading = true;
     try{
       this.car.status = environment.carStatus.waitExit;
-      console.log(this.exitInitDate);
       
       this.car.exitInitDate = this.exitInitDate;
       await lastValueFrom(this.carService.generateExitSlip(this.car));
+      this.setIsVisible(false);
       this.messageService.showSuccess("Bon de sortie généré avec succès")
-      this.router.navigate(['/admin/atelier']);
     }catch(e: any){
-      console.log(e);
       this.messageService.showError(e)
     } 
+    this.isLoading = false;
   }
 
 }

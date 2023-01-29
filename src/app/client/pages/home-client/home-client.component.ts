@@ -160,7 +160,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   }
   if(row.status === environment.carStatus.waitExit) {
     actionOptions.push({
-        label: 'Recuperer',
+        label: 'Récupérer',
           actionFunction: this.showRecup
     });
   }
