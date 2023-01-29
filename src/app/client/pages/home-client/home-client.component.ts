@@ -33,6 +33,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
     this.updateCar = this.updateCar.bind(this)
     this.deleteCar = this.deleteCar.bind(this)
     this.redirectHistory = this.redirectHistory.bind(this)
+    this.redirectReparation = this.redirectReparation.bind(this)
    }
 
   headers: GenTableHeader[];
@@ -122,6 +123,9 @@ export class HomeClientComponent implements OnInit, OnDestroy {
     console.log(row);
     this.router.navigate([`/client/car/${row._id}/repairs-historic`]);
   }
+  redirectReparation(row: any){ 
+    this.router.navigate([`/client/car/current-repair/${row._id}`]);
+  }
 
   getActionOptions(row: any){
     const actionOptions: GenTableCustomActionOption[] = [
@@ -145,6 +149,13 @@ export class HomeClientComponent implements OnInit, OnDestroy {
           actionFunction: this.showDeposit
     });
    }
+
+   if(row.status === environment.carStatus.inReparation) {
+    actionOptions.push({
+      label: 'Voir reparation',
+        actionFunction: this.redirectReparation
+  });
+ }
     return actionOptions;
   }
 
