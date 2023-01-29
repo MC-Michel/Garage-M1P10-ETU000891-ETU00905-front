@@ -37,7 +37,7 @@ export class DefaultRepairCreationFormComponent {
     try{
       await lastValueFrom(this.defaultRepairService.createDefaultRepair(this.form.value))
       this.setIsVisible(false);
-      this.messageService.showSuccess("Réparation par défaut ajoutée avec succès")
+      this.messageService.showSuccess("Offre ajoutée avec succès")
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e)
