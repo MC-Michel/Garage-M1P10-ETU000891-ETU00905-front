@@ -14,6 +14,7 @@ import { CarFilterComponent } from './components/car-filter/car-filter.component
 import { DefaultRepairFilterComponent } from './components/default-repair-filter/default-repair-filter.component';
 import { AccountingStatsDatatableComponent } from './components/accounting-stats-datatable/accounting-stats-datatable.component';
 import { HistoricFilterComponent } from './components/historic-filter/historic-filter.component';
+import { RepairPaymentStatusComponent } from './components/repair-payment-status/repair-payment-status.component';
 
 
 
@@ -31,6 +32,7 @@ import { HistoricFilterComponent } from './components/historic-filter/historic-f
     DefaultRepairFilterComponent,
     AccountingStatsDatatableComponent,
     HistoricFilterComponent,
+    RepairPaymentStatusComponent,
   ],
   imports: [
     FormsModule,
@@ -49,7 +51,8 @@ import { HistoricFilterComponent } from './components/historic-filter/historic-f
     CarFilterComponent,
     DefaultRepairFilterComponent,
     HistoricFilterComponent,
-    AccountingStatsDatatableComponent
+    AccountingStatsDatatableComponent,
+    RepairPaymentStatusComponent
   ]
 })
 export class SharedModule { }

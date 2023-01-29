@@ -27,6 +27,7 @@
                                                     <th>Voiture</th>
                                                     <th>Immatriculation</th>
                                                     <th>Prix total</th>
+                                                    <th>Etat de paiement</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -37,6 +38,9 @@
                                                     <td>{{car.brand}}</td>
                                                     <td>{{car.numberPlate}}</td>
                                                     <td>{{price.totalPrice}}</td>
+                                                    <td>
+                                                        <app-repair-payment-status [status]="car.currentRepair.status"></app-repair-payment-status>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
