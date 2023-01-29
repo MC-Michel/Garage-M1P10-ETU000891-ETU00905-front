@@ -25,15 +25,10 @@
                                         <div class="col-md-4">
                                             <div class="mb-1">
                                                 <label class="form-label" for="expensesDate">Date</label>
-                                                <input type="datetime-local" class="form-control" id="expensesDate" aria-describedby="expensesDate" formControlName="expensesDate" />
+                                                <input type="date" class="form-control" id="expensesDate" aria-describedby="expensesDate" formControlName="expensesDate" />
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="mb-1">
-                                                <label class="form-label" for="expensesTime"></label>
-                                                <input type="time" class="form-control" id="expensesTime" aria-describedby="expensesTime" formControlName="expensesTime"/>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <div data-repeater-list="invoice">
                                         <h4>Détails</h4>
@@ -69,15 +64,8 @@
                                             </div>
                                             <hr />
                                             <div class="price-details">
-                                                <h6 class="price-title">Détails des prix</h6>
-                                                <ul class="list-unstyled">
-                                                    <li class="price-detail">
-                                                        <div class="detail-title">Prix sans TVA : {{price.withoutTva | number : env.pipe.number}} {{env.currency}}</div>
-                                                    </li>
-                                                    <li class="price-detail">
-                                                        <div class="detail-title">TVA (20%) : {{price.tva | number : env.pipe.number}} {{env.currency}}</div>
-                                                    </li>
-                                                </ul>
+                                               
+                                               
                                                 <hr />
                                                 <ul class="list-unstyled">
                                                     <li class="price-detail">
