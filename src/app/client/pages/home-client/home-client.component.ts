@@ -147,7 +147,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
    
     if(row.status === environment.carStatus.inCirculation) {
       actionOptions.push({
-        label: 'Deposer',
+        label: 'Déposer',
           actionFunction: this.showDeposit
     });
    }
@@ -173,7 +173,7 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
   showDeposit(row: any){
     this.currentlyDeposing = row;
-    this.confirmService.showConfirm('Deposer cette voiture?', async ()=>{
+    this.confirmService.showConfirm('Déposer cette voiture?', async ()=>{
       await this.depositCar( this.currentlyDeposing._id);
     })
   }

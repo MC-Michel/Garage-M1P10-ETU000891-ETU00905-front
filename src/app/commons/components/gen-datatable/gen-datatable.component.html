@@ -23,13 +23,14 @@
     </thead>
     <ng-container style="height: 500px;" *ngIf="isLoading">
         <tr>
-            <td class=" d-flex justify-content-center"  [attr.colspan]="getColCount()" style="height: 100px;">
-                <div class="spinner-border text-primary" role="status">
+            <td [attr.colspan]="headers.length">
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-primary" role="status">
               
+                    </div>
                 </div>
             </td>
         </tr>
-      
     </ng-container>
     <ng-container  *ngIf="!isLoading && (!dataList || dataList.length === 0) ">
         <tr>
