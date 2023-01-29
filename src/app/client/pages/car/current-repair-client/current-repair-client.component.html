@@ -16,14 +16,6 @@
                                 <h4 class="card-title">
                                     Informations générales
                                 </h4>
-                                <div class="button">
-                                    <button class="btn btn-outline-primary">
-                                        Télécharger facture
-                                    </button>
-                                    <button class="btn btn-outline-primary mx-2">
-                                        Etat de paiement
-                                    </button>
-                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -34,20 +26,28 @@
                                                     <th>Récéption</th>
                                                     <th>Voiture</th>
                                                     <th>Immatriculation</th>
-                                                    <th>Prix totale</th>
+                                                    <th>Prix total</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        {{car.currentRepair.receptiondate | date:'medium'}} 
+                                                        {{car.currentRepair.receptionDate | date:'medium'}} 
                                                     </td>
                                                     <td>{{car.brand}}</td>
                                                     <td>{{car.numberPlate}}</td>
-                                                    <td>{{price.totalPrice | number : env.pipe.number}} {{env.currency}}</td>
+                                                    <td>{{price.totalPrice}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <h5>Progression</h5>
+                                        <div class="progress mb-3">
+                                            <div class="progress-bar" role="progressbar" [style.width]="globalProgression+'%'" aria-valuenow="globalProgression" aria-valuemin="0" aria-valuemax="100">{{globalProgression}}%</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -55,42 +55,91 @@
                     </div>
                 </div>
             </section>
-            
+            <div class="row mt-2">
+                <div class="col-12 text-end">
+                    <app-gen-button   [text]="'Facture'" [isLoading]="isInvoiceLoading" (genClick)="generateInvoice()" [customClass]="'ms-1 '"></app-gen-button>
+                   
+                  
+                </div>
+            </div>
             <div class="mt-2" cdkDropListGroup>
     
                 <div class="example-container">
                   <h2>Réparation à faire</h2>
               
                   <div
-                    cdkDropList
-                    [cdkDropListData]="todo"
-                    class="example-list"
                     >
-                    <div class="example-box" *ngFor="let item of todo" >{{item.label}}</div>
+                    <div class="example-box" *ngFor="let item of todo">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    {{item.label}}
+                                    <span class="badge mx-2 rounded-pill bg-info bg-glow">
+                                        {{item.price | number : env.pipe.number}} {{env.currency}}
+                                    </span>
+                                </h3>
+                                <p>
+                                    {{item.description}}
+                                </p>
+                                <div class="mt-3">
+                                    <label for="formRange1" class="form-label">Progression (%)</label>
+                                    <input class="form-control" type="number" value="{{item.progression}}" id="progression" disabled/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   </div>
                 </div>
               
                 <div class="example-container">
                   <h2>En cours</h2>
               
-                  <div
-                    cdkDropList
-                    [cdkDropListData]="inprogress"
-                    class="example-list"
-                    >
-                    <div class="example-box" *ngFor="let item of inprogress" >{{item.label}}</div>
+                  <div>
+                    <div class="example-box" *ngFor="let item of inprogress">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    {{item.label}}
+                                    <span class="badge mx-2 rounded-pill bg-info bg-glow">
+                                        {{item.price | number : env.pipe.number}} {{env.currency}}
+                                    </span>
+                                </h3>
+                                <p>
+                                    {{item.description}}
+                                </p>
+                                <div class="mt-3">
+                                    <label for="formRange1" class="form-label">Progression (%)</label>
+                                    <input class="form-control" type="number" id="progression" disabled value="{{item.progression}}" (blur)="refreshProgression()" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   </div>
                 </div>
               
                 <div class="example-container">
                   <h2>Terminée</h2>
               
-                  <div
-                    cdkDropList
-                    [cdkDropListData]="ended"
-                    class="example-list"
-                    >
-                    <div class="example-box" *ngFor="let item of ended" >{{item.label}}</div>
+                  <div>
+                    <div class="example-box" *ngFor="let item of ended">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    {{item.label}}
+                                    <span class="badge mx-2 rounded-pill bg-info bg-glow">
+                                        {{item.price | number : env.pipe.number}} {{env.currency}}
+                                    </span>
+                                </h3>
+                                <p>
+                                    {{item.description}}
+                                </p>
+                                <div class="mt-3">
+                                    <label for="formRange1" class="form-label">Progression (%)</label>
+                                    <input class="form-control" type="number" value="{{item.progression}}" id="progression" disabled/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   </div>
                 </div>
             </div>

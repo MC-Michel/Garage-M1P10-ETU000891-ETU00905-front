@@ -108,6 +108,7 @@ export class ReparationDetailAtelierComponent implements OnInit {
     let totalPrice = 0.0;
     for(let index in this.car.currentRepair.repairs){
       for(let repair of this.car.currentRepair.repairs[index]){
+        if(repair.price)
         totalPrice += repair.price;
       }
     }
