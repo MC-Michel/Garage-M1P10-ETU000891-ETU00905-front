@@ -38,7 +38,7 @@ export class DefaultRepairClientComponent implements OnInit {
       options = options.set(key, flattened[key]);
     }
     console.log(flattened)
-    return this.defaultRepairService.getDefaultRepairsForAdmin(options);
+    return this.defaultRepairService.getDefaultRepairs(options);
   }
 
   filter: any=[];
