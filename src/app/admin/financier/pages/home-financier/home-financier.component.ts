@@ -37,7 +37,22 @@ export class HomeFinancierComponent implements OnInit {
   @ViewChild("showCurrentRepairsColumn", {static: true}) showCurrentRepairsColumnTemplate: TemplateRef<any>;
 
   fetchData(options: any){
-  
+    this.filter.push({
+      column: 'currentRepair.status',
+      comparator: '!=',
+      type: 'number',
+      value: environment.status.validated
+    },
+    {
+      column: 'currentRepair',
+      comparator: 'exists',
+      value: true
+    },
+    {
+      column: 'currentRepair',
+      comparator: '!=',
+      value: null
+    })
     const flattened = flattenObject (this.filter, 'filter'); 
     for(const key in flattened) {
       options = options.set(key, flattened[key]);
@@ -47,6 +62,7 @@ export class HomeFinancierComponent implements OnInit {
   filter: any=[];
   async filterResults(filter: any){ 
     this.filter = filter;
+    
     await this.datatable.loadData();
   }
 

@@ -210,18 +210,10 @@ export class ReparationDetailAtelierComponent implements OnInit {
       }
     }
   }
-
-  async generateExitSlip(){
-    // Générer pdf ? ...
-    try{
-      this.car.status = environment.carStatus.waitExit;
-      await lastValueFrom(this.carService.generateExitSlip(this.car));
-      this.messageService.showSuccess("Bon de sortie généré avec succès")
-      this.router.navigate(['/admin/atelier']);
-    }catch(e: any){
-      console.log(e);
-      this.messageService.showError(e)
-    } 
+  exitFormVisible: boolean = false;
+  showExitForm(){
+    this.exitFormVisible = true;
   }
+ 
 
 }

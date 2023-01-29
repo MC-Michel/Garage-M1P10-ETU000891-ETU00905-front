@@ -1,0 +1,36 @@
+<app-gen-modal 
+[(isVisible)]="isVisible" 
+[bodyTemplate]="bodyTemplate" 
+[headerTemplate]="headerTemplate"
+[footerTemplate]="footerTemplate"
+></app-gen-modal>
+
+<ng-template #bodyTemplate>
+    <div class="card">
+        <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mb-1">
+                            <label class="form-label" for="first-name-column">Date de generation</label>
+                            <input type="date" class="form-control" [(ngModel)]="exitInitDate" />
+                        </div>
+                    </div>
+                  
+                   
+                </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #headerTemplate>
+    <h4 class="modal-title" id="modal-basic-title">Sortir une voiture</h4>
+</ng-template> 
+
+<ng-template #footerTemplate>
+    <button type="button" class="btn btn-outline-dark" (click)="handleCancel()">Annuler</button>
+    <app-gen-button [text]="'Enregistrer'" [isLoading]="isLoading" (click)="handleOk()"></app-gen-button>
+</ng-template> 
+
+
+
+

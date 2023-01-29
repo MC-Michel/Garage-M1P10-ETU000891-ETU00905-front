@@ -59,7 +59,7 @@
                 <div class="col-12 text-end">
                     <app-gen-button   [text]="'Facture'" [isLoading]="isInvoiceLoading"  (genClick)="generateInvoice()" [customClass]="'ms-1 '"></app-gen-button>
                    
-                    <button *ngIf="isRepairFinished" (click)="generateExitSlip()" class="ms-1 btn btn-primary">
+                    <button *ngIf="isRepairFinished" (click)="showExitForm()" class="ms-1 btn btn-primary">
                         Générer bon de sortie
                     </button>
                 </div>
@@ -168,3 +168,4 @@
 <!-- Car update modal-->
 
 
+<app-exit-form [(isVisible)]="exitFormVisible" [car]="car"></app-exit-form>

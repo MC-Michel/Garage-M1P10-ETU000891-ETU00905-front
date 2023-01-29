@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CurrentRepairsDetailsComponent implements OnInit {
 
+  repairsList: any;
   env : any = environment;
   car : any = {
     brand : '',
@@ -90,7 +91,10 @@ export class CurrentRepairsDetailsComponent implements OnInit {
 
   refreshPrice(){
     let totalPrice = 0.0;
-    for(let repair of this.car.currentRepair.repairs.todo){
+    this.repairsList =  this.car.currentRepair.repairs.todo;
+    this.repairsList = this.repairsList.concat( this.car.currentRepair.repairs.inprogress)
+    this.repairsList = this.repairsList.concat( this.car.currentRepair.repairs.ended)
+    for(let repair of this.repairsList){
       totalPrice += repair.price;
     }
     

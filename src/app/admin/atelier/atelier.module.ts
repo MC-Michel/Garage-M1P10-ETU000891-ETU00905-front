@@ -17,6 +17,7 @@ import { DefaultRepairCreationFormComponent } from './component/default-repair-c
 import { DefaultRepairUpdateFormComponent } from './component/default-repair-update-form/default-repair-update-form.component';
 import { DefaultRepairPopupComponent } from './component/default-repair-popup/default-repair-popup.component';
 import { RepairsHistoricAtelierComponent } from './pages/repairs-historic-atelier/repairs-historic-atelier.component';
+import { ExitFormComponent } from './component/exit-form/exit-form.component';
  
 
 
@@ -33,7 +34,8 @@ import { RepairsHistoricAtelierComponent } from './pages/repairs-historic-atelie
     DefaultRepairCreationFormComponent,
     DefaultRepairUpdateFormComponent,
     DefaultRepairPopupComponent,
-    RepairsHistoricAtelierComponent, 
+    RepairsHistoricAtelierComponent,
+    ExitFormComponent, 
   ],
   imports: [
     SharedModule,

@@ -32,7 +32,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th class="col-4">Date de récéption</th>
-                                                    <td class="col-8">{{car.currentRepair.receptiondate | date:'medium'}}</td>
+                                                    <td class="col-8">{{car.currentRepair.receptionDate | date:'medium'}}</td>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -61,7 +61,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let repair of car.currentRepair.repairs.todo">
+                                        <tr *ngFor="let repair of repairsList">
                                             <td>{{repair.label}}</td>
                                             <td>{{repair.description}}</td>
                                             <td>{{repair.price | number : env.pipe.number}} {{env.currency}}</td>
