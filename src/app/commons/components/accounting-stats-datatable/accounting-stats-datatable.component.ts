@@ -12,6 +12,7 @@ export class AccountingStatsDatatableComponent implements OnInit {
 
   groupByType: string = "year";
   groupByValueLimitYear: any = 2023;
+  avgReparationDaysDuration: number;
   groupByValueLimitMonth: any;
   isLoading: boolean;
   results: any;
@@ -20,6 +21,7 @@ export class AccountingStatsDatatableComponent implements OnInit {
     return this.groupByType && (this.groupByValueLimitMonth || this.groupByValueLimitYear)
   }
   ngOnInit(): void {
+      this.fetch()
   }
 
   pickGroupByValue(){
@@ -36,7 +38,9 @@ export class AccountingStatsDatatableComponent implements OnInit {
         groupByValueLimit: this.pickGroupByValue() 
       };
       
-      this.results = await lastValueFrom(this.statsService.findAccountingStats(data));
+      const stats:any = await lastValueFrom(this.statsService.findAccountingStats(data));
+      this.results = stats.moneyStats;
+      this.avgReparationDaysDuration = stats.avgReparationDaysDuration;
     }catch(e: any){
       console.log(e);
       this.message.showError(e);      
