@@ -30,10 +30,12 @@ export class HomeClientComponent implements OnInit, OnDestroy {
   ) {
     this.fetchData = this.fetchData.bind(this)
     this.showDeposit = this.showDeposit.bind(this)
+    this.showRecup = this.showRecup.bind(this)
     this.updateCar = this.updateCar.bind(this)
     this.deleteCar = this.deleteCar.bind(this)
     this.redirectHistory = this.redirectHistory.bind(this)
     this.redirectReparation = this.redirectReparation.bind(this)
+    this.recupCar = this.recupCar.bind(this)
    }
 
   headers: GenTableHeader[];
@@ -152,10 +154,16 @@ export class HomeClientComponent implements OnInit, OnDestroy {
 
    if(row.status === environment.carStatus.inReparation) {
     actionOptions.push({
-      label: 'Voir reparation',
-        actionFunction: this.redirectReparation
-  });
- }
+        label: 'Voir reparation',
+          actionFunction: this.redirectReparation
+    });
+  }
+  if(row.status === environment.carStatus.waitExit) {
+    actionOptions.push({
+        label: 'Recuperer',
+          actionFunction: this.showRecup
+    });
+  }
     return actionOptions;
   }
 
@@ -167,6 +175,13 @@ export class HomeClientComponent implements OnInit, OnDestroy {
     this.currentlyDeposing = row;
     this.confirmService.showConfirm('Deposer cette voiture?', async ()=>{
       await this.depositCar( this.currentlyDeposing._id);
+    })
+  }
+
+  showRecup(row: any){
+    this.currentlyDeposing = row;
+    this.confirmService.showConfirm('Recupérer cette voiture?', async ()=>{
+      await this.recupCar( this.currentlyDeposing._id);
     })
   }
 
@@ -183,5 +198,14 @@ export class HomeClientComponent implements OnInit, OnDestroy {
       this.messageService.showError(e)
     } 
   }
-   
+  async recupCar(id : string){
+    try{
+      await lastValueFrom(this.carService.exitCar({_id : id}));
+      this.messageService.showSuccess("Voiture retirée avec succès")
+      this.datatable.loadData();
+    }catch(e: any){
+      console.log(e);
+      this.messageService.showError(e)
+    } 
+  }
 }
