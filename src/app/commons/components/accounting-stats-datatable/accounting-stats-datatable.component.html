@@ -58,22 +58,22 @@
                 <p class="text-center" *ngIf="results && results.length === 0">
                     Aucun resultat
                 </p>
-                <table class="table table-bordered" *ngIf="results && results.length !== 0">
+                <table class="table table-bordered table-responsive" *ngIf="results && results.length !== 0">
                     <thead>
                         <tr>
                             <th>{{groupByType === 'month' ? 'Jour': 'Mois' }}</th>
                             <th>Chiffre d'affaires</th>
-                            <th>Depenses</th>
-                            <th>Benefices</th>
-                            <th>Nombre de voitures reparees</th>
+                            <th>Dépenses</th>
+                            <th>Bénéfices</th>
+                            <th>Nombre de voitures reparées</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let row of results">
                             <td>{{row.dateKey}}</td>
-                            <td>{{row.ca}}</td>
-                            <td>{{row.expenses}}</td>
-                            <td>{{row.benef}}</td>
+                            <td>{{row.ca | number : env.pipe.number}} {{env.currency}}</td>
+                            <td>{{row.expenses | number : env.pipe.number}} {{env.currency}}</td>
+                            <td>{{row.benef | number : env.pipe.number}} {{env.currency}}</td>
                             <td>{{row.repairCount}}</td>
                         </tr>
                     </tbody>

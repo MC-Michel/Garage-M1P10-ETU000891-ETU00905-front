@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StatsService } from 'src/app/services/stats.service';
 import { MessageService } from '../../services/message.service';
 import { lastValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-accounting-stats-datatable',
@@ -10,6 +11,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AccountingStatsDatatableComponent implements OnInit {
 
+  env : any = environment;
   groupByType: string = "year";
   groupByValueLimitYear: any = 2023;
   avgReparationDaysDuration: number;

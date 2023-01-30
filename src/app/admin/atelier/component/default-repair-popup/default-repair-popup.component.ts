@@ -84,6 +84,7 @@ export class DefaultRepairPopupComponent {
     {
       title: "Prix",
       selector: "price",
+      type: "money",
       isSortable: true
     },
     {
