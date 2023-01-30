@@ -104,16 +104,18 @@
                             <div class="col-12">
                                 <h3>
                                     {{item.label}}
-                                    <span class="badge mx-2 rounded-pill bg-info bg-glow">
-                                        {{item.price | number : env.pipe.number}} {{env.currency}}
-                                    </span>
                                 </h3>
                                 <p>
                                     {{item.description}}
                                 </p>
-                                <div class="mt-3">
+                                <div class="d-flex justify-content-start">
+                                    <span class="badge rounded-pill bg-info bg-glow">
+                                        {{item.price | number : env.pipe.number}} {{env.currency}}
+                                    </span>
+                                </div>
+                                <div class="mt-1">
                                     <label for="formRange1" class="form-label">Progression (%)</label>
-                                    <input class="form-control" type="number" id="progression" disabled value="{{item.progression}}" (blur)="refreshProgression()" />
+                                    <input class="form-control" type="number" id="progression" [(ngModel)]="item.progression" disabled/>
                                 </div>
                             </div>
                         </div>

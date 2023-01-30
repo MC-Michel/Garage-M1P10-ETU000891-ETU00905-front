@@ -167,6 +167,11 @@ export class ReparationDetailAtelierComponent implements OnInit {
     await lastValueFrom(this.carService.updateCarRepairsProgression(this.car));
   }
 
+  async updateProgression(){
+    this.refreshProgression();
+    await lastValueFrom(this.carService.updateCarRepairsProgression(this.car));
+  }
+
   refreshDragDropData(){    
     let repairs = this.car.currentRepair.repairs;
     this.todo = repairs.todo;
