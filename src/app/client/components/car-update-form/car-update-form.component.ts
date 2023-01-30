@@ -67,7 +67,7 @@ export class CarUpdateFormComponent implements OnInit, OnChanges {
       await lastValueFrom(this.carService.updateCar(this.form.value))
       this.setIsVisible(false);
       this.carService.carCollectionUpdate.next(null);
-      this.messageService.showSuccess("Voiture mise a jour avec succès")
+      this.messageService.showSuccess("Voiture mise à jour avec succès")
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e)

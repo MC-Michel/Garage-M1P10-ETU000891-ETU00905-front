@@ -60,7 +60,7 @@ export class DefaultRepairUpdateFormComponent implements OnInit {
       await lastValueFrom(this.defaultRepairService.updateDefaultRepair(this.form.value))
       this.setIsVisible(false);
       this.defaultRepairService.defaultRepairCollectionUpdate.next(null);
-      this.messageService.showSuccess("Offre mise a jour avec succès")
+      this.messageService.showSuccess("Offre mise à jour avec succès")
     }catch(e: any){
       console.log(e);
       this.messageService.showError(e)

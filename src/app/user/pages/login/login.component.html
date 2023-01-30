@@ -25,8 +25,8 @@
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title fw-bold text-center mb-1">Bienvenue sur K-OJAO! 👋</h2>
-                                <form [formGroup]="form" class="auth-login-form mt-2" > 
+                                <h2 class="card-title fw-bold text-center mb-1">Bienvenue sur <br> K-OJAO! 👋</h2>
+                                <form [formGroup]="form" (ngSubmit)="submit()" class="auth-login-form mt-2" > 
                                     <div class="mb-1">
                                         <label class="form-label" for="login-email">Email</label>
                                         <input class="form-control" id="login-email" type="text" formControlName="email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" value="clientgarage@gmail.com"/>
@@ -40,6 +40,7 @@
                                             <input class="form-control form-control-merge" id="login-password" type="password" formControlName="password" placeholder="············" aria-describedby="login-password" tabindex="2" value="123456" />
                                         </div>
                                     </div>
+                                    <input type="submit" hidden>
                                  <app-gen-button (genClick)="submit()" [text]="'Se connecter'" [customClass]="'w-100'" [disabled]="!form.valid" [isLoading]="isLoading"></app-gen-button>
                                 </form>
                                 <p class="text-center mt-2"><span>Nouveau sur notre plateforme?</span><a routerLink="/users/signin"><span>&nbsp;Créer votre compte</span></a></p>

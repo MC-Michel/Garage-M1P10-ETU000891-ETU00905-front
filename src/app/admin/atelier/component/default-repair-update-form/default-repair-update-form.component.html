@@ -13,7 +13,7 @@
     </div>
     <div class="card"  *ngIf="!isLoadingDefaultRepair">
         <div class="card-body">
-            <form class="form form-vertical" [formGroup]="form">
+            <form (ngSubmit)="handleOk()" class="form form-vertical" [formGroup]="form">
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-1">
@@ -33,6 +33,7 @@
                             <input type="text" id="last-name-column" class="form-control" placeholder="ex : 1000" formControlName="price" />
                         </div>
                     </div>
+                    <input type="submit" hidden>
                    
                 </div>
             </form>

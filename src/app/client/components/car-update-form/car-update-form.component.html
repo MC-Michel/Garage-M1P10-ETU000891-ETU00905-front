@@ -13,7 +13,7 @@
     </div>
     <div class="card"  *ngIf="!isLoadingCar">
         <div class="card-body">
-            <form class="form form-vertical" [formGroup]="form">
+            <form (ngSubmit)="handleOk()" class="form form-vertical" [formGroup]="form">
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-1">
@@ -33,6 +33,7 @@
                             <textarea  id="city-column" class="form-control" placeholder="ex : Voiture de plaisir, voiture de location, ..." formControlName="description" rows="3" placeholder="Textarea"></textarea>
                         </div>
                     </div>
+                    <input type="submit" hidden>
                    
                 </div>
             </form>
