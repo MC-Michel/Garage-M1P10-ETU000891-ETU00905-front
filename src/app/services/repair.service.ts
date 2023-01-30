@@ -16,6 +16,10 @@ export class RepairService {
     const url = `${this.wsUrl}/repairs/invoice/${repairId}`
     return this.http.get(url, {responseType: 'blob'});
   }
+  generateInvoiceForCustomer(repairId: any){
+    const url = `${this.wsUrl}/repairs/invoice/customer/${repairId}`
+    return this.http.get(url, {responseType: 'blob'});
+  }
   createRepair(data: any){
     const url = this.wsUrl+"/repairs";
     console.log('Here')

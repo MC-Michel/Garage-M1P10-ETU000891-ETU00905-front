@@ -126,7 +126,7 @@ export class CurrentRepairClientComponent implements OnInit {
   async generateInvoice(){
     this.isInvoiceLoading = true;
     try{
-      const response: any = await lastValueFrom(this.repairService.generateInvoice(this.car.currentRepair._id)); 
+      const response: any = await lastValueFrom(this.repairService.generateInvoiceForCustomer(this.car.currentRepair._id)); 
       let dataType = response.type;
       let binaryData = [];
       binaryData.push(response);
