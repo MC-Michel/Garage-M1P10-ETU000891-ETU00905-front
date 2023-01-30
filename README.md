@@ -29,3 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Some command
 # generate command with route
 ng g module admin/atelier --route admin/atelier --module app.module
+
+# Lien vers le document
+https://docs.google.com/document/d/1v2KZDWUnftT7psiDsjii50K3P1OQZ_f-FfMSmMAoZEE/edit?usp=sharing
