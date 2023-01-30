@@ -28,7 +28,7 @@ export class AccountingStatsDatatableComponent implements OnInit {
 
   pickGroupByValue(){
     if(this.groupByType === 'month') return new Date(this.groupByValueLimitMonth);
-    if(this.groupByType === 'year') return new Date(this.groupByValueLimitYear, 0,1);
+    if(this.groupByType === 'year') return new Date(Date.UTC(this.groupByValueLimitYear, 0,1));
     return null;
   }
 

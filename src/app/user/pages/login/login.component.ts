@@ -26,7 +26,7 @@ export class LoginComponent   {
     try{
       const data = await lastValueFrom(this.userService.login(this.form.value));
       const nextPath = this.userService.getNextLink(data.user.roleId);
-      this.router.navigate([nextPath]);
+      await this.router.navigate([nextPath]);
     }catch(e: any){
       console.log(e);
       this.message.showError(e);
